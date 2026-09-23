@@ -27,10 +27,12 @@ test('preparation keeps only its verified start view',()=>{
   assert.equal(d.navigation.edges['p001-start-view'].next,'p002-start-view');
 });
 
-test('unregistered qishi start does not inherit deleted preparation candidates',()=>{
+test('qishi start uses an explicit learning coordinate guide',()=>{
   const d=compileData(fresh());
-  assert.equal(d.views['p002-start-view'].stateId,null);
-  assert.equal(d.views['p002-start-view'].fromStateId,null);
+  assert.equal(d.views['p002-start-view'].stateId,'p002-start');
+  assert.equal(d.states['p002-start'].feet.left.position.basis,'illustration');
+  assert.deepEqual(d.states['p002-start'].feet.left.position.value,{x:0,y:0});
+  assert.deepEqual(d.states['p002-start'].feet.right.position.value,{x:1,y:0});
 });
 
 test('instructions, interpretations, principles and checks survive verbatim',()=>{
@@ -133,10 +135,11 @@ test('same-day training notes are represented by one source',()=>{
   assert.equal(d.sources['sifu-2026-09-23-nonrigidity'],undefined);
 });
 
-test('legacy preparation source and motions are absent',()=>{
+test('legacy preparation motions stay absent while the posture coordinate guide remains',()=>{
   const d=compileData(fresh());
   assert.equal(d.sources['legacy-preparation'],undefined);
   for(const id of ['p001-m01','p001-m02','p001-m03','p001-m04'])assert.equal(source.motions[id],undefined);
+  assert.equal(d.states['p001-start'].feet.left.position.basis,'illustration');
 });
 
 test('unsupported groups fail instead of being discarded',()=>{
