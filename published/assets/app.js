@@ -82,7 +82,7 @@
     }
     function go(id){if(!id)return;try{current=id;render();}catch(e){fail(e);}}
     $('prev').onclick=()=>go(d.navigation.edges[current].previous);$('next').onclick=()=>go(d.navigation.edges[current].next);
-    function options(select,items,selected){select.replaceChildren(...items.map(([value,label])=>{const o el('option',label);o.value=value;return o;}));select.value=selected;}
+    function options(select,items,selected){select.replaceChildren(...items.map(([value,label])=>{const o=el('option',label);o.value=value;return o;}));select.value=selected;}
     function fillPostures(sectionId,selected){const list=sections.find(s=>s.id===sectionId).postureIds;options($('posture-select'),list.map(id=>[id,`${postures[id].number}. ${postures[id].name}`]),selected||list[0]);}
     $('open-picker').onclick=()=>{const pid=d.views[current].postureId,s=sectionFor(pid);options($('section-select'),sections.map(s=>[s.id,s.name]),s.id);fillPostures(s.id,pid);pickerReturn=document.activeElement;$('picker-dialog').showModal();};
     $('section-select').onchange=()=>fillPostures($('section-select').value);
