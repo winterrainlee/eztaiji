@@ -21,7 +21,7 @@
     const regionText={leftFoot:'왼발 쪽',rightFoot:'오른발 쪽',betweenFeet:'두 발 사이',front:'기준 정면 쪽',back:'기준 뒤쪽'};
     const heading=c=>{const a=value(c);return !a?'미등록':a.kind==='sector'?sectorText[a.sector]:`${a.degrees}°${c.precision==='approximate'?' (근사)':''}`;};
     const claimLabel=(c,formatter=v=>String(v))=>c?.status==='known'?`${formatter(c.value)} · ${basis(c)}`:c?.status==='not_applicable'?'해당 없음':'미등록';
-    const stateDescription=s=>!s?'몸 상태 미등록':['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');
+    const stateDescription=s=>{if(!s)return '몸 상태 미등록';const feet=['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');const arms=[['left','왼팔'],['right','오른팔']].flatMap(([side,label])=>s.arms?.[side]?.direction?[`${label} 구조 방향 ${heading(s.arms[side].direction)}`]:[]).join('. ');return arms?`${feet}. ${arms}`:feet;};
     const svg=(tag,attrs={},label)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(label!==undefined)e.textContent=label;return e;};
     // One fixed world-to-view transform across the current training frames.
     function draw(v,s){
@@ -32,7 +32,7 @@
       const c=value(s?.center?.location);
       $('center-summary').textContent=c?`C 중심 · ${c.kind==='region'?regionText[c.anchor]+' (영역)':`≈ (${c.x}, ${c.y})`}`:hasFeet?'C 중심 · 미등록':'';
       if(!hasFeet)return;
-      const blue='#225bd6',muted='#5e7184',x0=60,y0=138,unit=88;
+      const blue='#225bd6',red='#c43d3d',muted='#5e7184',x0=60,y0=138,unit=88;
       for(let x=26;x<=334;x+=27)plot.append(svg('path',{d:`M${x} 18V150`,stroke:'#dce5f0','stroke-width':.7}));
       for(let y=24;y<=150;y+=27)plot.append(svg('path',{d:`M26 ${y}H334`,stroke:'#dce5f0','stroke-width':.7}));
       plot.append(svg('path',{d:`M26 ${y0}H270 M${x0} 150V22`,stroke:'#aabdd1','stroke-width':1}));
@@ -47,11 +47,11 @@
         const labels=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);
         if(labels.length)plot.append(svg('text',{x,y:y+30,fill:'#704f99','font-size':11,'text-anchor':'middle'},labels.join(' · ')));
       }
-      const b=value(s.body.heading);if(b){arrow(308,72,b.kind==='sector'?sectorAngle[b.sector]:b.degrees,32,blue);plot.append(svg('text',{x:308,y:97,fill:blue,'font-size':12,'font-weight':600,'text-anchor':'middle'},'B 몸 방향'));}
+      const b=value(s.body.heading);if(b){arrow(308,62,b.kind==='sector'?sectorAngle[b.sector]:b.degrees,28,blue);plot.append(svg('text',{x:308,y:91,fill:blue,'font-size':12,'font-weight':600,'text-anchor':'middle'},'B 몸 방향'));}const armArrow=(side,x,y,label,labelX)=>{const h=value(s.arms?.[side]?.direction);if(!h)return;arrow(x,y,h.kind==='sector'?sectorAngle[h.sector]:h.degrees,22,red);plot.append(svg('text',{x:labelX,y:y+4,fill:red,'font-size':11,'font-weight':700,'text-anchor':'middle'},label));};armArrow('left',296,120,'左臂',280);armArrow('right',322,120,'右臂',340);
     }
     function fillDetails(s){const box=$('pose-details');box.replaceChildren();if(!s){box.append(el('p','이 상태의 좌표는 아직 등록하지 않았어.'));return;}
       for(const side of ['left','right']){const f=s.feet[side];box.append(el('h3',side==='left'?'왼발':'오른발'),el('p','위치: '+claimLabel(f.position,p=>`≈ (${p.x}, ${p.y})`)),el('p','지지: '+claimLabel(f.supportRole,v=>({shi:'● 실',xu:'○ 허',shared:'함께 지지'})[v])),el('p','발끝 방향: '+heading(f.heading)),el('p','접촉: '+claimLabel(f.groundContact,v=>contactText[v])),el('p','뒤꿈치: '+claimLabel(f.heelRaised,v=>v?'들려 있음':'들려 있지 않음')));}
-      box.append(el('h3','몸과 중심'),el('p','몸 방향 B: '+heading(s.body.heading)),el('p',$('center-summary').textContent||'C 중심: 미등록'));
+      box.append(el('h3','몸과 중심'),el('p','몸 방향 B: '+heading(s.body.heading)),el('p',$('center-summary').textContent||'C 중심: 미등록'));for(const side of ['left','right']){const a=s.arms?.[side];if(!a)continue;box.append(el('h3',side==='left'?'왼팔':'오른팔'),el('p','구성: '+claimLabel(a.configuration)),el('p','구조 방향: '+heading(a.direction)));}
     }
     const sectionFor=id=>sections.find(s=>s.postureIds.includes(id));
     function render(){
