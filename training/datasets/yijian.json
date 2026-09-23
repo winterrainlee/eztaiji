@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "qishi-coupled-rise-006",
+  "revision": "global-principle-007",
   "coverage": {
     "kind": "partial",
     "note": "預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
@@ -181,6 +181,9 @@
           ],
           "note": "기존 설명의 이전 후보. 원문 재대조 전."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     },
     "p001-m02": {
@@ -254,7 +257,8 @@
           ],
           "note": "기존 설명의 이전 후보. 원문 재대조 전."
         }
-      ]
+      ],
+      "principleIds": []
     },
     "p001-m03": {
       "id": "p001-m03",
@@ -365,7 +369,8 @@
           ],
           "note": "기존 설명의 이전 후보. 원문 재대조 전."
         }
-      ]
+      ],
+      "principleIds": []
     },
     "p001-m04": {
       "id": "p001-m04",
@@ -438,7 +443,8 @@
           ],
           "note": "기존 설명의 이전 후보. 원문 재대조 전."
         }
-      ]
+      ],
+      "principleIds": []
     },
     "p002-m01": {
       "id": "p002-m01",
@@ -541,6 +547,9 @@
           ],
           "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     },
     "p002-m02": {
@@ -644,6 +653,9 @@
           ],
           "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     },
     "p002-m03": {
@@ -747,6 +759,9 @@
           ],
           "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     },
     "p002-m04": {
@@ -850,6 +865,9 @@
           ],
           "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     },
     "p002-m05": {
@@ -953,6 +971,9 @@
           ],
           "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     },
     "p002-m06": {
@@ -1056,6 +1077,9 @@
           ],
           "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
       ]
     }
   },
@@ -4861,11 +4885,23 @@
         "url": null,
         "note": "사부님이 太極起勢에서 팔이 올라가는 것과, 팔꿈치가 내려가며 손이 올라가는 것을 같은 계열의 음양·연동 원리로 설명한 현장 수련 메모야."
       }
+    },
+    "sifu-2026-09-23-nonrigidity": {
+      "id": "sifu-2026-09-23-nonrigidity",
+      "kind": "observation",
+      "reviewStatus": "checked",
+      "location": "2026-09-23 國立東華大學 태극권 수련 · 사부님 설명을 사용자 현장 메모로 기록",
+      "public": {
+        "id": "sifu-2026-09-23-nonrigidity",
+        "title": "2026-09-23 수련 메모 · 경직하지 않고 변화 가능성 유지",
+        "url": null,
+        "note": "사부님이 전신을 경직시키지 말고, 손목이 잡혀도 팔꿈치와 팔의 움직임·회전 가능성을 남겨야 한다고 설명한 현장 수련 메모야."
+      }
     }
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "2026-09-23 현장 수련에서 太極起勢의 팔 상승과 팔꿈치 하강·손 상승을 같은 계열의 음양·연동 원리로 설명한 내용을 observation 근거로 추가했다. 기존 자료 기반 開/合·鬆/升·不動/動 해석은 유지하고 별도 관계로 병기한다.",
+    "note": "2026-09-23 현장 수련의 공통 원리로 ‘경직하지 않고 변화 가능성을 유지하기’를 전역 principle로 추가했다. 관련 동작은 principleIds로 참조하며, 같은 설명을 동작별로 복제하지 않는다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [
@@ -4902,5 +4938,50 @@
         "shi": "L"
       }
     ]
+  },
+  "principles": {
+    "gp-nonrigidity": {
+      "id": "gp-nonrigidity",
+      "title": "경직하지 않고 변화 가능성을 유지하기",
+      "summary": {
+        "status": "known",
+        "value": "필요한 지지는 유지하되 몸 전체를 한 덩어리로 굳히지 않아. 한 부분이 제한되어도 다른 관절은 계속 움직이고 회전할 여지를 남겨.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-09-23-nonrigidity",
+            "locator": "2026-09-23 수련 · 전신 경직과 관절 변화 가능성",
+            "support": "explicit"
+          }
+        ]
+      },
+      "explanation": {
+        "status": "known",
+        "value": "사부님은 전신에 힘이 들어가 경직되는 것을 피해야 한다고 설명했어. 접촉이나 제약이 한 지점에 생겨도 그 제약을 몸 전체의 고정으로 번지게 하지 않고, 팔꿈치·전완·어깨·몸통 등 다른 연결 부위의 변화 가능성을 유지하는 것이 중요해.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-09-23-nonrigidity",
+            "locator": "2026-09-23 수련 · 전신 경직과 관절 변화 가능성",
+            "support": "explicit"
+          }
+        ]
+      },
+      "example": {
+        "status": "known",
+        "value": "예를 들어 손목이 잡혀 있어도 팔꿈치를 내리거나 팔·전완을 움직이고 회전할 수 있어야 해. 손목의 접촉은 남아 있어도 팔 전체가 막대처럼 굳을 필요는 없어.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-09-23-nonrigidity",
+            "locator": "2026-09-23 수련 · 전신 경직과 관절 변화 가능성",
+            "support": "explicit"
+          }
+        ]
+      }
+    }
   }
 }

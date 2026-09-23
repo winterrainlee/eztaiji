@@ -65,6 +65,9 @@
       const overview=$('start-overview');overview.replaceChildren();const ready=p.motionViewIds.filter(id=>text(d.views[id]?.instruction));overview.hidden=!(v.kind==='start'&&ready.length);
       if(!overview.hidden){overview.append(el('h2','이 자세의 흐름'));for(const id of ready){const m=d.views[id],row=el('div',undefined,'overview-step');row.append(el('span',`${m.motionNumber}동작`),el('div',m.title));overview.append(row);}}
       const related=v.interpretationIds.map(id=>d.interpretations[id]).filter(Boolean);
+      const globalPrinciples=(v.principleIds||[]).map(id=>d.principles?.[id]).filter(Boolean);
+      const gpSection=$('global-principles'),gpBody=$('global-principles-body');gpSection.hidden=!globalPrinciples.length;gpBody.replaceChildren();
+      for(const principle of globalPrinciples){const item=el('div',undefined,'global-principle-item');item.append(el('strong',principle.title),el('p',text(principle.summary)));gpBody.append(item);}
       const why=related.filter(x=>x.category==='principle'&&x.availability==='present');$('why').hidden=!why.length;$('why-body').replaceChildren(...why.map(x=>el('p',text(x.content.explanation))));
       const yy=related.filter(x=>x.category==='yinYang'&&x.availability==='present');$('yin-yang').hidden=!yy.length;const yyBox=$('yin-yang-body');yyBox.replaceChildren();
       for(const x of yy){const c=x.content,pair=el('div',undefined,'pair');for(const[key,i]of [['first',0],['second',1]]){const a=el('div');a.append(el('strong',c.terms[i]),el('p',text(c[key])));pair.append(a);}yyBox.append(pair,el('p',text(c.relation),'relation'));}

@@ -101,6 +101,16 @@
     relation:known('손을 따로 들어 올리기보다 팔꿈치가 내려가면서 손이 올라가는 상반된 변화가 한 구조 안에서 함께 나타나. 사부님은 이것도 같은 계열의 원리로 설명했어.','observation','qualitative','현장 수련 메모를 바탕으로 한 기록이야.')
   }};
   interpretations['p002-application']={id:'p002-application',category:'application',scope:{kind:'posture',postureId:'p002'},availability:'present',content:{applicationType:'preparation',assumption:text('상대와 팔이 접촉하거나 곧 접촉할 상황에서, 손의 한 지점을 바로 밀어내거나 잡아당기지 않고 구조를 바꿔야 한다고 가정해.'),response:text('손목·손끝·팔꿈치 중 한 지점을 공간의 기준으로 남겨두고 다른 관절을 풀거나 침강시켜 팔의 각도와 구조를 바꿔.'),possibleResult:text('접촉점을 크게 밀거나 당기지 않으면서도 몸 안쪽의 구조를 바꾸는 감각을 익히는 준비가 될 수 있어.'),limitations:text('太極起勢의 정식 전투 용법을 확정한 설명은 아니야. 여기서는 原空位와 鬆·沉의 구조가 접촉 상황에 어떻게 이어질 수 있는지만 본다.')}};
+  const principles={
+    'gp-nonrigidity':{
+      id:'gp-nonrigidity',
+      title:'경직하지 않고 변화 가능성을 유지하기',
+      summary:known('필요한 지지는 유지하되 몸 전체를 한 덩어리로 굳히지 않아. 한 부분이 제한되어도 다른 관절은 계속 움직이고 회전할 여지를 남겨.','observation','qualitative','2026-09-23 현장 수련 메모를 바탕으로 한 공통 원리야.'),
+      explanation:known('접촉이나 제약이 한 지점에 생겨도 그 제약을 몸 전체의 고정으로 번지게 하지 않고, 팔꿈치·전완·어깨·몸통 등 다른 연결 부위의 변화 가능성을 유지해.','observation','qualitative','2026-09-23 사부님 설명을 정리한 내용이야.'),
+      example:known('예를 들어 손목이 잡혀 있어도 팔꿈치를 내리거나 팔·전완을 움직이고 회전할 수 있어야 해.','observation','qualitative','2026-09-23 사부님이 든 예를 기록했어.')
+    }
+  };
+  const principleMotionIds=new Set(['p001-m01','p002-m01','p002-m02','p002-m03','p002-m04','p002-m05','p002-m06']);
   const sections=taijiCatalog.map(s=>({id:`s${String(s.id).padStart(2,'0')}`,name:s.name,postureIds:s.poses.map(p=>`p${String(p.id).padStart(3,'0')}`)}));
   const postures={},views={},order=[];
   for(const section of taijiCatalog){
@@ -113,7 +123,7 @@
         : pose.id===2
           ? known('預備式 4동작이 끝난 상태가 그대로 太極起勢의 시작 상태야. 왼발이 주로 받치고 두 발은 정면으로 나란한 상태에서 손·팔의 변화가 시작돼.','inference','qualitative','앞 자세의 마지막 상태를 다음 자세의 시작으로 읽는 프로젝트 연결 규칙이야.')
           : known('이전 자세를 마친 상태에서 다음 움직임을 준비해. 세부 설명은 모으는 중이야.','illustration','qualitative','아직 동작 자료를 채우는 중인 화면이야.');
-      views[startId]={id:startId,kind:'start',postureId:pid,motionId:null,motionNumber:null,title:`${pose.name} · 시작 상태`,stateId:startState,fromStateId:null,instruction:startInstruction,checks:[],events:[],contactSymbols:{left:null,right:null},interpretationIds:pose.id===1?['p001-application']:pose.id===2?['p002-principle-coupled-rise','p002-application']:[],sourceIds:(pose.id===1||pose.id===2)?['tsaifucius-yijian64']:[]};
+      views[startId]={id:startId,kind:'start',postureId:pid,motionId:null,motionNumber:null,title:`${pose.name} · 시작 상태`,stateId:startState,fromStateId:null,instruction:startInstruction,checks:[],events:[],contactSymbols:{left:null,right:null},principleIds:[],interpretationIds:pose.id===1?['p001-application']:pose.id===2?['p002-principle-coupled-rise','p002-application']:[],sourceIds:(pose.id===1||pose.id===2)?['tsaifucius-yijian64']:[]};
       order.push(startId);
       let from=startState;
       for(let n=1;n<=pose.count;n++){
@@ -121,7 +131,8 @@
         const collection=pose.id===1?prep:pose.id===2?qishi:null,p=collection?.[n-1]||null,stateId=p?.state||null;
         const applicationId=pose.id===1?'p001-application':pose.id===2?'p002-application':null;
         const sourceId=pose.id===1?'legacy-preparation':pose.id===2?'tsaifucius-yijian64':null;
-        views[vid]={id:vid,kind:'motion',postureId:pid,motionId:mid,motionNumber:n,title:p?.title||`${pose.name} · ${n}동작`,stateId,fromStateId:from,instruction:p?known(p.instruction,'source','qualitative',pose.id===2?'접근 가능한 易簡1–64식 太極起勢 기록을 바탕으로 정리한 내용이야. 현장 지도와 다르면 사부님의 지도를 우선해.':'접근 가능한 기존 수련 기록을 바탕으로 옮긴 내용이야. 원문·실연 대조는 이어서 보완해.'):unknown('unrecorded'),checks:p?p.checks.map(text):[],events:p?.events||[],contactSymbols:p?.contacts||{left:null,right:null},interpretationIds:p?[`${mid}-principle`,`${mid}-yinyang`,
+        const principleIds=principleMotionIds.has(mid)?['gp-nonrigidity']:[];
+        views[vid]={id:vid,kind:'motion',postureId:pid,motionId:mid,motionNumber:n,title:p?.title||`${pose.name} · ${n}동작`,stateId,fromStateId:from,instruction:p?known(p.instruction,'source','qualitative',pose.id===2?'접근 가능한 易簡1–64식 太極起勢 기록을 바탕으로 정리한 내용이야. 현장 지도와 다르면 사부님의 지도를 우선해.':'접근 가능한 기존 수련 기록을 바탕으로 옮긴 내용이야. 원문·실연 대조는 이어서 보완해.'):unknown('unrecorded'),checks:p?p.checks.map(text):[],events:p?.events||[],contactSymbols:p?.contacts||{left:null,right:null},principleIds,interpretationIds:p?[`${mid}-principle`,`${mid}-yinyang`,
           ...(mid==='p001-m01'?['p001-m01-principle-relative-rise','p001-m01-yinyang-height']:[]),
           ...(mid==='p002-m01'?['p002-principle-coupled-rise','p002-m01-yinyang-rise']:[]),
           ...(mid==='p002-m02'?['p002-principle-coupled-rise','p002-m02-yinyang-rise']:[]),
@@ -129,15 +140,17 @@
           ...((pose.id===2&&n>3)?['p002-principle-coupled-rise']:[]),
           applicationId].filter(Boolean):[],sourceIds:p&&sourceId?[sourceId,
           ...(mid==='p001-m01'?['sifu-2026-09-23-prep1']:[]),
-          ...(['p002-m01','p002-m02','p002-m03'].includes(mid)?['sifu-2026-09-23-qishi-rise']:[])
+          ...(['p002-m01','p002-m02','p002-m03'].includes(mid)?['sifu-2026-09-23-qishi-rise']:[]),
+          ...(principleIds.length?['sifu-2026-09-23-nonrigidity']:[])
         ]:[]};
         order.push(vid);motionViewIds.push(vid);from=stateId;
       }
     }
   }
   const edges={};order.forEach((id,i)=>edges[id]={previous:order[i-1]||null,next:order[i+1]||null});
-  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'qishi-coupled-rise-006',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
+  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'global-principle-007',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,principles,interpretations,sources:{
     'legacy-preparation':{id:'legacy-preparation',title:'eztaiji 기존 예비식 4동작과 학습용 도해',url:'https://github.com/winterrainlee/eztaiji/blob/b228b007d48756bdf83d6d2d3a0050a2b34a7f5e/training/datasets/yijian.json',note:'접근 가능한 기존 수련 기록을 바탕으로 모은 자료야. 원문과 사부님 실연의 대조는 이어서 보완해.'},
+    'sifu-2026-09-23-nonrigidity':{id:'sifu-2026-09-23-nonrigidity',title:'2026-09-23 수련 메모 · 경직하지 않고 변화 가능성 유지',url:null,note:'사부님이 전신을 경직시키지 말고, 손목이 잡혀도 팔꿈치와 팔의 움직임·회전 가능성을 남겨야 한다고 설명한 현장 수련 메모야.'},
     'sifu-2026-09-23-qishi-rise':{id:'sifu-2026-09-23-qishi-rise',title:'2026-09-23 수련 메모 · 太極起勢의 상승과 하강',url:null,note:'사부님이 太極起勢에서 팔이 올라가는 것과, 팔꿈치가 내려가며 손이 올라가는 것을 같은 계열의 음양·연동 원리로 설명한 현장 수련 메모야.'},
     'sifu-2026-09-23-prep1':{id:'sifu-2026-09-23-prep1',title:'2026-09-23 수련 메모 · 預備式 1동작',url:null,note:'사부님이 預備式 1동작에서 고관절·몸이 약간 내려가는 변화 자체를 음양으로 설명했고, 손이 조금 올라가 보이는 것은 팔·손을 능동적으로 드는 게 아니라 몸이 내려가며 생기는 상대적 변화라고 설명한 현장 수련 메모야.'},
     'tsaifucius-yijian64':{id:'tsaifucius-yijian64',title:'Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述',url:'https://tsaitaiji.blogspot.com/2024/03/1-64.html',note:'預備勢의 준비 자세와 太極起勢 1–6동의 순서·原空位·鬆肘·손바닥 방향 설명을 이번 수집에서 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해.'}

@@ -76,6 +76,9 @@ def verify_preservation(source, deployed):
         view = deployed["views"][key + "-view"]
         assert view["instruction"] == motion["instruction"], key
         assert view["checks"] == motion["checks"], key
+        assert view["principleIds"] == motion["principleIds"], key
+    for key, principle in deployed["principles"].items():
+        assert principle == source["principles"][key], key
     for key, interpretation in deployed["interpretations"].items():
         assert interpretation == source["interpretations"][key], key
     assert "authoring" not in deployed

@@ -62,6 +62,10 @@ class SchemaContracts(unittest.TestCase):
         x=copy.deepcopy(self.source);x["interpretations"]["p001-application"]["content"]={}
         self.bad("training",x)
 
+    def test_unresolved_global_principle_rejected(self):
+        x=copy.deepcopy(self.source);x["motions"]["p002-m03"]["principleIds"]=["missing-principle"]
+        self.bad("training",x)
+
     def test_unsupported_group_scope_rejected(self):
         x=copy.deepcopy(self.source);x["interpretations"]["p001-application"]["scope"]={"kind":"group","groupId":"g"}
         self.bad("training",x)

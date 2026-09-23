@@ -31,7 +31,7 @@ function validateReferences(d) {
   check(d.schemaVersion === '0.1.0' && d.profile === 'preparation-pilot', 'unsupported source version/profile');
   check(Object.keys(d.groups).length === 0, 'groups are not supported by preparation-pilot');
   const allIds = new Set();
-  for (const key of ['postures','motions','states','sources','interpretations','coordinateFrames']) {
+  for (const key of ['postures','motions','states','sources','interpretations','principles','coordinateFrames']) {
     for (const [id, item] of Object.entries(d[key])) {
       check(id === item.id && /^[a-z][a-z0-9-]*$/.test(id), `${key}/${id}: ID mismatch/invalid ID`);
       check(!allIds.has(id), `${key}/${id}: duplicate global ID`); allIds.add(id);
@@ -56,6 +56,7 @@ function validateReferences(d) {
       check(m.number === j + 1, `${mid}: motion number/order mismatch`);
       check(m.checkpointStateIds.length === 0 && m.eventRelations.length === 0, `${mid}: checkpoints/timing are outside preparation-pilot`);
       if (m.endStateId !== null) requireItem(d.states, m.endStateId, `${mid}/endStateId`);
+      for (const principleId of m.principleIds) requireItem(d.principles, principleId, `${mid}/principleIds`);
       for (const e of m.events) {
         check(!allIds.has(e.id), `${e.id}: duplicate event ID`); allIds.add(e.id);
       }
@@ -70,7 +71,7 @@ function validateReferences(d) {
       x.scope.kind === 'motion' ? x.scope.motionId : x.scope.postureId, `${x.id}/scope`);
   }
   for (const source of Object.values(d.sources)) check(source.public.id === source.id, `${source.id}: public source ID mismatch`);
-  walkClaims([d.states,d.motions,d.postures,d.interpretations], claim => {
+  walkClaims([d.states,d.motions,d.postures,d.interpretations,d.principles], claim => {
     check(!(claim.status !== 'known' && own(claim,'value')), 'unknown claim must not contain a value');
     for (const e of claim.evidence ?? []) requireItem(d.sources, e.sourceId, 'claim evidence');
   });
@@ -92,15 +93,16 @@ export function compileData(d) {
     meta:{datasetId:d.id, datasetRevision:d.revision, trainingSchemaVersion:d.schemaVersion,
       generatorVersion:'0.1.0', inputDigest:createHash('sha256').update(stableJSON(d)).digest('hex'), coverage:copy(d.coverage)},
     coordinateFrames:{}, catalog:{sections:copy(d.sections),postures:{}},
-    navigation:{order:[],edges:{}}, states:{}, views:{}, interpretations:{}, sources:{}
+    navigation:{order:[],edges:{}}, states:{}, views:{}, principles:{}, interpretations:{}, sources:{}
   };
-  const usedStates = new Set(), usedInterpretations = new Set(), usedSources = new Set();
+  const usedStates = new Set(), usedPrinciples = new Set(), usedInterpretations = new Set(), usedSources = new Set();
   let previousEnd = null;
   const add = (p, m, current, from) => {
     const id = m ? m.id+'-view' : p.id+'-start-view';
     const related = Object.values(d.interpretations).filter(x =>
       (x.scope.kind === 'posture' && x.scope.postureId === p.id) ||
       (m && x.scope.kind === 'motion' && x.scope.motionId === m.id)).map(x => x.id).sort();
+    const principleIds = m ? copy(m.principleIds) : [];
     const state = current === null ? null : d.states[current];
     const symbols = {left:null,right:null};
     for (const side of ['left','right']) {
@@ -112,11 +114,11 @@ export function compileData(d) {
       fromStateId:from,instruction:copy(m?.instruction ?? p.introduction),checks:copy(m?.checks ?? []),
       events:m ? m.events.map(e => ({...copy(e), symbol:explicitContact(e.description,d.sources)
         ? ({heel_raise:'Heel ↑',heel_lower:'Heel ↓'})[e.kind] ?? null : null})) : [],
-      contactSymbols:symbols,interpretationIds:related,sourceIds:[]};
+      contactSymbols:symbols,principleIds,interpretationIds:related,sourceIds:[]};
     const displayed = [view.instruction,view.checks,view.events,state,
-      ...(from === null ? [] : [d.states[from]]),...related.map(x => d.interpretations[x])];
+      ...(from === null ? [] : [d.states[from]]),...principleIds.map(x => d.principles[x]),...related.map(x => d.interpretations[x])];
     view.sourceIds = evidenceIds(displayed);
-    view.sourceIds.forEach(x => usedSources.add(x)); related.forEach(x => usedInterpretations.add(x));
+    view.sourceIds.forEach(x => usedSources.add(x)); principleIds.forEach(x => usedPrinciples.add(x)); related.forEach(x => usedInterpretations.add(x));
     if (current !== null) usedStates.add(current);
     if (from !== null) usedStates.add(from);
     if (current !== null && from !== null) check(d.states[current].coordinateFrameId === d.states[from].coordinateFrameId,
@@ -139,6 +141,7 @@ export function compileData(d) {
     out.states[id]=projection(d.states[id]);
     const fid=d.states[id].coordinateFrameId; out.coordinateFrames[fid]=copy(d.coordinateFrames[fid]);
   }
+  for (const id of [...usedPrinciples].sort()) out.principles[id]=copy(d.principles[id]);
   for (const id of [...usedInterpretations].sort()) {
     const x=d.interpretations[id];
     out.interpretations[id]={id:x.id,category:x.category,scope:copy(x.scope),availability:x.availability,
@@ -163,11 +166,12 @@ export function validateDeploymentReferences(d) {
       check(p.startViewId===id && v.motionId===null && v.events.length===0,'invalid start view');
     } else check(p.motionViewIds.includes(id),`${id}: view outside posture`);
     for (const sid of [v.stateId,v.fromStateId]) if (sid!==null) requireItem(d.states,sid,`${id}/state`);
+    for (const x of v.principleIds) requireItem(d.principles,x,`${id}/principles`);
     for (const x of v.interpretationIds) requireItem(d.interpretations,x,`${id}/interpretations`);
     for (const x of v.sourceIds) requireItem(d.sources,x,`${id}/sources`);
   }
   for (const s of Object.values(d.states)) requireItem(d.coordinateFrames,s.coordinateFrameId,'state frame');
-  walkClaims([d.views,d.states,d.interpretations], c => {
+  walkClaims([d.views,d.states,d.principles,d.interpretations], c => {
     for(const e of c.evidence??[]) requireItem(d.sources,e.sourceId,'deployment evidence');
   });
 }

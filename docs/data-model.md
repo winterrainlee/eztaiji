@@ -40,14 +40,21 @@
 | `PostureOccurrence` | 권가의 그 위치에서 등장하는 자세를 나타낸다. |
 | `Motion` | 원자료의 번호가 붙은 한 동작을 나타낸다. |
 | `State` | 특정 시점에 기록된 몸 상태를 나타낸다. |
-| `Interpretation` | 원리·음양·전투 가정을 특정 범위에 연결한다. |
+| `GlobalPrinciple` | 권가 전체에 걸쳐 반복되는 수련 원리를 한 번 정의하고 관련 동작이 참조한다. |
+| `Interpretation` | 동작·묶음·자세에 붙는 원리·음양·전투 가정을 특정 범위에 연결한다. |
 | `Source` | 문헌·영상·수련 메모·기존 코드 등의 근거를 식별한다. |
+
+### 공통 원리와 동작 해석의 구분
+
+`GlobalPrinciple`은 특정 자세 하나에 종속되지 않는 반복 수련 원리다. 예를 들어 **“경직하지 않고 변화 가능성을 유지하기”**는 한 지점이 접촉·제한되어도 다른 관절의 움직임과 회전 가능성을 남기는 원리로, 여러 자세에서 반복될 수 있다. 원리 본문은 `principles`에 한 번만 두고 관련 `Motion.principleIds[]`가 ID로 참조한다.
+
+동작 화면에서는 참조된 공통 원리를 짧게 보여주되 그 동작만의 설명처럼 복제하지 않는다. 동작별 `Interpretation(category: principle)`은 “이 동작에서 왜 이렇게 움직이는가”를 설명하고, `GlobalPrinciple`은 그 설명을 가로질러 반복되는 상위 원리를 담당한다. 아직 특정 동작과의 연결 근거가 없으면 전역 원리라는 이유만으로 모든 동작에 자동 부착하지 않는다.
 
 `PostureOccurrence`를 쓰는 이유는 같은 이름의 자세가 여러 번 등장하기 때문이다. 1단의 單鞭과 뒤에 나오는 單鞭은 이름이 같아도 별개의 항목이다. 시작 상태와 연결 문맥을 이름으로 재사용하지 않는다.
 
 ID는 이름이나 배열 인덱스와 분리한다. 예를 들어 `p001`, `p001-m01`, `p001-m01-end`, `p003-g-left-peng`처럼 안정된 ID를 쓴다. 번호는 표시·원자료 대조용이며, 이름의 오탈자를 고쳐도 참조 ID는 바뀌지 않는다. 서로 다른 Dataset 사이의 참조는 이번 버전에서 허용하지 않는다.
 
-저장 문서의 최상위에는 `schemaVersion`, `id`, `revision`, `coordinateFrames`, `sections`, `postures`, `motions`, `states`, `groups`, `interpretations`, `sources`를 둔다. `sections[].postureIds`를 펼치면 권가 전체 순서가 나온다. 아래 설계 시험의 `postureIds`는 이 파생 순서를 단순화한 입력이다. 중복된 순서표를 따로 편집하지 않는다.
+저장 문서의 최상위에는 `schemaVersion`, `id`, `revision`, `coordinateFrames`, `sections`, `postures`, `motions`, `states`, `groups`, `principles`, `interpretations`, `sources`를 둔다. `sections[].postureIds`를 펼치면 권가 전체 순서가 나온다. 아래 설계 시험의 `postureIds`는 이 파생 순서를 단순화한 입력이다. 중복된 순서표를 따로 편집하지 않는다.
 
 `CoordinateFrame`에는 ID, 기준 시점·원점 설명, 축 정의, 단위를 둔다. `PostureOccurrence`에는 ID, 표시 번호·이름, 시작 참조, `motionIds`, 자세 소개를 둔다. 알 수 없는 스키마 버전은 조용히 해석하지 않고 명시적으로 거부한다. 내용 교정의 `revision`과 저장 형식의 `schemaVersion`은 별개다.
 
@@ -72,6 +79,7 @@ Motion
   checkpointStateIds[]       # 확인된 순서의 중간 상태만 둔다.
   events[]                   # 들기·내리기·이동·회전 같은 변화를 둔다.
   eventRelations[]           # 확인된 선후·겹침 관계만 둔다.
+  principleIds[]             # 이 동작에서 다시 확인할 공통 수련 원리를 참조한다.
   instruction                # 출발점에서 결과까지의 안내이다.
   checks[]                   # 사용자가 몸으로 확인할 사항이다.
 ```
