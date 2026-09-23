@@ -1,0 +1,3 @@
+# Generated sites and build reports are not editable source files.
+/dist/
+/.build/

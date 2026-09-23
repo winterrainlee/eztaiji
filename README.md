@@ -18,5 +18,12 @@
 - [확장 계획 및 체크리스트](docs/expansion-plan.md)
 - [동작·상태 데이터 모델 0.1](docs/data-model.md)
 - [데이터 모델 설계 시험](docs/design-tests/model-contract.test.mjs)
+- [수련 원본의 검사·변환·배포 경로](docs/data-pipeline.md)
 
 새 데이터 모델과 시작 상태 탐색은 설계 단계이며, 현재 배포 UI에 아직 적용하지 않았습니다. 가상 데이터의 설계 시험은 `node docs/design-tests/model-contract.test.mjs`로 실행합니다. 실제 권가 내용이나 브라우저 화면을 검증하는 시험은 아닙니다.
+
+## 수련 원본과 배포 결과의 분리
+
+목표는 `training/`에서 수련 내용을, `web/`에서 화면 코드를 편집하고, 검사·변환을 거친 `dist/`만 배포하는 것입니다. 데이터 모델은 수련 원본의 기준이며, 배포 데이터는 자동 생성하는 별도 읽기 형식입니다. `dist/`와 `.build/`는 Git에서 제외합니다.
+
+현재는 두 폴더의 README와 경로 설계를 추가한 상태입니다. 실제 데이터 파일, 빌드 도구, 실행 스키마와 Actions 배포는 아직 구현하지 않았으며 기존 루트 화면도 옮기지 않았습니다. 위의 현재 실행 방법은 그대로입니다. 목표 구조와 완료 조건은 [배포 경로 문서](docs/data-pipeline.md)에 정리했습니다.
