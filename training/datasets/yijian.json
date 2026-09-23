@@ -2,15 +2,15 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "source-interpretation-cleanup-001",
+  "revision": "source-interpretation-cleanup-002",
   "coverage": {
     "kind": "partial",
-    "note": "預備式은 확인된 시작 자세와 수련 메모만 남기고 기존 번호 동작 후보는 제거했다. 太極起勢 6동작과 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 구분해 제공한다. 나머지 권가는 수집 중이다."
+    "note": "預備式은 확인된 시작 자세와 수련 메모만 제공한다. 太極起勢 6동작과 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 구분하며, 앞 자세에서 상속해야만 알 수 있는 미확인 좌표·허실은 표시하지 않는다. 나머지 권가는 수집 중이다."
   },
   "coordinateFrames": {
     "yijian-front": {
       "id": "yijian-front",
-      "origin": "太極起勢 이후 권가의 발 배치와 방향을 비교하기 위한 학습용 기준점이다.",
+      "origin": "학습용 좌표 정의상 太極起勢 종료 시점의 왼발을 원점으로 삼는다. 실제 위치를 측정한 값이라는 뜻은 아니다.",
       "axes": {
         "x": "initial-right",
         "y": "initial-front"
@@ -207,20 +207,6 @@
         {
           "status": "known",
           "value": "손을 앞으로 밀어내기보다 가볍게 떠오르게 해.",
-          "basis": "inference",
-          "precision": "qualitative",
-          "evidence": [
-            {
-              "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1動",
-              "support": "contextual"
-            }
-          ],
-          "note": "원문 동작 설명을 수련 시 자기 점검 문장으로 바꾼 프로젝트 해석이다."
-        },
-        {
-          "status": "known",
-          "value": "왼발 지지와 몸의 정면이 흔들리지 않는지 봐.",
           "basis": "inference",
           "precision": "qualitative",
           "evidence": [
@@ -2901,52 +2887,40 @@
       "feet": {
         "left": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 0,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "shi",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -2975,52 +2949,40 @@
         },
         "right": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 1,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "xu",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3050,21 +3012,16 @@
       },
       "center": {
         "location": {
-          "status": "known",
-          "value": {
-            "kind": "region",
-            "anchor": "leftFoot"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 1動",
               "support": "contextual"
             }
-          ],
-          "note": "왼발 지지가 이어진다는 수집 단계 해석에 따른 질적 중심 영역이다."
+          ]
         }
       },
       "body": {
@@ -3074,16 +3031,16 @@
             "kind": "sector",
             "sector": "front"
           },
-          "basis": "inference",
+          "basis": "source",
           "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
-              "support": "contextual"
+              "locator": "太極起勢 1動",
+              "support": "explicit"
             }
           ],
-          "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+          "note": "1동작 기록에서 몸을 정면으로 유지한다고 명시한 내용을 방향 범주로 옮겼다."
         },
         "organization": {
           "status": "known",
@@ -3172,52 +3129,40 @@
       "feet": {
         "left": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 0,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "shi",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3246,52 +3191,40 @@
         },
         "right": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 1,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "xu",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3321,40 +3254,30 @@
       },
       "center": {
         "location": {
-          "status": "known",
-          "value": {
-            "kind": "region",
-            "anchor": "leftFoot"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 2動",
               "support": "contextual"
             }
-          ],
-          "note": "왼발 지지가 이어진다는 수집 단계 해석에 따른 질적 중심 영역이다."
+          ]
         }
       },
       "body": {
         "heading": {
-          "status": "known",
-          "value": {
-            "kind": "sector",
-            "sector": "front"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 2動",
               "support": "contextual"
             }
-          ],
-          "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+          ]
         },
         "organization": {
           "status": "known",
@@ -3443,52 +3366,40 @@
       "feet": {
         "left": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 0,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "shi",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3517,52 +3428,40 @@
         },
         "right": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 1,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "xu",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3592,40 +3491,30 @@
       },
       "center": {
         "location": {
-          "status": "known",
-          "value": {
-            "kind": "region",
-            "anchor": "leftFoot"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 3動",
               "support": "contextual"
             }
-          ],
-          "note": "왼발 지지가 이어진다는 수집 단계 해석에 따른 질적 중심 영역이다."
+          ]
         }
       },
       "body": {
         "heading": {
-          "status": "known",
-          "value": {
-            "kind": "sector",
-            "sector": "front"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 3動",
               "support": "contextual"
             }
-          ],
-          "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+          ]
         },
         "organization": {
           "status": "known",
@@ -3714,52 +3603,40 @@
       "feet": {
         "left": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 0,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "shi",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3788,52 +3665,40 @@
         },
         "right": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 1,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "xu",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -3863,40 +3728,30 @@
       },
       "center": {
         "location": {
-          "status": "known",
-          "value": {
-            "kind": "region",
-            "anchor": "leftFoot"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 4動",
               "support": "contextual"
             }
-          ],
-          "note": "왼발 지지가 이어진다는 수집 단계 해석에 따른 질적 중심 영역이다."
+          ]
         }
       },
       "body": {
         "heading": {
-          "status": "known",
-          "value": {
-            "kind": "sector",
-            "sector": "front"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 4動",
               "support": "contextual"
             }
-          ],
-          "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+          ]
         },
         "organization": {
           "status": "known",
@@ -3985,52 +3840,40 @@
       "feet": {
         "left": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 0,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "shi",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -4059,52 +3902,40 @@
         },
         "right": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 1,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "xu",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -4134,40 +3965,30 @@
       },
       "center": {
         "location": {
-          "status": "known",
-          "value": {
-            "kind": "region",
-            "anchor": "leftFoot"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 5動",
               "support": "contextual"
             }
-          ],
-          "note": "왼발 지지가 이어진다는 수집 단계 해석에 따른 질적 중심 영역이다."
+          ]
         }
       },
       "body": {
         "heading": {
-          "status": "known",
-          "value": {
-            "kind": "sector",
-            "sector": "front"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 5動",
               "support": "contextual"
             }
-          ],
-          "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+          ]
         },
         "organization": {
           "status": "known",
@@ -4256,52 +4077,40 @@
       "feet": {
         "left": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 0,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "shi",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -4330,52 +4139,40 @@
         },
         "right": {
           "position": {
-            "status": "known",
-            "value": {
-              "x": 1,
-              "y": 0
-            },
-            "basis": "inference",
-            "precision": "approximate",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작 종료 상태를 이어받고, 起勢 6동에 별도 보법 서술이 없어 같은 발 배치로 정리한 수집 단계 추론이다."
+            ]
           },
           "heading": {
-            "status": "known",
-            "value": {
-              "kind": "sector",
-              "sector": "front"
-            },
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ],
-            "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+            ]
           },
           "supportRole": {
-            "status": "known",
-            "value": "xu",
-            "basis": "inference",
-            "precision": "qualitative",
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
-                "locator": "太極起勢 1–6動",
+                "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ],
-            "note": "預備式 4동작의 左實右虛를 이어받고, 起勢 6동에 별도 換重 서술이 없어 유지하는 것으로 정리했다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -4405,40 +4202,30 @@
       },
       "center": {
         "location": {
-          "status": "known",
-          "value": {
-            "kind": "region",
-            "anchor": "leftFoot"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 6動",
               "support": "contextual"
             }
-          ],
-          "note": "왼발 지지가 이어진다는 수집 단계 해석에 따른 질적 중심 영역이다."
+          ]
         }
       },
       "body": {
         "heading": {
-          "status": "known",
-          "value": {
-            "kind": "sector",
-            "sector": "front"
-          },
-          "basis": "inference",
-          "precision": "qualitative",
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
-              "locator": "太極起勢 1–6動",
+              "locator": "太極起勢 6動",
               "support": "contextual"
             }
-          ],
-          "note": "起勢 6동에 별도 발·몸 방향 전환 서술이 없어 기준 정면을 유지하는 것으로 정리한 수집 단계 추론이다."
+          ]
         },
         "organization": {
           "status": "known",
@@ -11139,7 +10926,7 @@
           "evidence": [
             {
               "sourceId": "sifu-2026-09-23",
-              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
               "support": "explicit"
             }
           ],
@@ -11168,7 +10955,7 @@
           "evidence": [
             {
               "sourceId": "sifu-2026-09-23",
-              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
               "support": "explicit"
             }
           ]
@@ -11181,7 +10968,7 @@
           "evidence": [
             {
               "sourceId": "sifu-2026-09-23",
-              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
               "support": "explicit"
             }
           ]
@@ -11194,7 +10981,7 @@
           "evidence": [
             {
               "sourceId": "sifu-2026-09-23",
-              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
               "support": "explicit"
             }
           ]
@@ -11230,7 +11017,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "기존 예비식 4동작 후보와 도해 파생값은 제거했다. 預備式은 확인된 시작 자세와 2026-09-23 현장 메모만 유지하고, 太極起勢·攬雀尾는 확인한 자료와 프로젝트 해석을 구분해 기록한다.",
+    "note": "예전 預備式 세부 단계 후보와 도해 파생값은 사용하지 않는다. 預備式은 확인된 시작 자세와 2026-09-23 현장 메모만 유지하고, 太極起勢·攬雀尾는 확인한 자료와 프로젝트 해석을 구분해 기록한다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": []
