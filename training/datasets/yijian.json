@@ -2,10 +2,10 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "restore-coordinate-guides-001",
+  "revision": "restore-preparation-motion-001",
   "coverage": {
     "kind": "partial",
-    "note": "預備式은 확인된 시작 자세와 수련 메모만 제공하되 시작 좌표판은 학습용 근사로 유지한다. 太極起勢 6동작은 발·중심의 평면 좌표를 학습용 도식으로 유지하고, 동작 기록·해석과 구분한다. 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 구분해 제공한다."
+    "note": "預備式은 확인된 시작 상태와 2026-09-23 현장 지도에 근거한 1동작만 제공한다. 예전 4동작 후보는 복구하지 않는다. 太極起勢 6동작은 학습용 평면 좌표와 확인된 동작 기록을 구분해 제공하고, 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 함께 제공한다."
   },
   "coordinateFrames": {
     "yijian-front": {
@@ -39,7 +39,9 @@
         "kind": "initial",
         "stateId": "p001-start"
       },
-      "motionIds": [],
+      "motionIds": [
+        "p001-m01"
+      ],
       "introduction": {
         "status": "known",
         "value": "양 발꿈치를 붙이고 발끝을 바깥으로 연 外八字로 곧게 서. 오른발을 實로 두고 왼다리는 풀어 虛로 두며, 팔은 자연스럽게 내려 중지를 바지선 가까이에 두고 손바닥은 안쪽을 향하게 해.",
@@ -2678,6 +2680,51 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
+      "principleIds": []
+    },
+    "p001-m01": {
+      "id": "p001-m01",
+      "number": 1,
+      "title": "몸을 낮추며 손의 상대적 상승을 느껴",
+      "endStateId": "p001-m01-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m01-e1",
+          "target": "body",
+          "kind": "body_lower",
+          "description": {
+            "status": "known",
+            "value": "오른다리로 받치며 고관절 쪽과 몸 전체가 약간 내려간다.",
+            "basis": "observation",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ],
+            "note": "2026-09-23 현장 지도에서 확인한 변화다."
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른다리로 몸을 받치며 고관절 쪽과 몸 전체를 약간 낮춰. 손이나 팔을 따로 들어 올리지 말고 자연스럽게 둬. 몸의 기준 높이가 내려가면서 손이 몸에 대해 상대적으로 조금 위에 남아 보이는 변화를 느껴.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-09-23",
+            "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+            "support": "explicit"
+          }
+        ],
+        "note": "손의 상승을 별도의 팔 동작으로 만들지 않는다는 2026-09-23 사부님 설명을 반영했다."
+      },
+      "checks": [],
       "principleIds": []
     }
   },
@@ -10444,6 +10491,244 @@
           }
         }
       }
+    },
+    "p001-m01-end": {
+      "id": "p001-m01-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0.65,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발꿈치를 붙여 서는 시작 모습을 화면에서 구분하기 위한 학습용 근사 위치다. 실측 좌표가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-left"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ],
+            "note": "外八字를 화면의 방향 범주로 표현했다. 정확한 각도값이 아니다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "observation",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ],
+            "note": "오른다리가 몸을 받친다는 현장 설명에 대응해 왼발은 주 지지에서 빠진 상태로 기록한다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 수련 메모만으로 왼발의 세부 접촉 부위를 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "왼발 뒤꿈치 높이는 이번 확인된 메모만으로 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발꿈치를 붙여 서는 시작 모습을 화면에서 구분하기 위한 학습용 근사 위치다. 실측 좌표가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ],
+            "note": "外八字를 화면의 방향 범주로 표현했다. 정확한 각도값이 아니다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "observation",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ],
+            "note": "오른다리로 몸을 받친다는 2026-09-23 현장 설명을 반영한다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 수련 메모만으로 오른발의 세부 접촉 부위를 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "오른발 뒤꿈치 높이는 이번 확인된 메모만으로 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+              "support": "explicit"
+            }
+          ],
+          "note": "오른다리가 주로 몸을 받친다는 관찰을 학습용 C 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+              "support": "explicit"
+            }
+          ]
+        },
+        "organization": {
+          "status": "known",
+          "value": "오른다리의 지지를 유지한 채 고관절 쪽과 몸 전체의 기준 높이가 약간 내려간다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "팔을 능동적으로 들어 올리지 않고 자연스럽게 둔다. 몸이 내려가면서 손이 몸에 대해 상대적으로 조금 위에 남아 보인다.",
+            "basis": "observation",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ],
+            "note": "손의 상대적 상승을 독립적인 팔 동작으로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "팔을 능동적으로 들어 올리지 않고 자연스럽게 둔다. 몸이 내려가면서 손이 몸에 대해 상대적으로 조금 위에 남아 보인다.",
+            "basis": "observation",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ],
+            "note": "손의 상대적 상승을 독립적인 팔 동작으로 기록하지 않는다."
+          }
+        }
+      }
     }
   },
   "groups": {},
@@ -11454,7 +11739,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "舊 預備式 번호 동작 후보는 복구하지 않는다. 대신 1·2초식의 좌표판 학습용 근사를 별도 상태값으로 유지하며 basis=illustration으로 명시한다.",
+    "note": "舊 預備式 4동작 후보는 복구하지 않는다. 현재 p001-m01은 2026-09-23 수련 메모에서 확인된 몸의 하강·손의 상대적 상승만으로 새로 구성했다. 발 좌표는 학습용 근사이며 미확인 뒤꿈치 동작은 넣지 않는다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": []
