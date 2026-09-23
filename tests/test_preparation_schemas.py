@@ -43,7 +43,7 @@ class SchemaContracts(unittest.TestCase):
 
     def test_string_coordinate_rejected(self):
         x = copy.deepcopy(self.source)
-        x["states"]["p002-m01-end"]["feet"]["left"]["position"]["value"]["x"] = "0"
+        x["states"]["p003-m01-end"]["feet"]["left"]["position"]["value"]["x"] = "0"
         self.bad("training", x)
 
     def test_inference_without_explanation_rejected(self):
@@ -58,7 +58,7 @@ class SchemaContracts(unittest.TestCase):
 
     def test_measurement_without_method_rejected(self):
         x = copy.deepcopy(self.source)
-        x["states"]["p002-m01-end"]["feet"]["left"]["position"]["precision"] = "measured"
+        x["states"]["p003-m01-end"]["feet"]["left"]["position"]["precision"] = "measured"
         self.bad("training", x)
 
     def test_profile_version_rejected(self):
