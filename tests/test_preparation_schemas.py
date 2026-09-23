@@ -28,9 +28,10 @@ class SchemaContracts(unittest.TestCase):
     def test_semantics_preserved(self):
         verify_preservation(self.source, self.deployed)
 
-    def test_zero_motion_preparation_is_valid(self):
-        self.assertEqual(self.source["postures"]["p001"]["motionIds"], [])
-        self.assertEqual(self.deployed["catalog"]["postures"]["p001"]["motionCount"], 0)
+    def test_verified_preparation_motion_is_valid(self):
+        self.assertEqual(self.source["postures"]["p001"]["motionIds"], ["p001-m01"])
+        self.assertEqual(self.deployed["catalog"]["postures"]["p001"]["motionCount"], 1)
+        self.assertEqual(self.deployed["navigation"]["edges"]["p001-start-view"]["next"], "p001-m01-view")
 
     def test_explicit_qishi_coordinate_start_is_valid(self):
         self.assertEqual(self.source["postures"]["p002"]["start"]["kind"], "explicitState")
