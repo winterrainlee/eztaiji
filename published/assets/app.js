@@ -43,11 +43,17 @@
         const f=s.feet[side],p=value(f.position);if(!p)continue;const x=x0+p.x*unit,y=y0-p.y*unit,h=value(f.heading),role=value(f.supportRole);
         if(h)arrow(x,y-12,h.kind==='sector'?sectorAngle[h.sector]:h.degrees,32,blue);
         plot.append(svg('circle',{cx:x,cy:y,r:13,fill:role==='shi'?blue:role==='shared'?'#dce7fc':'#f4f7fc',stroke:role?blue:muted,'stroke-width':2.4,...(!role?{'stroke-dasharray':'3 2'}:{})}),svg('text',{x,y:y+4,fill:role==='shi'?'white':blue,'font-size':12,'text-anchor':'middle','font-weight':600},side==='left'?'左':'右'));
+        const ah=value(s.arms?.[side]?.direction);
+        if(ah){
+          const aa=ah.kind==='sector'?sectorAngle[ah.sector]:ah.degrees,a=aa*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),offset=side==='left'?-6:6;
+          const ax=x+dx*14-dy*offset,ay=y+dy*14+dx*offset;
+          arrow(ax,ay,aa,22,red);
+        }
         if(!role)plot.append(svg('text',{x:x+18,y:y+4,fill:muted,'font-size':12},'?'));
         const labels=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);
         if(labels.length)plot.append(svg('text',{x,y:y+30,fill:'#704f99','font-size':11,'text-anchor':'middle'},labels.join(' · ')));
       }
-      const b=value(s.body.heading);if(b){arrow(308,62,b.kind==='sector'?sectorAngle[b.sector]:b.degrees,28,blue);plot.append(svg('text',{x:308,y:91,fill:blue,'font-size':12,'font-weight':600,'text-anchor':'middle'},'B 몸 방향'));}const armArrow=(side,x,y,label,labelX)=>{const h=value(s.arms?.[side]?.direction);if(!h)return;arrow(x,y,h.kind==='sector'?sectorAngle[h.sector]:h.degrees,22,red);plot.append(svg('text',{x:labelX,y:y+4,fill:red,'font-size':11,'font-weight':700,'text-anchor':'middle'},label));};armArrow('left',296,120,'左臂',280);armArrow('right',322,120,'右臂',340);
+      const b=value(s.body.heading);if(b){arrow(308,62,b.kind==='sector'?sectorAngle[b.sector]:b.degrees,28,blue);plot.append(svg('text',{x:308,y:91,fill:blue,'font-size':12,'font-weight':600,'text-anchor':'middle'},'B 몸 방향'));}
     }
     function fillDetails(s){const box=$('pose-details');box.replaceChildren();if(!s){box.append(el('p','이 상태의 좌표는 아직 등록하지 않았어.'));return;}
       for(const side of ['left','right']){const f=s.feet[side];box.append(el('h3',side==='left'?'왼발':'오른발'),el('p','위치: '+claimLabel(f.position,p=>`≈ (${p.x}, ${p.y})`)),el('p','지지: '+claimLabel(f.supportRole,v=>({shi:'● 실',xu:'○ 허',shared:'함께 지지'})[v])),el('p','발끝 방향: '+heading(f.heading)),el('p','접촉: '+claimLabel(f.groundContact,v=>contactText[v])),el('p','뒤꿈치: '+claimLabel(f.heelRaised,v=>v?'들려 있음':'들려 있지 않음')));}
