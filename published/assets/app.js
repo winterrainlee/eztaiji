@@ -16,12 +16,18 @@
     let pickerReturn=null;
     const postures=d.catalog.postures,sections=d.catalog.sections;
     const sectorAngle={'front':0,'front-right':45,'right':90,'back-right':135,'back':180,'back-left':225,'left':270,'front-left':315};
+    const angleSector=Object.fromEntries(Object.entries(sectorAngle).map(([name,angle])=>[angle,name]));
     const sectorText={'front':'기준 정면','front-right':'기준 오른쪽 앞','right':'기준 오른쪽','back-right':'기준 오른쪽 뒤','back':'기준 뒤','back-left':'기준 왼쪽 뒤','left':'기준 왼쪽','front-left':'기준 왼쪽 앞'};
+    const relativeSectorText={'front':'몸 정면','front-right':'몸 오른쪽 앞','right':'몸 오른쪽','back-right':'몸 오른쪽 뒤','back':'몸 뒤','back-left':'몸 왼쪽 뒤','left':'몸 왼쪽','front-left':'몸 왼쪽 앞'};
     const contactText={toe:'발끝 접촉',forefoot:'앞꿈치 접촉',heel:'뒤꿈치 접촉',sole:'발바닥 접촉',none:'바닥에서 떨어짐',other:'자료에 기록된 접촉'};
     const regionText={leftFoot:'왼발 쪽',rightFoot:'오른발 쪽',betweenFeet:'두 발 사이',front:'기준 정면 쪽',back:'기준 뒤쪽'};
     const heading=c=>{const a=value(c);return !a?'미등록':a.kind==='sector'?sectorText[a.sector]:`${a.degrees}°${c.precision==='approximate'?' (근사)':''}`;};
+    const relativeHeading=c=>{const a=value(c);return !a?'미등록':a.kind==='sector'?relativeSectorText[a.sector]:`몸 정면에서 ${a.degrees}°${c.precision==='approximate'?' (근사)':''}`;};
+    const headingAngle=h=>h?(h.kind==='sector'?sectorAngle[h.sector]:h.degrees):null;
+    const armWorldAngle=(s,side)=>{const b=value(s?.body?.heading),r=value(s?.arms?.[side]?.relativeDirection);if(!b||!r)return null;const ba=headingAngle(b),ra=headingAngle(r);return ba===null||ra===null?null:(ba+ra+360)%360;};
+    const armWorldText=(s,side)=>{const a=armWorldAngle(s,side);if(a===null)return '미등록';return sectorText[angleSector[a]]??`${a}°`;};
     const claimLabel=(c,formatter=v=>String(v))=>c?.status==='known'?`${formatter(c.value)} · ${basis(c)}`:c?.status==='not_applicable'?'해당 없음':'미등록';
-    const stateDescription=s=>{if(!s)return '몸 상태 미등록';const feet=['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');const arms=[['left','왼팔'],['right','오른팔']].flatMap(([side,label])=>s.arms?.[side]?.direction?[`${label} 구조 방향 ${heading(s.arms[side].direction)}`]:[]).join('. ');return arms?`${feet}. ${arms}`:feet;};
+    const stateDescription=s=>{if(!s)return '몸 상태 미등록';const feet=['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');const arms=[['left','왼팔'],['right','오른팔']].flatMap(([side,label])=>s.arms?.[side]?.relativeDirection?[`${label} 구조 방향 ${armWorldText(s,side)}`]:[]).join('. ');return arms?`${feet}. ${arms}`:feet;};
     const svg=(tag,attrs={},label)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(label!==undefined)e.textContent=label;return e;};
     // One fixed world-to-view transform across the current training frames.
     function draw(v,s){
@@ -32,20 +38,22 @@
       const c=value(s?.center?.location);
       $('center-summary').textContent=c?`C 중심 · ${c.kind==='region'?regionText[c.anchor]+' (영역)':`≈ (${c.x}, ${c.y})`}`:hasFeet?'C 중심 · 미등록':'';
       if(!hasFeet)return;
-      const blue='#225bd6',red='#c43d3d',muted='#5e7184',x0=60,y0=138,unit=88;
+      const blue='#225bd6',red='#c43d3d',centerColor='#704f99',muted='#5e7184',x0=60,y0=138,unit=88;
       for(let x=26;x<=334;x+=27)plot.append(svg('path',{d:`M${x} 18V150`,stroke:'#dce5f0','stroke-width':.7}));
       for(let y=24;y<=150;y+=27)plot.append(svg('path',{d:`M26 ${y}H334`,stroke:'#dce5f0','stroke-width':.7}));
       plot.append(svg('path',{d:`M26 ${y0}H270 M${x0} 150V22`,stroke:'#aabdd1','stroke-width':1}));
       plot.append(svg('text',{x:x0,y:14,fill:muted,'font-size':11,'text-anchor':'middle'},'+y 정면'),svg('text',{x:274,y:y0+14,fill:muted,'font-size':11},'+x'));
       for(const n of [0,1,2])plot.append(svg('text',{x:x0+unit*n,y:166,fill:muted,'font-size':11,'text-anchor':'middle'},String(n)));
       function arrow(x,y,angle,length,color){const a=angle*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),xx=x+dx*length,yy=y+dy*length;plot.append(svg('path',{d:`M${x} ${y}L${xx} ${yy}`,stroke:color,'stroke-width':2.4,'stroke-linecap':'round'}),svg('path',{d:`M${xx-dx*7-dy*4} ${yy-dy*7+dx*4}L${xx} ${yy}L${xx-dx*7+dy*4} ${yy-dy*7-dx*4}`,fill:'none',stroke:color,'stroke-width':2.2,'stroke-linejoin':'round'}));}
+      const footScreen={};
       for(const side of ['left','right']){
         const f=s.feet[side],p=value(f.position);if(!p)continue;const x=x0+p.x*unit,y=y0-p.y*unit,h=value(f.heading),role=value(f.supportRole);
-        if(h)arrow(x,y-12,h.kind==='sector'?sectorAngle[h.sector]:h.degrees,32,blue);
+        footScreen[side]={x,y};
+        if(h)arrow(x,y-12,headingAngle(h),32,blue);
         plot.append(svg('circle',{cx:x,cy:y,r:13,fill:role==='shi'?blue:role==='shared'?'#dce7fc':'#f4f7fc',stroke:role?blue:muted,'stroke-width':2.4,...(!role?{'stroke-dasharray':'3 2'}:{})}),svg('text',{x,y:y+4,fill:role==='shi'?'white':blue,'font-size':12,'text-anchor':'middle','font-weight':600},side==='left'?'左':'右'));
-        const ah=value(s.arms?.[side]?.direction);
-        if(ah){
-          const aa=ah.kind==='sector'?sectorAngle[ah.sector]:ah.degrees,a=aa*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),offset=side==='left'?-6:6;
+        const aa=armWorldAngle(s,side);
+        if(aa!==null){
+          const a=aa*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),offset=side==='left'?-6:6;
           const ax=x+dx*14-dy*offset,ay=y+dy*14+dx*offset;
           arrow(ax,ay,aa,22,red);
         }
@@ -53,11 +61,20 @@
         const labels=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);
         if(labels.length)plot.append(svg('text',{x,y:y+30,fill:'#704f99','font-size':11,'text-anchor':'middle'},labels.join(' · ')));
       }
-      const b=value(s.body.heading);if(b){arrow(308,62,b.kind==='sector'?sectorAngle[b.sector]:b.degrees,28,blue);plot.append(svg('text',{x:308,y:91,fill:blue,'font-size':12,'font-weight':600,'text-anchor':'middle'},'B 몸 방향'));}
+      if(c?.kind==='point'){
+        const x=x0+c.x*unit,y=y0-c.y*unit;
+        plot.append(svg('circle',{cx:x,cy:y,r:5,fill:centerColor}),svg('text',{x:x+10,y:y-8,fill:centerColor,'font-size':12,'font-weight':700},'C'));
+      }else if(c?.kind==='region'){
+        let anchor=null;
+        if(c.anchor==='leftFoot')anchor=footScreen.left;
+        else if(c.anchor==='rightFoot')anchor=footScreen.right;
+        else if(c.anchor==='betweenFeet'&&footScreen.left&&footScreen.right)anchor={x:(footScreen.left.x+footScreen.right.x)/2,y:(footScreen.left.y+footScreen.right.y)/2};
+        if(anchor)plot.append(svg('circle',{cx:anchor.x,cy:anchor.y,r:22,fill:'none',stroke:centerColor,'stroke-width':1.6,'stroke-dasharray':'4 3'}),svg('text',{x:anchor.x+17,y:anchor.y-17,fill:centerColor,'font-size':12,'font-weight':700},'C'));
+      }
     }
     function fillDetails(s){const box=$('pose-details');box.replaceChildren();if(!s){box.append(el('p','이 상태의 좌표는 아직 등록하지 않았어.'));return;}
       for(const side of ['left','right']){const f=s.feet[side];box.append(el('h3',side==='left'?'왼발':'오른발'),el('p','위치: '+claimLabel(f.position,p=>`≈ (${p.x}, ${p.y})`)),el('p','지지: '+claimLabel(f.supportRole,v=>({shi:'● 실',xu:'○ 허',shared:'함께 지지'})[v])),el('p','발끝 방향: '+heading(f.heading)),el('p','접촉: '+claimLabel(f.groundContact,v=>contactText[v])),el('p','뒤꿈치: '+claimLabel(f.heelRaised,v=>v?'들려 있음':'들려 있지 않음')));}
-      box.append(el('h3','몸과 중심'),el('p','몸 방향 B: '+heading(s.body.heading)),el('p',$('center-summary').textContent||'C 중심: 미등록'));for(const side of ['left','right']){const a=s.arms?.[side];if(!a)continue;box.append(el('h3',side==='left'?'왼팔':'오른팔'),el('p','구성: '+claimLabel(a.configuration)),el('p','구조 방향: '+heading(a.direction)));}
+      box.append(el('h3','몸과 중심'),el('p','몸 방향 B: '+heading(s.body.heading)),el('p',$('center-summary').textContent||'C 중심: 미등록'));for(const side of ['left','right']){const a=s.arms?.[side];if(!a)continue;box.append(el('h3',side==='left'?'왼팔':'오른팔'),el('p','구성: '+claimLabel(a.configuration)),el('p','몸 기준 방향: '+relativeHeading(a.relativeDirection)),el('p','좌표판 방향: '+armWorldText(s,side)));}
     }
     const sectionFor=id=>sections.find(s=>s.postureIds.includes(id));
     function render(){
