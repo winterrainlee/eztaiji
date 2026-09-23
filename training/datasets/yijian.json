@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "prep1-yinyang-004",
+  "revision": "prep1-relative-rise-005",
   "coverage": {
     "kind": "partial",
     "note": "預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
@@ -123,7 +123,7 @@
           "kind": "body_lower",
           "description": {
             "status": "known",
-            "value": "오른다리로 받치며 자세가 약간 내려간다.",
+            "value": "오른다리로 받치며 고관절 쪽과 몸 전체가 약간 내려간다.",
             "basis": "observation",
             "precision": "qualitative",
             "evidence": [
@@ -133,24 +133,24 @@
                 "support": "explicit"
               }
             ],
-            "note": "2026-09-23 현장 지도에서 사부님이 이 낮아짐 자체를 음양 변화의 한 예로 설명했다."
+            "note": "이 하강이 1동작 음양 변화의 한쪽을 이룬다."
           }
         }
       ],
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "오른다리로 몸을 받치며 가볍게 가라앉아. 왼발 뒤꿈치를 살짝 들어 발끝만 닿게 둬. 팔은 자연스럽게 내려놓아.",
-        "basis": "inference",
+        "value": "오른다리로 몸을 받치며 고관절 쪽이 약간 내려가게 해. 이때 손이나 팔을 따로 들어 올리지 않아. 팔은 자연스럽게 둔 채 몸이 내려가면서 손이 상대적으로 조금 올라가 보이게 해. 왼발 뒤꿈치는 살짝 들어 발끝만 닿게 둬.",
+        "basis": "observation",
         "precision": "qualitative",
         "evidence": [
           {
-            "sourceId": "legacy-preparation",
-            "locator": "預備式 1동작",
-            "support": "contextual"
+            "sourceId": "sifu-2026-09-23-prep1",
+            "locator": "2026-09-23 수련 · 預備式 1동작",
+            "support": "explicit"
           }
         ],
-        "note": "기존 설명의 이전 후보. 원문 재대조 전."
+        "note": "2026-09-23 현장 지도에서 사부님이 손의 상승을 팔·손의 능동적 동작이 아니라 고관절과 몸의 하강에 따른 상대적 변화로 설명했다."
       },
       "checks": [
         {
@@ -1501,33 +1501,33 @@
         "left": {
           "configuration": {
             "status": "known",
-            "value": "팔은 자연스럽게 내려놓는다.",
-            "basis": "inference",
+            "value": "손·팔을 능동적으로 들어 올리지 않고 자연스럽게 둔다. 고관절·몸이 내려가면서 손이 몸에 대해 상대적으로 조금 올라가 보인다.",
+            "basis": "observation",
             "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "legacy-preparation",
-                "locator": "預備式 1동작",
-                "support": "contextual"
+                "sourceId": "sifu-2026-09-23-prep1",
+                "locator": "2026-09-23 수련 · 預備式 1동작",
+                "support": "explicit"
               }
             ],
-            "note": "기존 설명의 이전 후보. 원문 재대조 전."
+            "note": "손의 상대적 상승을 독립적인 팔 동작으로 기록하지 않는다."
           }
         },
         "right": {
           "configuration": {
             "status": "known",
-            "value": "팔은 자연스럽게 내려놓는다.",
-            "basis": "inference",
+            "value": "손·팔을 능동적으로 들어 올리지 않고 자연스럽게 둔다. 고관절·몸이 내려가면서 손이 몸에 대해 상대적으로 조금 올라가 보인다.",
+            "basis": "observation",
             "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "legacy-preparation",
-                "locator": "預備式 1동작",
-                "support": "contextual"
+                "sourceId": "sifu-2026-09-23-prep1",
+                "locator": "2026-09-23 수련 · 預備式 1동작",
+                "support": "explicit"
               }
             ],
-            "note": "기존 설명의 이전 후보. 원문 재대조 전."
+            "note": "손의 상대적 상승을 독립적인 팔 동작으로 기록하지 않는다."
           }
         }
       }
@@ -4555,13 +4555,13 @@
       "availability": "present",
       "content": {
         "terms": [
-          "상대적으로 높음",
-          "약간 내려감"
+          "몸의 내려감",
+          "손의 상대적 올라감"
         ],
         "first": {
           "status": "known",
-          "value": "시작 상태의 높이에서 출발한다.",
-          "basis": "inference",
+          "value": "고관절 쪽과 몸 전체의 기준 높이가 약간 내려간다.",
+          "basis": "observation",
           "precision": "qualitative",
           "evidence": [
             {
@@ -4569,12 +4569,11 @@
               "locator": "2026-09-23 수련 · 預備式 1동작",
               "support": "explicit"
             }
-          ],
-          "note": "대조를 위해 시작 상태를 상대적으로 높은 쪽으로 표현한 프로젝트 설명이다."
+          ]
         },
         "second": {
           "status": "known",
-          "value": "1동작에서 몸 전체가 약간 가라앉아 자세의 높이가 낮아진다.",
+          "value": "손·팔은 따로 들어 올리지 않지만, 몸이 내려가면서 손이 몸에 대해 상대적으로 조금 위에 남아 보인다.",
           "basis": "observation",
           "precision": "qualitative",
           "evidence": [
@@ -4587,7 +4586,7 @@
         },
         "relation": {
           "status": "known",
-          "value": "사부님은 이 높이 변화 자체도 음양의 한 관계라고 설명했다. 上/下·升/沉 같은 정식 대립쌍 명칭은 이번 메모에서 확인되지 않아, 프로젝트에서는 높이 변화로만 기록한다.",
+          "value": "사부님은 이 한 동작 안의 ‘몸은 내려감 ↔ 손은 상대적으로 올라가 보임’ 같은 상호 관계도 음양으로 설명했다. 여기서 중요한 건 두 동작을 따로 만드는 게 아니라 하나의 몸 변화에서 서로 반대되는 현상이 동시에 나타난다는 점이야.",
           "basis": "observation",
           "precision": "qualitative",
           "evidence": [
@@ -4597,6 +4596,31 @@
               "support": "explicit"
             }
           ]
+        }
+      }
+    },
+    "p001-m01-principle-relative-rise": {
+      "id": "p001-m01-principle-relative-rise",
+      "category": "principle",
+      "scope": {
+        "kind": "motion",
+        "motionId": "p001-m01"
+      },
+      "availability": "present",
+      "content": {
+        "explanation": {
+          "status": "known",
+          "value": "손이 조금 올라가 보이는 원인은 손이나 팔을 들어서가 아니야. 고관절 쪽과 몸의 기준 높이가 내려가고 팔은 자연스럽게 남아 있으면서, 몸에 대한 손의 상대적 위치가 위로 드러나는 거야. 그래서 ‘손을 올려야지’라고 생각하면 어깨와 팔에 불필요한 힘이 들어가기 쉬워.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-prep1",
+              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "support": "explicit"
+            }
+          ],
+          "note": "2026-09-23 사부님 설명을 신체 물리 관점에서 풀어쓴 기록이다."
         }
       }
     }
@@ -4635,13 +4659,13 @@
         "id": "sifu-2026-09-23-prep1",
         "title": "2026-09-23 수련 메모 · 預備式 1동작",
         "url": null,
-        "note": "사부님이 預備式 1동작에서 자세가 약간 내려가는 변화 자체도 음양의 한 관계라고 설명한 현장 수련 메모야."
+        "note": "사부님이 預備式 1동작에서 고관절·몸이 약간 내려가는 변화 자체를 음양으로 설명했고, 손이 조금 올라가 보이는 것은 팔·손을 능동적으로 드는 게 아니라 몸이 내려가며 생기는 상대적 변화라고 설명한 현장 수련 메모야."
       }
     }
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "預備式 시작 상태와 太極起勢 자료에 더해, 2026-09-23 현장 수련에서 사부님이 預備式 1동작의 자세가 약간 내려가는 변화 자체도 음양이라고 설명한 내용을 observation 근거로 추가했다. 대립쌍의 정식 명칭은 추정하지 않았다.",
+    "note": "2026-09-23 현장 수련에서 預備式 1동작의 고관절·몸 하강과 손의 상대적 상승이 하나의 연동된 변화라는 설명을 추가했다. 손의 상승을 독립 arm_move 사건으로 만들지 않는다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [

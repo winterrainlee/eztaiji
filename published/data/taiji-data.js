@@ -49,7 +49,7 @@
     'p002-m06-end':qishiState('p002-m06-end','팔꿈치 끝은 原空位를 유지하고 두 손바닥은 앞아래로 천천히 내려간다.','머리부터 발까지 위에서 아래로 차례로 풀어준다.')
   });
   const prep=[
-    {title:'왼발을 비워, 움직일 준비',instruction:'오른다리로 몸을 받치며 가볍게 가라앉아. 왼발 뒤꿈치를 살짝 들어 발끝만 닿게 둬. 팔은 자연스럽게 내려놓아.',checks:['왼발 뒤꿈치를 들려고 몸을 기울이지 않아.','어깨를 올리지 말고 편안히 숨 쉬어.'],principle:'왼발을 옆으로 보내려면 먼저 그 발의 지지를 덜어내야 해. 발끝이 바닥에 닿아 있어도 주된 지지는 오른다리가 맡아.',yy:['虛','實','왼발을 비워 움직일 여지를 둔다.','오른다리가 몸을 받친다.','오른다리가 받쳐주는 만큼 왼발이 가벼워져. 한쪽의 지지와 다른 쪽의 비움은 함께 일어나.'],state:'p001-m01-end',contacts:{left:'Toe',right:null},events:[{id:'p001-m01-e1',target:'leftFoot',kind:'heel_raise',description:text('왼발 뒤꿈치를 살짝 든다.'),symbol:'Heel ↑'}]},
+    {title:'왼발을 비워, 움직일 준비',instruction:'오른다리로 몸을 받치며 고관절 쪽이 약간 내려가게 해. 손이나 팔은 따로 들어 올리지 않아. 팔은 자연스럽게 둔 채 몸이 내려가면서 손이 상대적으로 조금 올라가 보이게 해. 왼발 뒤꿈치는 살짝 들어 발끝만 닿게 둬.',checks:['왼발 뒤꿈치를 들려고 몸을 기울이지 않아.','손을 올리려고 어깨나 팔에 힘을 주지 않아.','고관절·몸이 내려갈 때 팔은 자연스럽게 남아 있는지 느껴봐.'],principle:'왼발을 옆으로 보내려면 먼저 그 발의 지지를 덜어내야 해. 동시에 손이 조금 올라가 보이는 건 팔을 들어서가 아니라 고관절·몸이 내려가며 생기는 상대적 변화야.',yy:['虛','實','왼발을 비워 움직일 여지를 둔다.','오른다리가 몸을 받친다.','오른다리가 받쳐주는 만큼 왼발이 가벼워져. 한쪽의 지지와 다른 쪽의 비움은 함께 일어나.'],state:'p001-m01-end',contacts:{left:'Toe',right:null},events:[{id:'p001-m01-e1',target:'leftFoot',kind:'heel_raise',description:text('왼발 뒤꿈치를 살짝 든다.'),symbol:'Heel ↑'}]},
     {title:'빈 왼발을 옆으로 열어',instruction:'오른발에 지지를 유지하며 왼발을 왼쪽으로 옮겨. 어깨너비 자리에서 발끝을 비스듬히 가볍게 대고, 양손도 조금 열어.',checks:['중심이 왼발을 따라 급히 쏠리지 않는지 봐.','발 간격은 사부님이 지도한 어깨너비로 맞춰.'],principle:'발이 먼저 새 자리에 도착하고 중심이 뒤따라가. 왼발이 멀어졌다고 바로 체중을 싣는 건 아니야.',yy:['虛','實','왼발을 비워 움직일 여지를 둔다.','오른다리가 몸을 받친다.','왼발은 새 자리를 찾지만 오른다리가 계속 받쳐. 발의 위치 변화와 지지의 변화를 나누어 읽어.'],state:'p001-m02-end',contacts:{left:'Toe',right:null},events:[]},
     {title:'왼발을 정렬하며 지지를 옮겨',instruction:'왼발을 정면으로 정렬하고 뒤꿈치를 내려놓으며 왼다리에 지지를 옮겨. 양팔은 다리 앞 바깥쪽으로 돌아오고, 오른발은 가벼워져.',checks:['왼무릎이 발끝 방향에서 크게 어긋나지 않게 해.','오른발을 돌리기 전에 어느 다리가 지지하는지 느껴봐.'],principle:'이제 왼발이 몸을 받쳐. 오른발을 비워두면 다음 동작에서 발끝을 안쪽으로 정렬하기 쉬워져.',yy:['虛','實','오른발이 정렬할 여지를 갖는다.','왼다리가 몸을 받친다.','지지가 왼다리로 옮겨가며 오른발을 비울 여지가 생겨. 앞 동작과 허실의 역할이 바뀌는 지점이야.'],state:'p001-m03-end',contacts:{left:null,right:null},events:[{id:'p001-m03-e2',target:'leftFoot',kind:'heel_lower',description:text('왼발 뒤꿈치를 내린다.'),symbol:'Heel ↓'}]},
     {title:'오른발을 나란히 정렬해',instruction:'왼다리의 지지를 유지하며 오른발 끝을 안쪽으로 돌려. 두 발을 정면으로 나란히 두고, 어깨를 풀어 손이 다리 앞 바깥쪽에 내려오게 해.',checks:['두 발이 나란해져도 지지는 왼다리에 남겨둬.','오른발을 억지로 비틀거나 어깨를 누르지 않아.'],principle:'오른발은 정렬을 돕는 가벼운 발이야. 오른발에 체중이 많이 남아 있으면 돌릴 때 무릎까지 비틀기 쉬워.',yy:['虛','實','오른발이 정렬할 여지를 갖는다.','왼다리가 몸을 받친다.','왼다리가 받치는 동안 가벼운 오른발을 정렬해. 양발이 나란하다는 모양과 어느 발이 받치는가는 달라.'],state:'p001-m04-end',contacts:{left:null,right:null},events:[]}
@@ -68,11 +68,12 @@
     interpretations[`${mid}-principle`]={id:`${mid}-principle`,category:'principle',scope:{kind:'motion',motionId:mid},availability:'present',content:{explanation:text(m.principle)}};
     interpretations[`${mid}-yinyang`]={id:`${mid}-yinyang`,category:'yinYang',scope:{kind:'motion',motionId:mid},availability:'present',content:{terms:m.yy.slice(0,2),first:text(m.yy[2]),second:text(m.yy[3]),relation:text(m.yy[4])}};
   });
+  interpretations['p001-m01-principle-relative-rise']={id:'p001-m01-principle-relative-rise',category:'principle',scope:{kind:'motion',motionId:'p001-m01'},availability:'present',content:{explanation:known('손이 조금 올라가 보이는 원인은 손이나 팔을 들어서가 아니야. 고관절 쪽과 몸의 기준 높이가 내려가고 팔은 자연스럽게 남아 있으면서, 몸에 대한 손의 상대적 위치가 위로 드러나는 거야. 그래서 손을 올리려고 하면 오히려 어깨와 팔에 불필요한 힘이 들어가기 쉬워.','observation','qualitative','2026-09-23 사부님 설명을 신체 물리 관점에서 풀어쓴 기록이야.')}};
   interpretations['p001-m01-yinyang-height']={id:'p001-m01-yinyang-height',category:'yinYang',scope:{kind:'motion',motionId:'p001-m01'},availability:'present',content:{
-    terms:['상대적으로 높음','약간 내려감'],
-    first:known('시작 상태의 높이에서 출발한다.','inference','qualitative','대조를 위해 시작 상태를 상대적으로 높은 쪽으로 표현한 프로젝트 설명이야.'),
-    second:known('1동작에서 몸 전체가 약간 가라앉아 자세의 높이가 낮아진다.','observation','qualitative','2026-09-23 현장 수련에서 사부님이 설명한 내용이야.'),
-    relation:known('사부님은 이 높이 변화 자체도 음양의 한 관계라고 설명했어. 上/下·升/沉 같은 정식 대립쌍 명칭은 이번 메모에서 확인되지 않아, 높이 변화로만 기록해.','observation','qualitative','현장 수련 메모를 바탕으로 한 기록이야.')
+    terms:['몸의 내려감','손의 상대적 올라감'],
+    first:known('고관절 쪽과 몸 전체의 기준 높이가 약간 내려간다.','observation','qualitative','2026-09-23 현장 수련에서 사부님이 설명한 내용이야.'),
+    second:known('손·팔은 따로 들어 올리지 않지만, 몸이 내려가면서 손이 몸에 대해 상대적으로 조금 위에 남아 보인다.','observation','qualitative','2026-09-23 현장 수련에서 사부님이 설명한 내용이야.'),
+    relation:known('사부님은 이 한 동작 안의 몸은 내려감 ↔ 손은 상대적으로 올라가 보임 같은 상호 관계도 음양으로 설명했어. 두 동작을 따로 만드는 게 아니라 하나의 몸 변화에서 서로 반대되는 현상이 동시에 나타나는 거야.','observation','qualitative','현장 수련 메모를 바탕으로 한 기록이야.')
   }};
   interpretations['p001-application']={id:'p001-application',category:'application',scope:{kind:'posture',postureId:'p001'},availability:'present',content:{applicationType:'preparation',assumption:text('상대의 움직임에 맞춰 한 발을 옮겨야 한다고 가정해.'),response:text('한 다리가 몸을 받치는 동안 다른 발을 가볍게 옮기고 정렬해. 자리를 잡은 뒤 지지 역할을 바꿔.'),possibleResult:text('받치는 발과 움직일 발을 구분해, 다음 이동이나 대응을 준비하는 과정으로 읽을 수 있어.'),limitations:text('예비식의 준비 구조를 이해하기 위한 가정이야. 특정 공격을 막는 독립 기술이라고 단정하지 않아.')}};
   qishi.forEach((m,i)=>{
@@ -101,15 +102,15 @@
         const collection=pose.id===1?prep:pose.id===2?qishi:null,p=collection?.[n-1]||null,stateId=p?.state||null;
         const applicationId=pose.id===1?'p001-application':pose.id===2?'p002-application':null;
         const sourceId=pose.id===1?'legacy-preparation':pose.id===2?'tsaifucius-yijian64':null;
-        views[vid]={id:vid,kind:'motion',postureId:pid,motionId:mid,motionNumber:n,title:p?.title||`${pose.name} · ${n}동작`,stateId,fromStateId:from,instruction:p?known(p.instruction,'source','qualitative',pose.id===2?'접근 가능한 易簡1–64식 太極起勢 기록을 바탕으로 정리한 내용이야. 현장 지도와 다르면 사부님의 지도를 우선해.':'접근 가능한 기존 수련 기록을 바탕으로 옮긴 내용이야. 원문·실연 대조는 이어서 보완해.'):unknown('unrecorded'),checks:p?p.checks.map(text):[],events:p?.events||[],contactSymbols:p?.contacts||{left:null,right:null},interpretationIds:p?[`${mid}-principle`,`${mid}-yinyang`,...(mid==='p001-m01'?['p001-m01-yinyang-height']:[]),applicationId].filter(Boolean):[],sourceIds:p&&sourceId?[sourceId,...(mid==='p001-m01'?['sifu-2026-09-23-prep1']:[])]:[]};
+        views[vid]={id:vid,kind:'motion',postureId:pid,motionId:mid,motionNumber:n,title:p?.title||`${pose.name} · ${n}동작`,stateId,fromStateId:from,instruction:p?known(p.instruction,'source','qualitative',pose.id===2?'접근 가능한 易簡1–64식 太極起勢 기록을 바탕으로 정리한 내용이야. 현장 지도와 다르면 사부님의 지도를 우선해.':'접근 가능한 기존 수련 기록을 바탕으로 옮긴 내용이야. 원문·실연 대조는 이어서 보완해.'):unknown('unrecorded'),checks:p?p.checks.map(text):[],events:p?.events||[],contactSymbols:p?.contacts||{left:null,right:null},interpretationIds:p?[`${mid}-principle`,`${mid}-yinyang`,...(mid==='p001-m01'?['p001-m01-principle-relative-rise','p001-m01-yinyang-height']:[]),applicationId].filter(Boolean):[],sourceIds:p&&sourceId?[sourceId,...(mid==='p001-m01'?['sifu-2026-09-23-prep1']:[])]:[]};
         order.push(vid);motionViewIds.push(vid);from=stateId;
       }
     }
   }
   const edges={};order.forEach((id,i)=>edges[id]={previous:order[i-1]||null,next:order[i+1]||null});
-  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'prep1-yinyang-004',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
+  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'prep1-relative-rise-005',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
     'legacy-preparation':{id:'legacy-preparation',title:'eztaiji 기존 예비식 4동작과 학습용 도해',url:'https://github.com/winterrainlee/eztaiji/blob/b228b007d48756bdf83d6d2d3a0050a2b34a7f5e/training/datasets/yijian.json',note:'접근 가능한 기존 수련 기록을 바탕으로 모은 자료야. 원문과 사부님 실연의 대조는 이어서 보완해.'},
-    'sifu-2026-09-23-prep1':{id:'sifu-2026-09-23-prep1',title:'2026-09-23 수련 메모 · 預備式 1동작',url:null,note:'사부님이 預備式 1동작에서 자세가 약간 내려가는 변화 자체도 음양의 한 관계라고 설명한 현장 수련 메모야.'},
+    'sifu-2026-09-23-prep1':{id:'sifu-2026-09-23-prep1',title:'2026-09-23 수련 메모 · 預備式 1동작',url:null,note:'사부님이 預備式 1동작에서 고관절·몸이 약간 내려가는 변화 자체를 음양으로 설명했고, 손이 조금 올라가 보이는 것은 팔·손을 능동적으로 드는 게 아니라 몸이 내려가며 생기는 상대적 변화라고 설명한 현장 수련 메모야.'},
     'tsaifucius-yijian64':{id:'tsaifucius-yijian64',title:'Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述',url:'https://tsaitaiji.blogspot.com/2024/03/1-64.html',note:'預備勢의 준비 자세와 太極起勢 1–6동의 순서·原空位·鬆肘·손바닥 방향 설명을 이번 수집에서 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해.'}
   }};
   globalThis.EZTAIJI_DATA=data;
