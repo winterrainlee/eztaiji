@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "prep1-relative-rise-005",
+  "revision": "qishi-coupled-rise-006",
   "coverage": {
     "kind": "partial",
     "note": "預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
@@ -4623,6 +4623,194 @@
           "note": "2026-09-23 사부님 설명을 신체 물리 관점에서 풀어쓴 기록이다."
         }
       }
+    },
+    "p002-principle-coupled-rise": {
+      "id": "p002-principle-coupled-rise",
+      "category": "principle",
+      "scope": {
+        "kind": "posture",
+        "postureId": "p002"
+      },
+      "availability": "present",
+      "content": {
+        "explanation": {
+          "status": "known",
+          "value": "太極起勢에서는 올라가는 부분을 따로 들어 올리는 것으로만 보지 않아. 팔이 올라갈 때도 아래쪽으로 풀리고 가라앉는 흐름과 짝을 이루고, 3동작에서는 팔꿈치가 내려가면서 손이 올라가. 사부님은 이런 서로 반대 방향의 움직임이 한 몸 안에서 동시에 생기는 것을 같은 계열의 원리로 설명했어.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ],
+          "note": "구체적인 전통 용어쌍을 확정하지 않고, 현장 설명의 공통 원리만 기록했다."
+        }
+      }
+    },
+    "p002-m01-yinyang-rise": {
+      "id": "p002-m01-yinyang-rise",
+      "category": "yinYang",
+      "scope": {
+        "kind": "motion",
+        "motionId": "p002-m01"
+      },
+      "availability": "present",
+      "content": {
+        "terms": [
+          "아래로 풀림",
+          "팔의 상승"
+        ],
+        "first": {
+          "status": "known",
+          "value": "몸과 어깨 쪽은 힘을 빼고 아래로 풀리는 방향을 가진다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ],
+          "note": "팔 상승을 위쪽 근육의 능동적 들기만으로 만들지 않는다는 현장 설명을 반영했다."
+        },
+        "second": {
+          "status": "known",
+          "value": "그와 동시에 두 팔은 앞쪽·위쪽으로 떠오른다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        },
+        "relation": {
+          "status": "known",
+          "value": "팔의 상승은 아래로 풀리고 가라앉는 쪽과 짝을 이룬다. 한쪽 방향만 따로 만드는 게 아니라 반대 방향이 함께 생긴다는 점을 음양으로 읽는다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        }
+      }
+    },
+    "p002-m02-yinyang-rise": {
+      "id": "p002-m02-yinyang-rise",
+      "category": "yinYang",
+      "scope": {
+        "kind": "motion",
+        "motionId": "p002-m02"
+      },
+      "availability": "present",
+      "content": {
+        "terms": [
+          "아래로 풀림",
+          "팔의 상승"
+        ],
+        "first": {
+          "status": "known",
+          "value": "어깨·몸은 계속 힘을 빼고 아래로 풀리는 방향을 유지한다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        },
+        "second": {
+          "status": "known",
+          "value": "팔은 그 상태에서 어깨 높이까지 떠오른다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        },
+        "relation": {
+          "status": "known",
+          "value": "팔이 더 높아져도 아래쪽의 풀림과 짝을 이루어야 해. 위로 가는 팔과 아래로 풀리는 몸이 동시에 존재하는 관계야.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        }
+      }
+    },
+    "p002-m03-yinyang-rise": {
+      "id": "p002-m03-yinyang-rise",
+      "category": "yinYang",
+      "scope": {
+        "kind": "motion",
+        "motionId": "p002-m03"
+      },
+      "availability": "present",
+      "content": {
+        "terms": [
+          "팔꿈치의 내려감",
+          "손의 올라감"
+        ],
+        "first": {
+          "status": "known",
+          "value": "팔꿈치는 아래로 풀리며 내려간다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        },
+        "second": {
+          "status": "known",
+          "value": "그 결과 손바닥과 손끝은 상대적으로 위로 떠오른다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        },
+        "relation": {
+          "status": "known",
+          "value": "손을 따로 들어 올리기보다 팔꿈치가 내려가면서 손이 올라가는 상반된 변화가 한 구조 안에서 함께 나타나. 사부님은 이것도 같은 계열의 원리로 설명했어.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-qishi-rise",
+              "locator": "2026-09-23 수련 · 太極起勢 1–3동작",
+              "support": "explicit"
+            }
+          ]
+        }
+      }
     }
   },
   "sources": {
@@ -4661,11 +4849,23 @@
         "url": null,
         "note": "사부님이 預備式 1동작에서 고관절·몸이 약간 내려가는 변화 자체를 음양으로 설명했고, 손이 조금 올라가 보이는 것은 팔·손을 능동적으로 드는 게 아니라 몸이 내려가며 생기는 상대적 변화라고 설명한 현장 수련 메모야."
       }
+    },
+    "sifu-2026-09-23-qishi-rise": {
+      "id": "sifu-2026-09-23-qishi-rise",
+      "kind": "observation",
+      "reviewStatus": "checked",
+      "location": "2026-09-23 國立東華大學 태극권 수련 · 사부님 설명을 사용자 현장 메모로 기록",
+      "public": {
+        "id": "sifu-2026-09-23-qishi-rise",
+        "title": "2026-09-23 수련 메모 · 太極起勢의 상승과 하강",
+        "url": null,
+        "note": "사부님이 太極起勢에서 팔이 올라가는 것과, 팔꿈치가 내려가며 손이 올라가는 것을 같은 계열의 음양·연동 원리로 설명한 현장 수련 메모야."
+      }
     }
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "2026-09-23 현장 수련에서 預備式 1동작의 고관절·몸 하강과 손의 상대적 상승이 하나의 연동된 변화라는 설명을 추가했다. 손의 상승을 독립 arm_move 사건으로 만들지 않는다.",
+    "note": "2026-09-23 현장 수련에서 太極起勢의 팔 상승과 팔꿈치 하강·손 상승을 같은 계열의 음양·연동 원리로 설명한 내용을 observation 근거로 추가했다. 기존 자료 기반 開/合·鬆/升·不動/動 해석은 유지하고 별도 관계로 병기한다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [
