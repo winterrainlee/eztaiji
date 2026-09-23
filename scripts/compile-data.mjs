@@ -48,6 +48,8 @@ function validateReferences(d) {
       requireItem(d.states, p.start.stateId, `${id}/start`);
     } else if (p.start.kind === 'previousEnd') {
       check(p.start.postureId === order[i-1], `${id}: start must reference immediate predecessor`);
+    } else if (p.start.kind === 'explicitState') {
+      requireItem(d.states, p.start.stateId, `${id}/start`);
     } else {
       check(p.start.kind === 'unregistered', `${id}: unsupported start kind`);
     }
@@ -128,7 +130,7 @@ export function compileData(d) {
     return id;
   };
   for (const pid of order) {
-    const p=d.postures[pid], start=p.start.kind === 'initial' ? p.start.stateId
+    const p=d.postures[pid], start=p.start.kind === 'initial' || p.start.kind === 'explicitState' ? p.start.stateId
       : p.start.kind === 'unregistered' ? null : previousEnd;
     const startViewId=add(p,null,start,null), motionViewIds=[];
     let from=start;
