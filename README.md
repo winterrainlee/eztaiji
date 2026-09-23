@@ -15,3 +15,4 @@
 - [좌표계 원칙](docs/coordinate-system.md)
 - [모바일 연습 화면](docs/mobile-layout.md)
 - [단·자세·동작 구조와 출처](docs/routine-navigation.md)
+- [확장 계획 및 체크리스트](docs/expansion-plan.md)
