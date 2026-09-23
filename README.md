@@ -19,7 +19,7 @@
 - [동작·상태 데이터 모델 0.1](docs/data-model.md)
 - [데이터 모델 설계 시험](docs/design-tests/model-contract.test.mjs)
 - [수련 원본의 검사·변환·배포 경로](docs/data-pipeline.md)
-- [예비식 원본·배포 데이터 쌍과 검증 기록](docs/preparation-pair.md)
+- [수련 원본·배포 데이터 정리 기록](docs/preparation-pair.md)
 
 새 데이터 모델의 일부는 현재 배포 UI에 연결되어 있으며, 특히 攬雀尾 21동의 몸 기준 팔 방향과 C·발·팔 좌표판에 적용되어 있습니다. 가상 데이터의 기존 설계 시험은 `node docs/design-tests/model-contract.test.mjs`로 실행합니다. 실제 권가 내용이나 브라우저 화면을 모두 검증하는 시험은 아닙니다.
 
