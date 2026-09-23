@@ -2,10 +2,10 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "source-interpretation-cleanup-002",
+  "revision": "restore-coordinate-guides-001",
   "coverage": {
     "kind": "partial",
-    "note": "預備式은 확인된 시작 자세와 수련 메모만 제공한다. 太極起勢 6동작과 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 구분하며, 앞 자세에서 상속해야만 알 수 있는 미확인 좌표·허실은 표시하지 않는다. 나머지 권가는 수집 중이다."
+    "note": "預備式은 확인된 시작 자세와 수련 메모만 제공하되 시작 좌표판은 학습용 근사로 유지한다. 太極起勢 6동작은 발·중심의 평면 좌표를 학습용 도식으로 유지하고, 동작 기록·해석과 구분한다. 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 구분해 제공한다."
   },
   "coordinateFrames": {
     "yijian-front": {
@@ -59,7 +59,8 @@
       "number": 2,
       "name": "太極起勢",
       "start": {
-        "kind": "unregistered"
+        "kind": "explicitState",
+        "stateId": "p002-start"
       },
       "motionIds": [
         "p002-m01",
@@ -71,7 +72,7 @@
       ],
       "introduction": {
         "status": "known",
-        "value": "太極起勢는 6동작으로 기록돼 있어. 預備式에서 넘어오는 정확한 전환 상태는 여기서 따로 추정하지 않고, 확인된 1동작부터 이어서 살펴봐.",
+        "value": "太極起勢는 6동작으로 이어져. 시작 좌표판은 발의 평면 배치를 이해하기 위한 학습용 근사이고, 실제 핵심은 어깨·팔꿈치·손목이 어떻게 풀리며 두 팔의 구조가 바뀌는지에 있어.",
         "basis": "inference",
         "precision": "qualitative",
         "evidence": [
@@ -81,7 +82,7 @@
             "support": "contextual"
           }
         ],
-        "note": "동작 수는 자료에서 확인하고, 예비식 종료 상태는 기존 후보값을 재사용하지 않는다는 프로젝트 정리 원칙이다."
+        "note": "좌표판의 발 배치는 개인 연습용 도식이고, 동작 설명 자체는 확인한 기록과 따로 구분한다."
       }
     },
     "p003": {
@@ -2687,9 +2688,21 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "발꿈치를 붙여 선다는 자세는 확인했지만, 이를 고정 좌표의 실측값으로 환산하지 않는다."
+            "status": "known",
+            "value": {
+              "x": 0.65,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발꿈치를 붙여 서는 시작 모습을 화면에서 구분하기 위한 학습용 근사 위치다. 실측 좌표가 아니다."
           },
           "heading": {
             "status": "known",
@@ -2743,9 +2756,21 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "발꿈치를 붙여 선다는 자세는 확인했지만, 이를 고정 좌표의 실측값으로 환산하지 않는다."
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발꿈치를 붙여 서는 시작 모습을 화면에서 구분하기 위한 학습용 근사 위치다. 실측 좌표가 아니다."
           },
           "heading": {
             "status": "known",
@@ -2887,40 +2912,52 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -2949,40 +2986,52 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 1動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3012,16 +3061,21 @@
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 1動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "학습용 허실 도식에 따른 질적 중심 영역이다. 측정값이 아니다."
         }
       },
       "body": {
@@ -3031,16 +3085,16 @@
             "kind": "sector",
             "sector": "front"
           },
-          "basis": "source",
+          "basis": "illustration",
           "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 1動",
-              "support": "explicit"
+              "support": "contextual"
             }
           ],
-          "note": "1동작 기록에서 몸을 정면으로 유지한다고 명시한 내용을 방향 범주로 옮겼다."
+          "note": "太極起勢의 평면 좌표판에서는 몸 정면을 기준 방향으로 유지해 읽는다."
         },
         "organization": {
           "status": "known",
@@ -3129,40 +3183,52 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3191,40 +3257,52 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 2動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3254,30 +3332,40 @@
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 2動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "학습용 허실 도식에 따른 질적 중심 영역이다. 측정값이 아니다."
         }
       },
       "body": {
         "heading": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 2動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "太極起勢의 평면 좌표판에서는 몸 정면을 기준 방향으로 유지해 읽는다."
         },
         "organization": {
           "status": "known",
@@ -3366,40 +3454,52 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3428,40 +3528,52 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 3動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3491,30 +3603,40 @@
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 3動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "학습용 허실 도식에 따른 질적 중심 영역이다. 측정값이 아니다."
         }
       },
       "body": {
         "heading": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 3動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "太極起勢의 평면 좌표판에서는 몸 정면을 기준 방향으로 유지해 읽는다."
         },
         "organization": {
           "status": "known",
@@ -3603,40 +3725,52 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3665,40 +3799,52 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 4動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3728,30 +3874,40 @@
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 4動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "학습용 허실 도식에 따른 질적 중심 영역이다. 측정값이 아니다."
         }
       },
       "body": {
         "heading": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 4動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "太極起勢의 평면 좌표판에서는 몸 정면을 기준 방향으로 유지해 읽는다."
         },
         "organization": {
           "status": "known",
@@ -3840,40 +3996,52 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3902,40 +4070,52 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 5動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -3965,30 +4145,40 @@
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 5動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "학습용 허실 도식에 따른 질적 중심 영역이다. 측정값이 아니다."
         }
       },
       "body": {
         "heading": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 5動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "太極起勢의 평면 좌표판에서는 몸 정면을 기준 방향으로 유지해 읽는다."
         },
         "organization": {
           "status": "known",
@@ -4077,40 +4267,52 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -4139,40 +4341,52 @@
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 고정 좌표의 발 위치를 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "太極起勢 동안 발의 평면 위치가 바뀌지 않는 것으로 읽기 위한 학습용 좌표다. 실측값이 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 발끝 방향을 독립적으로 확정하지 않았다.",
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "평면 좌표판에서는 두 발을 정면으로 나란히 둔 학습용 도식으로 유지한다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 동작 자료만으로 좌우 허실을 독립적으로 확정하지 않았다. 앞 자세의 삭제한 후보값을 상속하지 않는다.",
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
             "evidence": [
               {
                 "sourceId": "tsaifucius-yijian64",
                 "locator": "太極起勢 6動",
                 "support": "contextual"
               }
-            ]
+            ],
+            "note": "허실 흐름을 읽기 위한 학습용 좌표판 표기다."
           },
           "groundContact": {
             "status": "unknown",
@@ -4202,30 +4416,40 @@
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "발의 허실을 독립적으로 확인하지 못했으므로 중심 C의 영역도 따로 확정하지 않는다.",
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 6動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "학습용 허실 도식에 따른 질적 중심 영역이다. 측정값이 아니다."
         }
       },
       "body": {
         "heading": {
-          "status": "unknown",
-          "reason": "unverified",
-          "note": "이 동작 기록만으로 몸 방향 유지 여부를 별도 좌표값으로 확정하지 않았다.",
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
           "evidence": [
             {
               "sourceId": "tsaifucius-yijian64",
               "locator": "太極起勢 6動",
               "support": "contextual"
             }
-          ]
+          ],
+          "note": "太極起勢의 평면 좌표판에서는 몸 정면을 기준 방향으로 유지해 읽는다."
         },
         "organization": {
           "status": "known",
@@ -10007,6 +10231,219 @@
           }
         }
       }
+    },
+    "p002-start": {
+      "id": "p002-start",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발의 상대 배치를 읽기 위한 학습용 기준 좌표다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발을 나란히 놓는 연습 구조를 화면 방향으로 단순화한 학습용 도식이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 지지·오른발 가벼움이라는 연습 구조를 좌표판에 보이기 위한 학습용 표기다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "발바닥의 세부 접촉 부위는 이 좌표 도식에서 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "뒤꿈치 높이는 이 좌표 도식에서 별도 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ]
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발의 상대 배치를 읽기 위한 학습용 기준 좌표다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ],
+            "note": "두 발을 나란히 놓는 연습 구조를 화면 방향으로 단순화한 학습용 도식이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 지지·오른발 가벼움이라는 연습 구조를 좌표판에 보이기 위한 학습용 표기다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "발바닥의 세부 접촉 부위는 이 좌표 도식에서 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "뒤꿈치 높이는 이 좌표 도식에서 별도 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 시작",
+                "support": "contextual"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "太極起勢 시작",
+              "support": "contextual"
+            }
+          ],
+          "note": "허실을 한눈에 읽기 위한 질적 중심 영역이다. 압력중심의 측정값이 아니다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "illustration",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "太極起勢 시작",
+              "support": "contextual"
+            }
+          ],
+          "note": "정면을 기준으로 연습하는 평면 좌표판용 방향이다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded",
+          "note": "이 시작 상태는 좌표판용 학습 도식만 두고 팔의 세부 모양은 별도로 확정하지 않는다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded",
+            "note": "이 시작 상태는 좌표판용 학습 도식만 두고 팔의 세부 모양은 별도로 확정하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded",
+            "note": "이 시작 상태는 좌표판용 학습 도식만 두고 팔의 세부 모양은 별도로 확정하지 않는다."
+          }
+        }
+      }
     }
   },
   "groups": {},
@@ -11017,7 +11454,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "예전 預備式 세부 단계 후보와 도해 파생값은 사용하지 않는다. 預備式은 확인된 시작 자세와 2026-09-23 현장 메모만 유지하고, 太極起勢·攬雀尾는 확인한 자료와 프로젝트 해석을 구분해 기록한다.",
+    "note": "舊 預備式 번호 동작 후보는 복구하지 않는다. 대신 1·2초식의 좌표판 학습용 근사를 별도 상태값으로 유지하며 basis=illustration으로 명시한다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": []
