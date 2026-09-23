@@ -68,6 +68,12 @@
     interpretations[`${mid}-principle`]={id:`${mid}-principle`,category:'principle',scope:{kind:'motion',motionId:mid},availability:'present',content:{explanation:text(m.principle)}};
     interpretations[`${mid}-yinyang`]={id:`${mid}-yinyang`,category:'yinYang',scope:{kind:'motion',motionId:mid},availability:'present',content:{terms:m.yy.slice(0,2),first:text(m.yy[2]),second:text(m.yy[3]),relation:text(m.yy[4])}};
   });
+  interpretations['p001-m01-yinyang-height']={id:'p001-m01-yinyang-height',category:'yinYang',scope:{kind:'motion',motionId:'p001-m01'},availability:'present',content:{
+    terms:['상대적으로 높음','약간 내려감'],
+    first:known('시작 상태의 높이에서 출발한다.','inference','qualitative','대조를 위해 시작 상태를 상대적으로 높은 쪽으로 표현한 프로젝트 설명이야.'),
+    second:known('1동작에서 몸 전체가 약간 가라앉아 자세의 높이가 낮아진다.','observation','qualitative','2026-09-23 현장 수련에서 사부님이 설명한 내용이야.'),
+    relation:known('사부님은 이 높이 변화 자체도 음양의 한 관계라고 설명했어. 上/下·升/沉 같은 정식 대립쌍 명칭은 이번 메모에서 확인되지 않아, 높이 변화로만 기록해.','observation','qualitative','현장 수련 메모를 바탕으로 한 기록이야.')
+  }};
   interpretations['p001-application']={id:'p001-application',category:'application',scope:{kind:'posture',postureId:'p001'},availability:'present',content:{applicationType:'preparation',assumption:text('상대의 움직임에 맞춰 한 발을 옮겨야 한다고 가정해.'),response:text('한 다리가 몸을 받치는 동안 다른 발을 가볍게 옮기고 정렬해. 자리를 잡은 뒤 지지 역할을 바꿔.'),possibleResult:text('받치는 발과 움직일 발을 구분해, 다음 이동이나 대응을 준비하는 과정으로 읽을 수 있어.'),limitations:text('예비식의 준비 구조를 이해하기 위한 가정이야. 특정 공격을 막는 독립 기술이라고 단정하지 않아.')}};
   qishi.forEach((m,i)=>{
     const n=i+1,mid=`p002-m${String(n).padStart(2,'0')}`;
@@ -95,14 +101,15 @@
         const collection=pose.id===1?prep:pose.id===2?qishi:null,p=collection?.[n-1]||null,stateId=p?.state||null;
         const applicationId=pose.id===1?'p001-application':pose.id===2?'p002-application':null;
         const sourceId=pose.id===1?'legacy-preparation':pose.id===2?'tsaifucius-yijian64':null;
-        views[vid]={id:vid,kind:'motion',postureId:pid,motionId:mid,motionNumber:n,title:p?.title||`${pose.name} · ${n}동작`,stateId,fromStateId:from,instruction:p?known(p.instruction,'source','qualitative',pose.id===2?'접근 가능한 易簡1–64식 太極起勢 기록을 바탕으로 정리한 내용이야. 현장 지도와 다르면 사부님의 지도를 우선해.':'접근 가능한 기존 수련 기록을 바탕으로 옮긴 내용이야. 원문·실연 대조는 이어서 보완해.'):unknown('unrecorded'),checks:p?p.checks.map(text):[],events:p?.events||[],contactSymbols:p?.contacts||{left:null,right:null},interpretationIds:p?[`${mid}-principle`,`${mid}-yinyang`,applicationId].filter(Boolean):[],sourceIds:p&&sourceId?[sourceId]:[]};
+        views[vid]={id:vid,kind:'motion',postureId:pid,motionId:mid,motionNumber:n,title:p?.title||`${pose.name} · ${n}동작`,stateId,fromStateId:from,instruction:p?known(p.instruction,'source','qualitative',pose.id===2?'접근 가능한 易簡1–64식 太極起勢 기록을 바탕으로 정리한 내용이야. 현장 지도와 다르면 사부님의 지도를 우선해.':'접근 가능한 기존 수련 기록을 바탕으로 옮긴 내용이야. 원문·실연 대조는 이어서 보완해.'):unknown('unrecorded'),checks:p?p.checks.map(text):[],events:p?.events||[],contactSymbols:p?.contacts||{left:null,right:null},interpretationIds:p?[`${mid}-principle`,`${mid}-yinyang`,...(mid==='p001-m01'?['p001-m01-yinyang-height']:[]),applicationId].filter(Boolean):[],sourceIds:p&&sourceId?[sourceId,...(mid==='p001-m01'?['sifu-2026-09-23-prep1']:[])]:[]};
         order.push(vid);motionViewIds.push(vid);from=stateId;
       }
     }
   }
   const edges={};order.forEach((id,i)=>edges[id]={previous:order[i-1]||null,next:order[i+1]||null});
-  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'preparation-start-003',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
+  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'prep1-yinyang-004',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
     'legacy-preparation':{id:'legacy-preparation',title:'eztaiji 기존 예비식 4동작과 학습용 도해',url:'https://github.com/winterrainlee/eztaiji/blob/b228b007d48756bdf83d6d2d3a0050a2b34a7f5e/training/datasets/yijian.json',note:'접근 가능한 기존 수련 기록을 바탕으로 모은 자료야. 원문과 사부님 실연의 대조는 이어서 보완해.'},
+    'sifu-2026-09-23-prep1':{id:'sifu-2026-09-23-prep1',title:'2026-09-23 수련 메모 · 預備式 1동작',url:null,note:'사부님이 預備式 1동작에서 자세가 약간 내려가는 변화 자체도 음양의 한 관계라고 설명한 현장 수련 메모야.'},
     'tsaifucius-yijian64':{id:'tsaifucius-yijian64',title:'Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述',url:'https://tsaitaiji.blogspot.com/2024/03/1-64.html',note:'預備勢의 준비 자세와 太極起勢 1–6동의 순서·原空位·鬆肘·손바닥 방향 설명을 이번 수집에서 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해.'}
   }};
   globalThis.EZTAIJI_DATA=data;

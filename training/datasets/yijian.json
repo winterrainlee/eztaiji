@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "preparation-start-003",
+  "revision": "prep1-yinyang-004",
   "coverage": {
     "kind": "partial",
     "note": "預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
@@ -123,17 +123,17 @@
           "kind": "body_lower",
           "description": {
             "status": "known",
-            "value": "오른다리로 받치며 가볍게 가라앉는다.",
-            "basis": "inference",
+            "value": "오른다리로 받치며 자세가 약간 내려간다.",
+            "basis": "observation",
             "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "legacy-preparation",
-                "locator": "預備式 1동작",
-                "support": "contextual"
+                "sourceId": "sifu-2026-09-23-prep1",
+                "locator": "2026-09-23 수련 · 預備式 1동작",
+                "support": "explicit"
               }
             ],
-            "note": "기존 설명의 이전 후보. 원문 재대조 전."
+            "note": "2026-09-23 현장 지도에서 사부님이 이 낮아짐 자체를 음양 변화의 한 예로 설명했다."
           }
         }
       ],
@@ -4544,6 +4544,61 @@
           "note": "과장된 용법 단정을 피하기 위한 한계 표시다."
         }
       }
+    },
+    "p001-m01-yinyang-height": {
+      "id": "p001-m01-yinyang-height",
+      "category": "yinYang",
+      "scope": {
+        "kind": "motion",
+        "motionId": "p001-m01"
+      },
+      "availability": "present",
+      "content": {
+        "terms": [
+          "상대적으로 높음",
+          "약간 내려감"
+        ],
+        "first": {
+          "status": "known",
+          "value": "시작 상태의 높이에서 출발한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-prep1",
+              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "support": "explicit"
+            }
+          ],
+          "note": "대조를 위해 시작 상태를 상대적으로 높은 쪽으로 표현한 프로젝트 설명이다."
+        },
+        "second": {
+          "status": "known",
+          "value": "1동작에서 몸 전체가 약간 가라앉아 자세의 높이가 낮아진다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-prep1",
+              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "support": "explicit"
+            }
+          ]
+        },
+        "relation": {
+          "status": "known",
+          "value": "사부님은 이 높이 변화 자체도 음양의 한 관계라고 설명했다. 上/下·升/沉 같은 정식 대립쌍 명칭은 이번 메모에서 확인되지 않아, 프로젝트에서는 높이 변화로만 기록한다.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23-prep1",
+              "locator": "2026-09-23 수련 · 預備式 1동작",
+              "support": "explicit"
+            }
+          ]
+        }
+      }
     }
   },
   "sources": {
@@ -4570,11 +4625,23 @@
         "url": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
         "note": "預備勢의 준비 자세와 太極起勢 1–6동의 순서·原空位·鬆肘·손바닥 방향 설명을 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해."
       }
+    },
+    "sifu-2026-09-23-prep1": {
+      "id": "sifu-2026-09-23-prep1",
+      "kind": "observation",
+      "reviewStatus": "checked",
+      "location": "2026-09-23 國立東華大學 태극권 수련 · 사부님 설명을 사용자 현장 메모로 기록",
+      "public": {
+        "id": "sifu-2026-09-23-prep1",
+        "title": "2026-09-23 수련 메모 · 預備式 1동작",
+        "url": null,
+        "note": "사부님이 預備式 1동작에서 자세가 약간 내려가는 변화 자체도 음양의 한 관계라고 설명한 현장 수련 메모야."
+      }
     }
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "預備式 시작 상태는 2026-09-23 접근 가능한 Tsaifucius 1–64식 기록의 準備動作·站姿를 바탕으로 채웠다. 발 좌표는 기존 도해와 이어지는 학습용 근사이며, 중심 위치와 바닥 접촉은 원문에서 파생한 추론으로 구분했다. 太極起勢 1–6동도 같은 기록을 직접 확인해 수집했다.",
+    "note": "預備式 시작 상태와 太極起勢 자료에 더해, 2026-09-23 현장 수련에서 사부님이 預備式 1동작의 자세가 약간 내려가는 변화 자체도 음양이라고 설명한 내용을 observation 근거로 추가했다. 대립쌍의 정식 명칭은 추정하지 않았다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [
