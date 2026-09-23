@@ -5,7 +5,7 @@
   const el=(tag,text,className)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;};
   const value=c=>c?.status==='known'?c.value:null;
   const text=c=>typeof value(c)==='string'?value(c):'';
-  const basis=c=>c?.basis==='inference'?'해석':c?.basis==='illustration'?'학습용 근사':c?.basis==='source'?'자료 기록':c?.basis==='observation'?'관찰 기록':'미등록';
+  const basis=c=>c?.basis==='inference'?'프로젝트 해석':c?.basis==='illustration'?'학습용 근사':c?.basis==='source'?'자료 기록':c?.basis==='observation'?'수련 메모':'확인 안 됨';
   function fail(error){$('app').hidden=true;const box=$('load-message');box.hidden=false;box.replaceChildren(el('h1','연습 데이터를 불러오지 못했어'),el('p','새로고침한 뒤 다시 확인해줘. 자료가 없는 동작과는 다른 로딩 오류야.'));const b=el('button','새로고침');b.onclick=()=>location.reload();box.append(b);console.error('eztaiji:',error);}
   try {
     // Plain-data and compressed-data transports share this promise contract.
@@ -34,7 +34,7 @@
       const plot=$('plot');plot.replaceChildren(svg('title',{id:'diagram-title'},v.title),svg('desc',{id:'diagram-desc'},stateDescription(s)));
       const hasFeet=s&&['left','right'].some(k=>value(s.feet[k].position));
       plot.hidden=!hasFeet;$('plot-empty').hidden=hasFeet;
-      $('plot-empty').textContent=v.kind==='start'?'시작 전의 배치는\n기록을 보완하는 중이야.':'이 동작의 좌표는 아직 없어.\n등록된 설명부터 살펴봐.';
+      $('plot-empty').textContent=v.kind==='start'?'확인된 좌표값은 따로 표시하지 않아.\n아래 자료와 해석을 살펴봐.':'확인된 좌표값이 없어.\n아래 기록만 보여줄게.';
       const c=value(s?.center?.location);
       $('center-summary').textContent=c?`C 중심 · ${c.kind==='region'?regionText[c.anchor]+' (영역)':`≈ (${c.x}, ${c.y})`}`:hasFeet?'C 중심 · 미등록':'';
       if(!hasFeet)return;
@@ -72,9 +72,16 @@
         if(anchor)plot.append(svg('circle',{cx:anchor.x,cy:anchor.y,r:22,fill:'none',stroke:centerColor,'stroke-width':1.6,'stroke-dasharray':'4 3'}),svg('text',{x:anchor.x+17,y:anchor.y-17,fill:centerColor,'font-size':12,'font-weight':700},'C'));
       }
     }
-    function fillDetails(s){const box=$('pose-details');box.replaceChildren();if(!s){box.append(el('p','이 상태의 좌표는 아직 등록하지 않았어.'));return;}
-      for(const side of ['left','right']){const f=s.feet[side];box.append(el('h3',side==='left'?'왼발':'오른발'),el('p','위치: '+claimLabel(f.position,p=>`≈ (${p.x}, ${p.y})`)),el('p','지지: '+claimLabel(f.supportRole,v=>({shi:'● 실',xu:'○ 허',shared:'함께 지지'})[v])),el('p','발끝 방향: '+heading(f.heading)),el('p','접촉: '+claimLabel(f.groundContact,v=>contactText[v])),el('p','뒤꿈치: '+claimLabel(f.heelRaised,v=>v?'들려 있음':'들려 있지 않음')));}
-      box.append(el('h3','몸과 중심'),el('p','몸 방향 B: '+heading(s.body.heading)),el('p',$('center-summary').textContent||'C 중심: 미등록'));for(const side of ['left','right']){const a=s.arms?.[side];if(!a)continue;box.append(el('h3',side==='left'?'왼팔':'오른팔'),el('p','구성: '+claimLabel(a.configuration)),el('p','몸 기준 방향: '+relativeHeading(a.relativeDirection)),el('p','좌표판 방향: '+armWorldText(s,side)));}
+    function fillDetails(s){const box=$('pose-details');box.replaceChildren();if(!s){box.append(el('p','확인된 상태값이 없어.'));return;}
+      const known=c=>c?.status==='known';let any=false;
+      for(const side of ['left','right']){const f=s.feet[side],lines=[];const push=(label,claim,formatter=v=>String(v))=>{if(known(claim))lines.push(el('p',label+formatter(claim.value)+' · '+basis(claim)));};
+        push('위치: ',f.position,p=>'≈ ('+p.x+', '+p.y+')');push('지지: ',f.supportRole,v=>({shi:'● 실',xu:'○ 허',shared:'함께 지지'})[v]);push('발끝 방향: ',f.heading,()=>heading(f.heading));push('접촉: ',f.groundContact,v=>contactText[v]);push('뒤꿈치: ',f.heelRaised,v=>v?'들려 있음':'들려 있지 않음');
+        if(lines.length){box.append(el('h3',side==='left'?'왼발':'오른발'),...lines);any=true;}}
+      const bodyLines=[];if(known(s.body?.heading))bodyLines.push(el('p','몸 방향 B: '+heading(s.body.heading)+' · '+basis(s.body.heading)));
+      if(known(s.center?.location)){const cc=s.center.location.value;bodyLines.push(el('p','C 중심: '+(cc.kind==='region'?regionText[cc.anchor]+' (영역)':'≈ ('+cc.x+', '+cc.y+')')+' · '+basis(s.center.location)));}
+      if(known(s.body?.organization))bodyLines.push(el('p','몸 구성: '+s.body.organization.value+' · '+basis(s.body.organization)));if(bodyLines.length){box.append(el('h3','몸과 중심'),...bodyLines);any=true;}
+      for(const side of ['left','right']){const a=s.arms?.[side],lines=[];if(!a)continue;if(known(a.configuration))lines.push(el('p','구성: '+a.configuration.value+' · '+basis(a.configuration)));if(known(a.relativeDirection))lines.push(el('p','몸 기준 방향: '+relativeHeading(a.relativeDirection)+' · '+basis(a.relativeDirection)),el('p','좌표판 방향: '+armWorldText(s,side)));if(lines.length){box.append(el('h3',side==='left'?'왼팔':'오른팔'),...lines);any=true;}}
+      if(!any)box.append(el('p','확인된 세부값이 없어.'));
     }
     const sectionFor=id=>sections.find(s=>s.postureIds.includes(id));
     function render(){
@@ -82,7 +89,7 @@
       $('location-text').textContent=`${section.name} · ${p.number}. ${p.name}`;
       const position=v.kind==='start'?'시작 상태':`${v.motionNumber}동작 / ${p.motionCount}동작`;
       $('stage').textContent=`${p.name} · ${position}`;$('title').textContent=v.kind==='start'?`${p.name} · 시작 상태`:v.title;
-      $('instruction').textContent=text(v.instruction)||(v.kind==='start'?'이전 자세를 마친 상태에서 다음 움직임을 준비해. 세부 설명은 모으는 중이야.':'이 동작의 설명은 모으는 중이야. 상단에서 예비식을 골라 먼저 살펴볼 수 있어.');
+      $('instruction').textContent=text(v.instruction)||'확인된 설명이 없어.';$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
       const contacts=['left','right'].flatMap(side=>{const list=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);return list.length?[`${side==='left'?'왼발':'오른발'} · ${list.join(' / ')}`]:[];});
       $('contact-summary').hidden=!contacts.length;$('contact-summary').textContent=contacts.join('　')+(contacts.length?' · 기록 기준':'');
       const overview=$('start-overview');overview.replaceChildren();const ready=p.motionViewIds.filter(id=>text(d.views[id]?.instruction));overview.hidden=!(v.kind==='start'&&ready.length);
@@ -96,12 +103,12 @@
       for(const x of yy){const c=x.content,pair=el('div',undefined,'pair');for(const[key,i]of [['first',0],['second',1]]){const a=el('div');a.append(el('strong',c.terms[i]),el('p',text(c[key])));pair.append(a);}yyBox.append(pair,el('p',text(c.relation),'relation'));}
       const apps=related.filter(x=>x.category==='application');$('application').hidden=!apps.length;const ab=$('application-body');ab.replaceChildren();
       for(const x of apps){if(x.availability!=='present'){ab.append(el('p',x.reason,'muted'));continue;}const c=x.content;ab.append(el('p',`${x.scope.kind==='posture'?p.name+' 전체':'이 동작'} · ${c.applicationType==='preparation'?'준비 구조로 읽기':'상황을 가정한 해석'}`,'scope'));for(const[key,label]of [['assumption','상황'],['response','대응'],['possibleResult','가능한 결과'],['limitations','읽을 때의 한계']]){ab.append(el('span',label,'scenario-label'),el('p',text(c[key]),key==='limitations'?'limitations':''));}}
-      const checks=v.checks.map(text).filter(Boolean);$('checks').hidden=!checks.length;$('check-list').replaceChildren(...checks.map(t=>el('li',t)));
-      const sb=$('source-list');sb.replaceChildren();for(const id of v.sourceIds){const source=d.sources[id];if(!source)continue;const item=el('div',undefined,'source-item');const a=el('a',source.title);if(/^https?:\/\//i.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}else item.append(el('strong',source.title));item.append(el('p',source.note));sb.append(item);}if(!sb.childNodes.length)sb.append(el('p','아직 이 화면에 연결한 자료가 없어.'));
+      const checks=v.checks.map(text).filter(Boolean);$('checks').hidden=!checks.length;$('check-list').replaceChildren(...checks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length||checks.length);
+      const sb=$('source-list');sb.replaceChildren();for(const id of v.sourceIds){const source=d.sources[id];if(!source)continue;const item=el('div',undefined,'source-item');const a=el('a',source.title);if(/^https?:\/\//i.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}else item.append(el('strong',source.title));item.append(el('p',source.note));sb.append(item);}if(!sb.childNodes.length)sb.append(el('p','이 화면에는 별도로 연결된 출처가 없어.'));
       draw(v,s);fillDetails(s);$('open-details').disabled=!s;
       const edges=d.navigation.edges[current];$('prev').disabled=edges.previous===null;$('next').disabled=edges.next===null;
-      $('prev').textContent=v.kind==='start'&&edges.previous?'← 이전 자세':'← 이전';$('next').textContent=v.kind==='start'?'1동작 →':v.motionNumber===p.motionCount&&edges.next?'다음 자세 →':'다음 →';
-      $('motion-current').textContent=v.kind==='start'?'시작 상태':`${v.motionNumber} / ${p.motionCount}동작`;
+      $('prev').textContent=v.kind==='start'&&edges.previous?'← 이전 자세':'← 이전';$('next').textContent=v.kind==='start'?(p.motionCount?'1동작 →':edges.next?'다음 자세 →':'끝'):v.motionNumber===p.motionCount&&edges.next?'다음 자세 →':'다음 →';
+      $('motion-current').textContent=v.kind==='start'?p.name+' · 0동작':v.motionNumber+' / '+p.motionCount+'동작';
       $('explanation').scrollTop=0;$('sources').open=false;$('application').open=false;
       $('announce').textContent=`${section.name} ${p.name} ${position}. ${v.title}`;
       try{history.replaceState(null,'','#'+current);}catch{/* file viewers may limit history */}
