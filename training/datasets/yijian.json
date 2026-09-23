@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "restore-preparation-motion-001",
+  "revision": "original-space-body-001",
   "coverage": {
     "kind": "partial",
     "note": "預備式은 확인된 시작 상태와 2026-09-23 현장 지도에 근거한 1동작만 제공한다. 예전 4동작 후보는 복구하지 않는다. 太極起勢 6동작은 학습용 평면 좌표와 확인된 동작 기록을 구분해 제공하고, 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 함께 제공한다."
@@ -803,7 +803,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "무릎을 굽혀 몸을 수직으로 낮춰. 오른손은 공간 위치를 크게 바꾸지 않고, 왼손은 몸과 함께 내려가며 손바닥 축을 오른쪽으로 돌려.",
+        "value": "무릎을 굽혀 몸을 수직으로 낮춰. 오른손은 `📌空 原空位`로 바닥 평면의 공간 기준을 남겨두고, 왼손은 `↔體 原體位`로 몸과 함께 내려가며 손바닥 축을 오른쪽으로 돌려.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -844,7 +844,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m02": {
       "id": "p003-m02",
@@ -893,7 +895,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "몸통을 오른쪽, 동쪽으로 돌리고 오른발 끝도 오른쪽으로 약 90도 돌려. 오른손은 원래 공간에 두고 왼손이 그 아래로 들어가 두 손바닥이 서로 마주 보게 해. 약 30cm 간격의 큰 공을 안는 모양이야.",
+        "value": "몸통을 오른쪽, 동쪽으로 돌리고 오른발 끝도 오른쪽으로 약 90도 돌려. 오른손은 `📌空 原空位`로 남겨두고, 왼손은 `↔體 原體位`로 몸을 따라 오른손 아래로 들어가. 두 손바닥이 서로 마주 보며 약 30cm 간격의 큰 공을 안는 모양이야.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -934,7 +936,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m03": {
       "id": "p003-m03",
@@ -1145,7 +1149,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "몸을 북쪽으로 돌며 왼발에 들어가 坐實해. 회전과 전진이 먼저고, 왼쪽 어깨가 팔꿈치를 데리고 팔꿈치가 손을 데려가며 왼팔이 위·앞으로 掤을 만들어. 오른손은 몸이 움직일 때 수직으로 내려가.",
+        "value": "몸을 북쪽으로 돌며 왼발에 들어가 坐實해. 회전과 전진이 먼저고, 왼쪽 어깨가 팔꿈치를 데리고 팔꿈치가 손을 데려가며 왼팔이 위·앞으로 掤을 만들어. 오른손은 `📌空 原空位`를 유지하면서 수직으로 가라앉아.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -1200,7 +1204,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m06": {
       "id": "p003-m06",
@@ -1393,7 +1399,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "왼발로 확실히 받치며 오른무릎을 들어 발끝만 바닥에 대. 허리와 골반을 1시30분 쪽으로 오른쪽 회전하고, 오른발 뒤꿈치가 따라 돌아 발끝이 동쪽을 향하게 해. 두 손의 공은 공간 위치를 크게 바꾸지 않아.",
+        "value": "왼발로 확실히 받치며 오른무릎을 들어 발끝만 바닥에 대. 허리와 골반을 1시30분 쪽으로 오른쪽 회전하고, 오른발 뒤꿈치가 따라 돌아 발끝이 동쪽을 향하게 해. 두 손은 모두 `📌空 原空位`를 유지해. 몸과 발이 돌아도 두 손의 공 전체를 몸과 같이 휘두르지 않아.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -1434,7 +1440,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m09": {
       "id": "p003-m09",
@@ -1555,7 +1563,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "몸을 오른발 쪽으로 옮겨 坐實하고 오른弓步를 만들어. 전진하면서 허리가 오른쪽으로 돌고, 오른팔은 팔꿈치를 앞세워 호를 그리며 올라간 뒤 어깨를 풀고 팔꿈치를 가라앉혀 가슴 앞 橫掤을 만들어. 왼손은 계속 오른손과 마주 보는 관계를 유지해.",
+        "value": "몸을 오른발 쪽으로 옮겨 坐實하고 오른弓步를 만들어. 전진하면서 허리가 오른쪽으로 돌고, 오른팔은 팔꿈치를 앞세워 호를 그리며 올라간 뒤 어깨를 풀고 팔꿈치를 가라앉혀 가슴 앞 橫掤을 만들어. 왼손은 `↔體 原體位`로 진행 내내 오른손과 마주 보는 관계를 유지해.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -1610,7 +1618,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m11": {
       "id": "p003-m11",
@@ -1731,7 +1741,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "정동쪽을 향한 몸을 4시30분 쪽으로 더 오른쪽으로 돌려. 오른쪽 어깨를 풀고 팔꿈치를 가라앉혀 오른손을 오른쪽 바깥·위로 펼치고, 왼팔도 풀어 왼손을 오른쪽 아래로 보내. 두 팔이 한쪽으로 붙잡아당기기보다 오른쪽에 길을 열어.",
+        "value": "정동쪽을 향한 몸을 4시30분 쪽으로 더 오른쪽으로 돌려. 양팔은 `↔體 原體位`로 몸의 회전을 따라가. 오른쪽 어깨를 풀고 팔꿈치를 가라앉혀 오른손을 오른쪽 바깥·위로 펼치고, 왼팔도 풀어 왼손을 오른쪽 아래로 보내. 두 팔이 한쪽으로 붙잡아당기기보다 오른쪽에 길을 열어.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -1772,7 +1782,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m13": {
       "id": "p003-m13",
@@ -1805,7 +1817,7 @@
           "kind": "arm_move",
           "description": {
             "status": "known",
-            "value": "왼팔이 후퇴·좌회전을 따라 오른쪽 위로 뻗는다.",
+            "value": "왼팔꿈치·위팔은 `📌空 原空位` 관계를 두고 후퇴한 뒤, 몸의 좌회전을 따라 오른쪽 위로 비스듬히 올라간다.",
             "basis": "source",
             "precision": "qualitative",
             "evidence": [
@@ -1823,7 +1835,7 @@
           "kind": "arm_move",
           "description": {
             "status": "known",
-            "value": "오른팔꿈치가 공간을 유지하며 가슴 앞으로 내려온다.",
+            "value": "오른팔꿈치는 `↔體 原體位`로 몸과의 관계를 유지하며 가슴 앞으로 내려온다.",
             "basis": "source",
             "precision": "qualitative",
             "evidence": [
@@ -1839,7 +1851,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "몸을 뒤의 왼발로 물려 坐實하면서 허리를 왼쪽으로 크게 돌려 1시30분 쪽을 향해. 오른팔꿈치는 공간을 크게 잃지 않으며 가슴 앞으로 내려오고, 왼팔은 후퇴와 좌회전을 따라 오른쪽 위로 뻗어. 손으로 끌지 말고 중심의 후퇴와 허리 회전으로 履를 만들어.",
+        "value": "몸을 뒤의 왼발로 물려 坐實하면서 허리를 왼쪽으로 크게 돌려 1시30분 쪽을 향해. 오른팔꿈치는 `↔體 原體位`로 몸과의 관계를 유지하며 가슴 앞으로 내려오고, 왼팔꿈치·위팔은 원문에서 `📌空 原空位`로 처리되며 후퇴한 뒤 몸의 좌회전을 따라 오른쪽 위로 비스듬히 올라가. 손으로 끌지 말고 중심의 후퇴와 허리 회전으로 履를 만들어.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -1894,7 +1906,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m14": {
       "id": "p003-m14",
@@ -2033,7 +2047,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "허리를 오른쪽으로 돌려 다시 동쪽을 향해. 오른쪽 어깨가 팔꿈치와 손목을 데려가 오른팔을 가슴 앞 橫掤으로 만들고, 왼팔꿈치는 조금 가라앉으며 왼손이 오른손목 앞 약 2cm까지 가까워져. 아직 중심은 왼발에 둬.",
+        "value": "허리를 오른쪽으로 돌려 다시 동쪽을 향해. 오른쪽 어깨가 팔꿈치와 손목을 데려가 오른팔을 가슴 앞 橫掤으로 만들고, 왼팔꿈치는 `↔體 原體位`로 조금 가라앉으며 왼손이 몸과 함께 오른손목 앞 약 2cm까지 가까워져. 아직 중심은 왼발에 둬.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -2088,7 +2102,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m16": {
       "id": "p003-m16",
@@ -2137,7 +2153,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "몸의 중심을 오른쪽 앞발로 옮겨 오른발을 坐實하고 弓步를 만들어. 전진을 시작할 때 오른손은 먼저 원래 공간을 지키고, 왼손이 몸과 함께 앞으로 와 오른손목에 닿은 뒤 두 팔이 한 구조로 앞으로 擠해.",
+        "value": "몸의 중심을 오른쪽 앞발로 옮겨 오른발을 坐實하고 弓步를 만들어. 전진을 시작할 때 오른손은 `📌空 原空位`로 먼저 공간에 남아 있고, 왼손이 몸과 함께 앞으로 와 오른손목에 닿은 뒤 두 팔이 한 구조로 앞으로 擠해.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -2192,7 +2208,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m17": {
       "id": "p003-m17",
@@ -2223,7 +2241,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "오른손은 원래 공간을 유지하고, 가슴을 약간 머금고 허리를 풀면서 왼손이 오른손목의 접촉에서 아주 조금 떨어지게 해. 큰 동작이 아니라 결합을 푸는 작은 전환이야.",
+        "value": "오른손은 `📌空 原空位`로 그대로 두고, 가슴을 약간 머금고 허리를 풀면서 왼손이 오른손목의 접촉에서 아주 조금 떨어지게 해. 큰 동작이 아니라 결합을 푸는 작은 전환이야.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -2264,7 +2282,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m18": {
       "id": "p003-m18",
@@ -2521,7 +2541,7 @@
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "몸을 다시 왼발로 물려 坐實해. 양손은 몸과 함께 뒤로 따라오면서 내려가 가슴 높이에서 평평하게 거둬. 팔꿈치는 둔각의 여유를 남겨.",
+        "value": "몸을 다시 왼발로 물려 坐實해. 원문은 이때 두 손을 `📌空 原空位`로 두고, 몸이 후퇴하는 동안 두 손이 가라앉아 가슴 높이로 평평하게 거둬진다고 설명해. 팔꿈치는 약 120도의 여유를 남겨.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
@@ -2535,7 +2555,7 @@
       "checks": [
         {
           "status": "known",
-          "value": "팔로 몸을 뒤로 끌지 말고 몸의 후퇴가 팔을 데려오게 해.",
+          "value": "몸이 물러날 때 두 손을 팔 힘으로 같이 뒤로 당기지 않아. `📌空` 관계를 두고 팔꿈치의 침강으로 평평하게 거둬지는지 봐.",
           "basis": "inference",
           "precision": "qualitative",
           "evidence": [
@@ -2576,7 +2596,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-spatial-reference"
+      ]
     },
     "p003-m21": {
       "id": "p003-m21",
@@ -11492,7 +11514,7 @@
       "content": {
         "explanation": {
           "status": "known",
-          "value": "이 21동에서는 ‘발이 도착하는 것’과 ‘중심이 도착하는 것’을 분리해서 보면 흐름이 선명해져. 虛한 발을 먼저 놓고, 그 다음 C가 들어가면서 實이 된다. 팔도 따로 모양을 만드는 게 아니라 허리·몸통의 회전과 중심 이동을 따라 구조가 바뀌어.",
+          "value": "이 21동에서는 ‘발이 도착하는 것’과 ‘중심이 도착하는 것’을 분리해서 보면 흐름이 선명해져. 虛한 발을 먼저 놓고, 그 다음 C가 들어가면서 實이 된다. 팔도 따로 모양을 만드는 게 아니라 허리·몸통의 회전과 중심 이동을 따라 구조가 바뀌어. 여기에 원문에서 반복되는 原空位·原體位를 함께 보면, 어떤 점은 공간 기준으로 남기고 어떤 부위는 몸과의 상대 관계를 유지하며 따라가는 교대가 攬雀尾의 중요한 학습 축으로 드러나.",
           "basis": "inference",
           "precision": "qualitative",
           "evidence": [
@@ -11500,9 +11522,14 @@
               "sourceId": "tsaifucius-yijian64",
               "locator": "攬雀尾 3-1~3-5",
               "support": "contextual"
+            },
+            {
+              "sourceId": "yijian-natural-eight-methods",
+              "locator": "一、原體位 / 二、原空位",
+              "support": "explicit"
             }
           ],
-          "note": "원문의 坐實·虛踏·身軀/腰身帶動 표현을 좌표·신체 물리 관점으로 묶은 프로젝트 해석이다."
+          "note": "원문의 坐實·虛踏·身軀/腰身帶動과 原空位·原體位 반복을 좌표·신체 물리 관점으로 묶은 프로젝트 해석이다."
         }
       }
     },
@@ -11735,11 +11762,23 @@
         "url": null,
         "note": "같은 날 기록한 내용을 한 메모로 묶었어. 預備式에서 몸이 내려가며 손이 상대적으로 올라가 보이는 관계, 太極起勢의 상승·하강과 팔꿈치-손 연동, 전신을 굳히지 않고 관절의 변화 가능성을 남기는 설명이 포함돼."
       }
+    },
+    "yijian-natural-eight-methods": {
+      "id": "yijian-natural-eight-methods",
+      "kind": "document",
+      "reviewStatus": "checked",
+      "location": "https://lotushilltaichi.pixnet.net/blog/posts/8010320731 — 中華易簡太極拳協會 張榮達〈自然運動八法〉(2003), 一、原體位 / 二、原空位",
+      "public": {
+        "id": "yijian-natural-eight-methods",
+        "title": "中華易簡太極拳協會 · 自然運動八法",
+        "url": "https://lotushilltaichi.pixnet.net/blog/posts/8010320731",
+        "note": "張榮達가 2003년에 정리한 自然運動八法 자료의 전재본이야. 原體位를 두 점의 상대 위치 유지, 原空位를 몸이 이동할 때 지정점과 지면 공간의 관계 유지로 설명해. eztaiji의 📌空 / ↔體 표기는 이 정의를 개인 연습 화면에 옮긴 보조 표기야."
+      }
     }
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "舊 預備式 4동작 후보는 복구하지 않는다. 현재 p001-m01은 2026-09-23 수련 메모에서 확인된 몸의 하강·손의 상대적 상승만으로 새로 구성했다. 발 좌표는 학습용 근사이며 미확인 뒤꿈치 동작은 넣지 않는다.",
+    "note": "舊 預備式 4동작 후보는 복구하지 않는다. 현재 p001-m01은 2026-09-23 수련 메모에서 확인된 몸의 하강·손의 상대적 상승만으로 새로 구성했다. 발 좌표는 학습용 근사이며 미확인 뒤꿈치 동작은 넣지 않는다. 2026-09-24에는 自然運動八法의 原空位·原體位 정의를 별도 출처로 대조하고, 攬雀尾에서 원문이 명시한 동작에만 📌空 / ↔體 학습 표기를 추가했다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": []
@@ -11783,6 +11822,50 @@
           {
             "sourceId": "sifu-2026-09-23",
             "locator": "2026-09-23 수련 · 전신 경직과 관절 변화 가능성",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
+    "gp-spatial-reference": {
+      "id": "gp-spatial-reference",
+      "title": "📌空 原空位 / ↔體 原體位",
+      "summary": {
+        "status": "known",
+        "value": "📌空 原空位는 몸이 이동·회전할 때 손·팔꿈치 같은 지정점의 바닥 평면상 공간 기준을 남기는 관계야. ↔體 原體位는 지정점끼리 또는 몸과 해당 부위 사이의 상대 위치를 유지하며 몸의 움직임을 따라가는 관계야.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "yijian-natural-eight-methods",
+            "locator": "一、原體位 / 二、原空位",
+            "support": "explicit"
+          }
+        ]
+      },
+      "explanation": {
+        "status": "known",
+        "value": "自然運動八法의 정의를 eztaiji의 2차원 학습 좌표에 옮기면, 📌空은 우선 바닥 평면의 공간 기준을 뜻해. 손을 힘으로 얼리는 뜻은 아니고, 원문처럼 그 기준점에서 축회전하거나 浮升·沉降이 결합될 수 있어. ↔體는 두 점의 상대 관계를 유지하는 것이므로 몸과 함께 이동·회전해도 그 관계가 유지되는지를 본다.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "yijian-natural-eight-methods",
+            "locator": "一、原體位 / 二、原空位",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문의 정의를 eztaiji의 바닥 2차원 좌표판과 Motion/State 분리에 맞춰 풀어쓴 프로젝트 해석이다."
+      },
+      "example": {
+        "status": "known",
+        "value": "攬雀尾 左掤 제1·2동에서는 오른손이 原空位이고 왼손이 原體位다. 右擠 제3동에서는 오른손이 먼저 原空位로 남아 있고, 몸을 따라 전진한 왼손이 오른손목에 닿은 뒤 두 팔이 함께 擠한다.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "攬雀尾 左掤 第1–2動 / 右擠 第3動",
             "support": "explicit"
           }
         ]
