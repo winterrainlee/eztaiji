@@ -10,10 +10,10 @@ const qishiEnd='p002-m06-end';
 
 function freeze(x){if(x&&typeof x==='object'){Object.freeze(x);Object.values(x).forEach(freeze);}return x;}
 
-test('current partial dataset has three starts and 27 numbered motions',()=>{
+test('current partial dataset has three starts and 28 numbered motions',()=>{
   const d=compileData(fresh());
-  assert.equal(d.navigation.order.length,30);
-  assert.equal(d.catalog.postures.p001.motionCount,0);
+  assert.equal(d.navigation.order.length,31);
+  assert.equal(d.catalog.postures.p001.motionCount,1);
   assert.equal(d.catalog.postures.p002.motionCount,6);
   assert.equal(d.catalog.postures.p003.motionCount,21);
 });
@@ -135,11 +135,13 @@ test('same-day training notes are represented by one source',()=>{
   assert.equal(d.sources['sifu-2026-09-23-nonrigidity'],undefined);
 });
 
-test('legacy preparation motions stay absent while the posture coordinate guide remains',()=>{
+test('only the verified preparation motion remains',()=>{
   const d=compileData(fresh());
   assert.equal(d.sources['legacy-preparation'],undefined);
-  for(const id of ['p001-m01','p001-m02','p001-m03','p001-m04'])assert.equal(source.motions[id],undefined);
+  assert.ok(source.motions['p001-m01']);
+  for(const id of ['p001-m02','p001-m03','p001-m04'])assert.equal(source.motions[id],undefined);
   assert.equal(d.states['p001-start'].feet.left.position.basis,'illustration');
+  assert.equal(d.views['p001-m01-view'].instruction.basis,'observation');
 });
 
 test('unsupported groups fail instead of being discarded',()=>{
