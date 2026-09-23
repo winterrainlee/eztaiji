@@ -38,73 +38,72 @@
 
 목표: 預備式 전용 데이터 구조를 전체 64자세에 사용할 수 있는 구조로 바꾼다.
 
+설계 기준은 [동작·상태 데이터 모델 0.1](data-model.md)이다. 기존의 한 프레임에 모든 정보를 넣는 개념도는 아래처럼 갱신한다. 이번 문서화와 설계 시험은 실제 데이터 변환이나 UI 구현의 완료를 뜻하지 않는다.
+
 ### 필요한 정보
 
-각 프레임은 가능한 범위에서 다음을 가진다.
+가능한 범위에서 다음 정보를 서로 구분해 기록한다.
 
-- 왼발·오른발 위치 `(x, y)`
-- 각 발의 `● 實 / ○ 虛`
-- 발끝 방향
-- 발 접촉 상태: `Toe`, `Heel`, `Heel ↑`, `Heel ↓`
-- 중심 `C`의 위치 또는 이동
-- 몸 방향 `B`와 회전량 `ΔB`
-- 동작 설명
-- 왜 그렇게 움직이는지에 대한 원리
-- 자기 점검 항목
-- 음양 관계
-- 전투 가정
-- 근거와 확실도
+- 상태에는 왼발·오른발 위치 `(x, y)`, 발별 허실·지지 역할, 발끝 방향과 현재 접촉을 담는다.
+- 상태에는 중심 `C`의 점 또는 질적 영역, 몸 방향 `B`, 필요한 팔의 상대적 배치를 담는다.
+- 동작에는 뒤꿈치 들기·내리기, 중심 이동, 회전 `ΔB` 같은 변화와 확인된 선후 관계를 담는다.
+- 안내에는 동작 설명과 자기 점검 항목을 담는다.
+- 해석에는 원리·음양·전투 가정과 적용 범위를 담는다.
+- 각 정보에는 근거 유형, 위치, 근사 여부와 미확인을 구분해 기록한다.
 
 ### 개념 구조
 
 ```text
-posture
-  name
-  startState
-  motions[]
+Dataset
+  sections -> posture occurrences -> numbered motions
+  coordinateFrames
+  states
+  interpretations
+  sources
 
-motion
-  number
-  title
+PostureOccurrence
+  id, name
+  start: initial / previousEnd
+  motionIds[]
+  introduction
 
-  feet
-    left
-      x, y
-      state
-      direction
-      contact
-    right
-      x, y
-      state
-      direction
-      contact
+Motion
+  id, number
+  endStateId
+  checkpointStateIds[]
+  events[], eventRelations[]
+  instruction, checks[]
 
+State
+  id, coordinateFrameId
+  feet.left / feet.right
   center
-    x, y
-    movement
-
   body
-    direction
-    delta
+  arms
 
-  instruction
-  principle
-  checks
+Interpretation
+  category: principle / yinYang / application
+  scope: motion / group / posture
+  availability
+  content / reason
 
-  yinYang[]
-  application
-
-  evidence[]
+Claim
+  value + basis + precision + evidence
+  또는 unknown / not_applicable
 ```
 
 ### 체크
 
-- [ ] 현재 `lx / lt / rt / cx / shi` 구조의 한계를 정리한다.
-- [ ] 새 프레임 스키마를 문서로 정의한다.
-- [ ] 모르는 값은 `null` 또는 미기록으로 남기는 규칙을 정한다.
-- [ ] 관찰값과 추론값을 구분하는 필드를 정한다.
+- [x] 현재 `lx / lt / rt / cx / shi` 구조의 한계를 정리한다.
+- [x] 새 프레임 스키마를 문서로 정의한다. — `data-model.md` 0.1에 상태·동작·해석을 분리했다.
+- [x] 모르는 값과 미등록 참조를 구분하는 규칙을 정한다. — 물리 필드는 Claim의 미확인으로, 미등록 결과 참조는 `null`로 표시한다.
+- [x] 관찰값과 추론값을 구분하는 필드를 정한다. — 필드별 근거와 근사 여부를 기록한다.
+- [x] 시작 상태·중간 상태·부분 미등록과 UI의 연결 규칙을 정의한다.
+- [x] 가상 데이터로 핵심 설계 계약을 시험한다. — 로컬 Node.js에서 20개 시험을 통과했다. 전체 스키마·실제 권가·브라우저 검증은 아니다.
+- [ ] 좌표계 문서의 고정 축, 발 기준점, 상태와 사건의 구분을 새 설계와 맞춘다.
+- [ ] 실행 가능한 전체 데이터 스키마와 검증기를 작성한다.
 - [ ] 기존 預備式 4동작을 새 구조로 변환한다.
-- [ ] 기존 화면이 새 구조에서도 동일하게 렌더링되는지 확인한다.
+- [ ] 기존 화면이 새 구조에서도 정보를 보존하는지 확인한다. — 달라지는 표현은 이유를 기록한다.
 
 ---
 
@@ -127,6 +126,8 @@ motion
 - `收 ↔ 放`
 - `상대의 進 ↔ 나의 化`
 - `한쪽 공간을 비움 ↔ 다른 쪽 공간을 차지함`
+
+위 예시에는 전통적 대립쌍과 프로젝트의 설명용 대비가 함께 있다. 작성 원칙에서 둘을 구분하며, 모든 대비를 표준 음양 분류로 단정하지 않는다.
 
 ### 체크
 
@@ -151,7 +152,10 @@ motion
 그 힘에 대해 내 몸 전체가 어떻게 반응하는가?
 
 결과
-힘·중심·공간의 관계가 어떻게 바뀌는가?
+힘·중심·공간의 관계가 어떻게 바뀔 수 있는가?
+
+한계
+어떤 전제에서 가능한 설명이며 무엇이 아직 확인되지 않았는가?
 ```
 
 ### 원칙
@@ -164,7 +168,7 @@ motion
 ### 범위
 
 - `motion`: 한 동작 자체에서 의미가 충분히 드러남.
-- `group`: 左掤 등 여러 동작 묶음에 걸쳐 의미가 완성됨.
+- `group`: 左掤 등 여러 동작 묶음에 걸쳐 의미가 완성됨. 일부에만 해당하면 대상 동작 ID를 명시한다.
 - `posture`: 한 자세 전체를 봐야 의미를 설명할 수 있음.
 
 ### 체크
@@ -317,6 +321,6 @@ motion
 
 ## 현재 다음 작업
 
-**2단계: 범용 동작·상태 데이터 구조 설계**
+**2단계 후반: 좌표계 정합성 및 실행 스키마**
 
-다음 작업에서는 현재 `lx / lt / rt / cx / shi` 구조의 한계를 정리하고, 전체 64자세에 사용할 범용 프레임 스키마를 문서로 정의한다.
+`data-model.md` 8절에 정리한 고정 축·발 기준점·상태와 사건 구분을 좌표계 문서에 반영한다. 그다음 실행 가능한 전체 스키마와 검증기를 만들고, 기존 예비식 네 동작을 새 구조로 변환한다. 설계 시험 통과를 실제 데이터·브라우저 검증 완료로 세지 않는다.

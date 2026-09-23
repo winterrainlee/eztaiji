@@ -16,3 +16,7 @@
 - [모바일 연습 화면](docs/mobile-layout.md)
 - [단·자세·동작 구조와 출처](docs/routine-navigation.md)
 - [확장 계획 및 체크리스트](docs/expansion-plan.md)
+- [동작·상태 데이터 모델 0.1](docs/data-model.md)
+- [데이터 모델 설계 시험](docs/design-tests/model-contract.test.mjs)
+
+새 데이터 모델과 시작 상태 탐색은 설계 단계이며, 현재 배포 UI에 아직 적용하지 않았습니다. 가상 데이터의 설계 시험은 `node docs/design-tests/model-contract.test.mjs`로 실행합니다. 실제 권가 내용이나 브라우저 화면을 검증하는 시험은 아닙니다.
