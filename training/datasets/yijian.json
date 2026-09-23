@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "lanquewei-arm-direction-003",
+  "revision": "lanquewei-relative-arm-001",
   "coverage": {
     "kind": "partial",
     "note": "預備式 4동작, 太極起勢 6동작, 攬雀尾 21동작을 시작 상태부터 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
@@ -5860,7 +5860,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -5875,7 +5875,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -5892,7 +5892,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -5907,7 +5907,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "이 동작에서 오른팔 자체의 변화는 매우 작아, 구조 방향은 기준 정면으로 유지한다. 몸 회전에 따라 생기는 세계좌표상의 변화는 별도 규칙으로 다룬다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -6132,11 +6132,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -6147,7 +6147,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -6164,11 +6164,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "back-left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -6179,7 +6179,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -6402,11 +6402,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -6417,7 +6417,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -6434,11 +6434,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "back-left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -6449,7 +6449,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -6674,11 +6674,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -6689,7 +6689,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -6706,11 +6706,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "back-left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -6721,7 +6721,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -6944,7 +6944,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -6959,7 +6959,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -6976,7 +6976,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -6991,7 +6991,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -7216,7 +7216,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -7231,7 +7231,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -7248,7 +7248,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -7263,7 +7263,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -7488,11 +7488,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "back-right"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -7503,7 +7503,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -7520,11 +7520,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -7535,7 +7535,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -7761,11 +7761,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front-right"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -7776,7 +7776,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -7793,11 +7793,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -7808,7 +7808,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -8031,11 +8031,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front-right"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8046,7 +8046,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -8063,11 +8063,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8078,7 +8078,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -8301,11 +8301,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front-right"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8316,7 +8316,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -8333,11 +8333,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front-right"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8348,7 +8348,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -8573,11 +8573,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8588,7 +8588,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -8605,11 +8605,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8620,7 +8620,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -8845,11 +8845,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front-left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8860,7 +8860,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -8877,11 +8877,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-right"
+              "sector": "left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -8892,7 +8892,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -9116,11 +9116,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -9131,7 +9131,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -9148,11 +9148,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "front-left"
+              "sector": "left"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -9163,7 +9163,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -9388,7 +9388,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -9403,7 +9403,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -9420,7 +9420,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -9435,7 +9435,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -9660,11 +9660,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -9675,7 +9675,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -9692,11 +9692,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -9707,7 +9707,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -9931,11 +9931,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -9946,7 +9946,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -9963,11 +9963,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -9978,7 +9978,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -10203,11 +10203,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -10218,7 +10218,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -10235,11 +10235,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -10250,7 +10250,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -10474,11 +10474,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -10489,7 +10489,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -10506,11 +10506,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -10521,7 +10521,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -10745,11 +10745,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -10760,7 +10760,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -10777,11 +10777,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -10792,7 +10792,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -11016,11 +11016,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -11031,7 +11031,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -11048,11 +11048,11 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
-              "sector": "right"
+              "sector": "front"
             },
             "basis": "inference",
             "precision": "qualitative",
@@ -11063,7 +11063,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -11288,7 +11288,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -11303,7 +11303,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         },
         "right": {
@@ -11320,7 +11320,7 @@
               }
             ]
           },
-          "direction": {
+          "relativeDirection": {
             "status": "known",
             "value": {
               "kind": "sector",
@@ -11335,7 +11335,7 @@
                 "support": "contextual"
               }
             ],
-            "note": "팔의 손바닥 면이나 순간 이동 방향이 아니라, 동작 종료 시 팔 구조를 바닥 평면에 투영했을 때의 주방향을 8방향으로 근사한 학습용 표시다."
+            "note": "몸통 방향 B에 대한 팔 구조의 상대 주방향이다. 빨간 화살표의 좌표판 방향은 이 값과 B를 합성해 계산하며, 몸이 팔을 데리고 회전하는 경우 relativeDirection은 유지될 수 있다. 손바닥 면·순간 이동 경로·힘 벡터를 뜻하지 않는다."
           }
         }
       }
@@ -12723,7 +12723,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "2026-09-23 攬雀尾 팔 방향 규칙 검토 중. 左掤 1동 오른팔은 실제 팔 자체의 변화가 작으므로 front로 되돌렸다. 앞으로 몸 회전에 따라 팔이 함께 도는 경우에는 팔 자체의 상대 방향과 몸 회전에 따른 세계좌표 변화를 분리해 다룬다.",
+    "note": "2026-09-23 좌표판 원칙을 C·발·팔의 최종 자세 중심으로 정리했다. 攬雀尾 21동의 팔 방향은 고정 좌표계 절대값 대신 body.heading에 대한 relativeDirection으로 저장한다. 화면의 빨간 팔 화살표는 B와 relativeDirection을 합성해 계산하며, 몸통·고관절·어깨·팔꿈치의 연결 과정은 configuration·events·instruction 등 데이터에 남긴다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [
