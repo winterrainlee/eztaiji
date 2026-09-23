@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "0.1.0",
+  "profile": "preparation-pilot",
+  "id": "yijian",
+  "revision": "preparation-001",
+  "coverage": {"kind":"partial","note":"예비식 1자세·4동작만 옮긴 시험용 부분 데이터다. 전체 권가의 완성을 뜻하지 않는다."},
+  "coordinateFrames": {
+    "yijian-front": {
+      "id": "yijian-front",
+      "origin": "太極起勢 종료 시점 왼발의 학습용 기준점이다. 예비식에서는 같은 고정 기준을 거슬러 사용한다.",
+      "axes": {"x":"initial-right","y":"initial-front"},
+      "unit": "initial-stance-width",
+      "footReference": "foot-shape-center-projection"
+    }
+  },
+  "sections": [{"id":"s01","name":"1단","postureIds":["p001"]}],
+  "postures": {
+    "p001": {
+      "id": "p001",
+      "number": 1,
+      "name": "預備式",
+      "start": {"kind":"initial","stateId":"p001-start"},
+      "motionIds": ["p001-m01","p001-m02","p001-m03","p001-m04"],
+      "introduction": {"status":"known","value":"권가 시작 전 상태야. 1동작이 끝난 상태와 구분하며, 확인되지 않은 좌표·허실·접촉은 비워뒀어.","basis":"illustration","precision":"qualitative","evidence":[],"note":"프로젝트의 시작 상태 설명이다. 초기 자세의 신체 정보를 추정하지 않았다."}
+    }
+  },
+  "motions": {
+    "p001-m01": {
+      "id": "p001-m01",
+      "number": 1,
+      "title": "왼발을 비워, 움직일 준비",
+      "endStateId": "p001-m01-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m01-e1",
+          "target": "leftFoot",
+          "kind": "heel_raise",
+          "description": {"status":"known","value":"왼발 뒤꿈치를 살짝 든다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        {
+          "id": "p001-m01-e2",
+          "target": "body",
+          "kind": "body_lower",
+          "description": {"status":"known","value":"오른다리로 받치며 가볍게 가라앉는다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {"status":"known","value":"오른다리로 몸을 받치며 가볍게 가라앉아. 왼발 뒤꿈치를 살짝 들어 발끝만 닿게 둬. 팔은 자연스럽게 내려놓아.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+      "checks": [
+        {"status":"known","value":"왼발 뒤꿈치를 들려고 몸을 기울이지 않아.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        {"status":"known","value":"어깨를 올리지 말고 편안히 숨 쉬어.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      ]
+    },
+    "p001-m02": {
+      "id": "p001-m02",
+      "number": 2,
+      "title": "빈 왼발을 옆으로 열어",
+      "endStateId": "p001-m02-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m02-e1",
+          "target": "leftFoot",
+          "kind": "foot_move",
+          "description": {"status":"known","value":"빈 왼발을 왼쪽으로 옮긴다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {"status":"known","value":"오른발에 지지를 유지하며 왼발을 왼쪽으로 옮겨. 어깨너비 자리에서 발끝을 비스듬히 가볍게 대고, 양손도 조금 열어.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+      "checks": [
+        {"status":"known","value":"중심이 왼발을 따라 급히 쏠리지 않는지 봐.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        {"status":"known","value":"발 간격은 사부님이 지도한 어깨너비로 맞춰.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      ]
+    },
+    "p001-m03": {
+      "id": "p001-m03",
+      "number": 3,
+      "title": "왼발을 정렬하며 지지를 옮겨",
+      "endStateId": "p001-m03-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m03-e1",
+          "target": "leftFoot",
+          "kind": "foot_turn",
+          "description": {"status":"known","value":"왼발을 정면으로 정렬한다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        {
+          "id": "p001-m03-e2",
+          "target": "leftFoot",
+          "kind": "heel_lower",
+          "description": {"status":"known","value":"왼발 뒤꿈치를 내린다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        {
+          "id": "p001-m03-e3",
+          "target": "center",
+          "kind": "weight_shift",
+          "description": {"status":"known","value":"왼다리로 지지를 옮긴다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {"status":"known","value":"왼발을 정면으로 정렬하고 뒤꿈치를 내려놓으며 왼다리에 지지를 옮겨. 양팔은 다리 앞 바깥쪽으로 돌아오고, 오른발은 가벼워져.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+      "checks": [
+        {"status":"known","value":"왼무릎이 발끝 방향에서 크게 어긋나지 않게 해.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        {"status":"known","value":"오른발을 돌리기 전에 어느 다리가 지지하는지 느껴봐.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      ]
+    },
+    "p001-m04": {
+      "id": "p001-m04",
+      "number": 4,
+      "title": "오른발을 나란히 정렬해",
+      "endStateId": "p001-m04-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m04-e1",
+          "target": "rightFoot",
+          "kind": "foot_turn",
+          "description": {"status":"known","value":"왼다리의 지지를 유지하며 오른발을 나란히 정렬한다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {"status":"known","value":"왼다리의 지지를 유지하며 오른발 끝을 안쪽으로 돌려. 두 발을 정면으로 나란히 두고, 어깨를 풀어 손이 다리 앞 바깥쪽에 내려오게 해.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+      "checks": [
+        {"status":"known","value":"두 발이 나란해져도 지지는 왼다리에 남겨둬.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        {"status":"known","value":"오른발을 억지로 비틀거나 어깨를 누르지 않아.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      ]
+    }
+  },
+  "states": {
+    "p001-start": {
+      "id": "p001-start",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {"status":"unknown","reason":"unverified"},
+          "heading": {"status":"unknown","reason":"unverified"},
+          "supportRole": {"status":"unknown","reason":"unverified"},
+          "groundContact": {"status":"unknown","reason":"unverified"},
+          "heelRaised": {"status":"unknown","reason":"unverified"}
+        },
+        "right": {
+          "position": {"status":"unknown","reason":"unverified"},
+          "heading": {"status":"unknown","reason":"unverified"},
+          "supportRole": {"status":"unknown","reason":"unverified"},
+          "groundContact": {"status":"unknown","reason":"unverified"},
+          "heelRaised": {"status":"unknown","reason":"unverified"}
+        }
+      },
+      "center": {"location":{"status":"unknown","reason":"unverified"}},
+      "body": {
+        "heading": {"status":"unknown","reason":"unverified"},
+        "organization": {"status":"unknown","reason":"unverified"}
+      },
+      "arms": {
+        "left": {"configuration":{"status":"unknown","reason":"unverified"}},
+        "right": {"configuration":{"status":"unknown","reason":"unverified"}}
+      }
+    },
+    "p001-m01-end": {
+      "id": "p001-m01-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {"status":"known","value":{"x":0.65,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front-left"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"xu","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"기존 설명은 왼발 뒤꿈치 들기와 발끝 접촉을 말한다. 원문 재확인 전이므로 확정 접촉 기호는 생성하지 않는다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}]}
+        },
+        "right": {
+          "position": {"status":"known","value":{"x":1,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front-right"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"shi","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"오른발의 접촉 부위를 원문에서 재확인하지 못했다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}]}
+        }
+      },
+      "center": {
+        "location": {"status":"known","value":{"kind":"region","anchor":"rightFoot"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 C의 발 쪽만 보존. cx·화면 오프셋은 좌표로 쓰지 않음."}
+      },
+      "body": {
+        "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 B 정면 도해. 실제 회전량 0의 근거 아님."},
+        "organization": {"status":"unknown","reason":"unverified"}
+      },
+      "arms": {
+        "left": {
+          "configuration": {"status":"known","value":"팔은 자연스럽게 내려놓는다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        "right": {
+          "configuration": {"status":"known","value":"팔은 자연스럽게 내려놓는다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      }
+    },
+    "p001-m02-end": {
+      "id": "p001-m02-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {"status":"known","value":{"x":0,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front-left"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"xu","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"기존 설명은 왼발을 옮겨 발끝을 가볍게 댄다고 한다. 원문 재확인 전이다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}]}
+        },
+        "right": {
+          "position": {"status":"known","value":{"x":1,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front-right"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"shi","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"오른발의 접촉 부위를 원문에서 재확인하지 못했다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}]}
+        }
+      },
+      "center": {
+        "location": {"status":"known","value":{"kind":"region","anchor":"rightFoot"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 C의 발 쪽만 보존. cx·화면 오프셋은 좌표로 쓰지 않음."}
+      },
+      "body": {
+        "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 B 정면 도해. 실제 회전량 0의 근거 아님."},
+        "organization": {"status":"unknown","reason":"unverified"}
+      },
+      "arms": {
+        "left": {
+          "configuration": {"status":"known","value":"양손을 조금 연다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        "right": {
+          "configuration": {"status":"known","value":"양손을 조금 연다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      }
+    },
+    "p001-m03-end": {
+      "id": "p001-m03-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {"status":"known","value":{"x":0,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"shi","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"기존 설명은 왼발 뒤꿈치를 내린다고 한다. 뒤꿈치부터 새로 착지한 것으로 해석하지 않는다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}]}
+        },
+        "right": {
+          "position": {"status":"known","value":{"x":1,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front-right"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"xu","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"오른발의 접촉 부위를 원문에서 재확인하지 못했다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}]}
+        }
+      },
+      "center": {
+        "location": {"status":"known","value":{"kind":"region","anchor":"leftFoot"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 C의 발 쪽만 보존. cx·화면 오프셋은 좌표로 쓰지 않음."}
+      },
+      "body": {
+        "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 B 정면 도해. 실제 회전량 0의 근거 아님."},
+        "organization": {"status":"unknown","reason":"unverified"}
+      },
+      "arms": {
+        "left": {
+          "configuration": {"status":"known","value":"양팔이 다리 앞 바깥쪽으로 돌아온다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        "right": {
+          "configuration": {"status":"known","value":"양팔이 다리 앞 바깥쪽으로 돌아온다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      }
+    },
+    "p001-m04-end": {
+      "id": "p001-m04-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {"status":"known","value":{"x":0,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"shi","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"왼발의 접촉 상태를 원문에서 재확인하지 못했다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}]}
+        },
+        "right": {
+          "position": {"status":"known","value":{"x":1,"y":0},"basis":"illustration","precision":"approximate","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 도해를 새 기준점의 설명용 배치로 옮긴 근사값. 실측 아님."},
+          "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 화살표의 방향 범주. 실측 각도 아님."},
+          "supportRole": {"status":"known","value":"xu","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+          "groundContact": {"status":"unknown","reason":"unverified","note":"오른발의 접촉 부위를 원문에서 재확인하지 못했다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}]},
+          "heelRaised": {"status":"unknown","reason":"unverified","note":"뒤꿈치 상태 미확인. 들기·내리기 사건과 구분한다.","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}]}
+        }
+      },
+      "center": {
+        "location": {"status":"known","value":{"kind":"region","anchor":"leftFoot"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 C의 발 쪽만 보존. cx·화면 오프셋은 좌표로 쓰지 않음."}
+      },
+      "body": {
+        "heading": {"status":"known","value":{"kind":"sector","sector":"front"},"basis":"illustration","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 B 정면 도해. 실제 회전량 0의 근거 아님."},
+        "organization": {"status":"unknown","reason":"unverified"}
+      },
+      "arms": {
+        "left": {
+          "configuration": {"status":"known","value":"어깨를 풀고 손을 다리 앞 바깥쪽에 둔다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        },
+        "right": {
+          "configuration": {"status":"known","value":"어깨를 풀고 손을 다리 앞 바깥쪽에 둔다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+        }
+      }
+    }
+  },
+  "groups": {},
+  "interpretations": {
+    "p001-m01-principle": {
+      "id": "p001-m01-principle",
+      "category": "principle",
+      "scope": {"kind":"motion","motionId":"p001-m01"},
+      "availability": "present",
+      "content": {
+        "explanation": {"status":"known","value":"왼발을 옆으로 보내려면 먼저 그 발의 지지를 덜어내야 해. 발끝이 바닥에 닿아 있어도 주된 지지는 오른다리가 맡아.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m01-yinyang": {
+      "id": "p001-m01-yinyang",
+      "category": "yinYang",
+      "scope": {"kind":"motion","motionId":"p001-m01"},
+      "availability": "present",
+      "content": {
+        "terms": ["虛","實"],
+        "first": {"status":"known","value":"왼발을 비워 움직일 여지를 둔다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "second": {"status":"known","value":"오른다리가 몸을 받친다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "relation": {"status":"known","value":"기존 설명의 지지·비움 관계를 음양으로 읽은 프로젝트 해석이다. 좌우에 음양을 고정한 분류가 아니다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 1동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m02-principle": {
+      "id": "p001-m02-principle",
+      "category": "principle",
+      "scope": {"kind":"motion","motionId":"p001-m02"},
+      "availability": "present",
+      "content": {
+        "explanation": {"status":"known","value":"발이 먼저 새 자리에 도착하고 중심이 뒤따라가. 왼발이 멀어졌다고 바로 체중을 싣는 건 아니야.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m02-yinyang": {
+      "id": "p001-m02-yinyang",
+      "category": "yinYang",
+      "scope": {"kind":"motion","motionId":"p001-m02"},
+      "availability": "present",
+      "content": {
+        "terms": ["虛","實"],
+        "first": {"status":"known","value":"왼발을 비워 움직일 여지를 둔다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "second": {"status":"known","value":"오른다리가 몸을 받친다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "relation": {"status":"known","value":"기존 설명의 지지·비움 관계를 음양으로 읽은 프로젝트 해석이다. 좌우에 음양을 고정한 분류가 아니다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 2동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m03-principle": {
+      "id": "p001-m03-principle",
+      "category": "principle",
+      "scope": {"kind":"motion","motionId":"p001-m03"},
+      "availability": "present",
+      "content": {
+        "explanation": {"status":"known","value":"이제 왼발이 몸을 받쳐. 오른발을 비워두면 다음 동작에서 발끝을 안쪽으로 정렬하기 쉬워져.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m03-yinyang": {
+      "id": "p001-m03-yinyang",
+      "category": "yinYang",
+      "scope": {"kind":"motion","motionId":"p001-m03"},
+      "availability": "present",
+      "content": {
+        "terms": ["虛","實"],
+        "first": {"status":"known","value":"오른발이 정렬할 여지를 갖는다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "second": {"status":"known","value":"왼다리가 몸을 받친다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "relation": {"status":"known","value":"기존 설명의 지지·비움 관계를 음양으로 읽은 프로젝트 해석이다. 좌우에 음양을 고정한 분류가 아니다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 3동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m04-principle": {
+      "id": "p001-m04-principle",
+      "category": "principle",
+      "scope": {"kind":"motion","motionId":"p001-m04"},
+      "availability": "present",
+      "content": {
+        "explanation": {"status":"known","value":"오른발은 정렬을 돕는 가벼운 발이야. 오른발에 체중이 많이 남아 있으면 돌릴 때 무릎까지 비틀기 쉬워.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-m04-yinyang": {
+      "id": "p001-m04-yinyang",
+      "category": "yinYang",
+      "scope": {"kind":"motion","motionId":"p001-m04"},
+      "availability": "present",
+      "content": {
+        "terms": ["虛","實"],
+        "first": {"status":"known","value":"오른발이 정렬할 여지를 갖는다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "second": {"status":"known","value":"왼다리가 몸을 받친다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."},
+        "relation": {"status":"known","value":"기존 설명의 지지·비움 관계를 음양으로 읽은 프로젝트 해석이다. 좌우에 음양을 고정한 분류가 아니다.","basis":"inference","precision":"qualitative","evidence":[{"sourceId":"legacy-preparation","locator":"預備式 4동작","support":"contextual"}],"note":"기존 설명의 이전 후보. 원문 재대조 전."}
+      }
+    },
+    "p001-application": {
+      "id": "p001-application",
+      "category": "application",
+      "scope": {"kind":"posture","postureId":"p001"},
+      "availability": "pending",
+      "reason": "예비식 전체의 준비 구조라는 관점은 검토 중이다. 이번에는 독립 전투 용법이나 상대 상황을 새로 만들어 넣지 않는다."
+    }
+  },
+  "sources": {
+    "legacy-preparation": {
+      "id": "legacy-preparation",
+      "kind": "legacy",
+      "reviewStatus": "not_primary",
+      "location": "index.html @ ba53fbbb5d562efeb36bc96707baebf6814acd3d; preparation[0..3], draw()",
+      "public": {
+        "id": "legacy-preparation",
+        "title": "eztaiji 기존 예비식 4동작과 학습용 도해",
+        "url": "https://github.com/winterrainlee/eztaiji/blob/ba53fbbb5d562efeb36bc96707baebf6814acd3d/index.html",
+        "note": "이전 웹앱의 설명을 옮겼다. 기존에 참고한 외부 권보 원문은 이번에 다시 열지 못했으며, 접촉 기호의 직접 근거로 사용하지 않는다."
+      }
+    }
+  },
+  "authoring": {
+    "reviewStatus": "source-recheck-pending",
+    "note": "기존 문구를 보존하는 이전 후보이며 사부님 확인 완료본이 아니다. 외부 원문 접근 제한으로 접촉 정보의 직접 근거를 재확인하지 못했다.",
+    "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
+    "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
+    "legacyRendering": [
+      {"motionId":"p001-m01","lx":0.65,"cx":0.92,"lt":-1,"rt":1,"shi":"R"},
+      {"motionId":"p001-m02","lx":0,"cx":0.87,"lt":-1,"rt":1,"shi":"R"},
+      {"motionId":"p001-m03","lx":0,"cx":0.13,"lt":0,"rt":1,"shi":"L"},
+      {"motionId":"p001-m04","lx":0,"cx":0.13,"lt":0,"rt":0,"shi":"L"}
+    ]
+  }
+}
