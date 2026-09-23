@@ -2,10 +2,10 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "qishi-002",
+  "revision": "preparation-start-003",
   "coverage": {
     "kind": "partial",
-    "note": "預備式 4동작과 太極起勢 6동작을 시작 상태까지 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
+    "note": "預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
   },
   "coordinateFrames": {
     "yijian-front": {
@@ -46,11 +46,16 @@
       ],
       "introduction": {
         "status": "known",
-        "value": "권가 시작 전 상태야. 1동작이 끝난 상태와 구분하며, 확인되지 않은 좌표·허실·접촉은 비워뒀어.",
-        "basis": "illustration",
+        "value": "양 발꿈치를 붙이고 발끝을 바깥으로 연 外八字로 곧게 서. 오른발을 實로 두고 왼다리는 풀어 虛로 두며, 팔은 자연스럽게 내려 중지를 바지선 가까이에 두고 손바닥은 안쪽을 향하게 해.",
+        "basis": "source",
         "precision": "qualitative",
-        "evidence": [],
-        "note": "프로젝트의 시작 상태 설명이다. 초기 자세의 신체 정보를 추정하지 않았다."
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+            "support": "explicit"
+          }
+        ]
       }
     },
     "p002": {
@@ -1061,76 +1066,238 @@
       "feet": {
         "left": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": {
+              "x": 0.65,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "기존 1동작 도해와 이어지도록 잡은 학습용 근사 위치다. 발꿈치가 붙어 선다는 원문을 정확한 실측 좌표로 바꾼 값은 아니다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-left"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ],
+            "note": "外八字를 화면의 방향 범주로 표현했다. 정확한 각도값이 아니다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": "xu",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ]
           },
           "groundContact": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "발꿈치를 붙이고 서 있는 시작 자세를 바탕으로 양발이 바닥에 닿아 있다고 정리했다."
           },
           "heelRaised": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": false,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作",
+                "support": "explicit"
+              }
+            ],
+            "note": "두 발꿈치를 붙여 선다고 명시되어 있어 시작 상태에서는 들리지 않은 것으로 기록했다."
           }
         },
         "right": {
           "position": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "기존 1동작 도해와 이어지도록 잡은 학습용 근사 위치다."
           },
           "heading": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ],
+            "note": "外八字를 화면의 방향 범주로 표현했다. 정확한 각도값이 아니다."
           },
           "supportRole": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": "shi",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ]
           },
           "groundContact": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "contextual"
+              }
+            ],
+            "note": "발꿈치를 붙이고 서 있는 시작 자세를 바탕으로 양발이 바닥에 닿아 있다고 정리했다."
           },
           "heelRaised": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": false,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作",
+                "support": "explicit"
+              }
+            ],
+            "note": "두 발꿈치를 붙여 선다고 명시되어 있어 시작 상태에서는 들리지 않은 것으로 기록했다."
           }
         }
       },
       "center": {
         "location": {
-          "status": "unknown",
-          "reason": "unverified"
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "第一式 預備式 站姿",
+              "support": "contextual"
+            }
+          ],
+          "note": "오른발이 實이라는 기록을 중심의 질적 영역으로 옮긴 프로젝트 해석이다."
         }
       },
       "body": {
         "heading": {
-          "status": "unknown",
-          "reason": "unverified"
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+              "support": "explicit"
+            }
+          ]
         },
         "organization": {
-          "status": "unknown",
-          "reason": "unverified"
+          "status": "known",
+          "value": "正身直立·尾閭中正·沉肩垂肘·含胸拔背를 기본으로 전신을 풀어 선다.",
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 準備動作",
+              "support": "explicit"
+            }
+          ]
         }
       },
       "arms": {
         "left": {
           "configuration": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": "팔은 자연스럽게 아래로 늘어뜨리고 팔꿈치는 약간 굽혀, 중지를 바지선 가까이에 두며 손바닥은 안쪽을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ]
           }
         },
         "right": {
           "configuration": {
-            "status": "unknown",
-            "reason": "unverified"
+            "status": "known",
+            "value": "팔은 자연스럽게 아래로 늘어뜨리고 팔꿈치는 약간 굽혀, 중지를 바지선 가까이에 두며 손바닥은 안쪽을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+                "support": "explicit"
+              }
+            ]
           }
         }
       }
@@ -4401,13 +4568,13 @@
         "id": "tsaifucius-yijian64",
         "title": "Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述",
         "url": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
-        "note": "太極起勢 6동작의 세부 순서와 原空位·鬆肘·손바닥 방향 설명을 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해."
+        "note": "預備勢의 준비 자세와 太極起勢 1–6동의 순서·原空位·鬆肘·손바닥 방향 설명을 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해."
       }
     }
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "預備式은 기존 이전 후보를 유지한다. 太極起勢 1–6동은 2026-09-23 접근 가능한 Tsaifucius 1–64식 기록을 직접 확인해 수집했으며, 발·중심 유지와 음양·무술 의미는 추론으로 구분했다.",
+    "note": "預備式 시작 상태는 2026-09-23 접근 가능한 Tsaifucius 1–64식 기록의 準備動作·站姿를 바탕으로 채웠다. 발 좌표는 기존 도해와 이어지는 학습용 근사이며, 중심 위치와 바닥 접촉은 원문에서 파생한 추론으로 구분했다. 太極起勢 1–6동도 같은 기록을 직접 확인해 수집했다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [

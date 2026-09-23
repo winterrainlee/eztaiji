@@ -30,7 +30,11 @@
     }
   });
   const states={
-    'p001-start':emptyState('p001-start'),
+    'p001-start':state('p001-start',
+      foot(pos(.65,0),heading('front-left'),support('xu'),contact('sole'),false),
+      foot(pos(1,0),heading('front-right'),support('shi'),contact('sole'),false),
+      region('rightFoot')),
+
     'p001-m01-end':state('p001-m01-end',foot(pos(.65,0),heading('front-left'),support('xu'),contact('toe'),true),foot(pos(1,0),heading('front-right'),support('shi')),region('rightFoot')),
     'p001-m02-end':state('p001-m02-end',foot(pos(0,0),heading('front-left'),support('xu'),contact('toe')),foot(pos(1,0),heading('front-right'),support('shi')),region('rightFoot')),
     'p001-m03-end':state('p001-m03-end',foot(pos(0,0),heading('front'),support('shi'),contact('sole'),false),foot(pos(1,0),heading('front-right'),support('xu')),region('leftFoot')),
@@ -79,11 +83,11 @@
       postures[pid]={id:pid,number:pose.id,name:pose.name,motionCount:pose.count,startViewId:startId,motionViewIds};
       const startState=pose.id===1?'p001-start':pose.id===2?'p001-m04-end':null;
       const startInstruction=pose.id===1
-        ? known('권가 시작 전 상태야. 1동작이 끝난 상태와 구분하며, 확인되지 않은 좌표·허실·접촉은 비워뒀어.','illustration','qualitative','프로젝트의 시작 상태 설명이야.')
+        ? known('양 발꿈치를 붙이고 발끝을 바깥으로 연 外八字로 곧게 서. 오른발을 實로 두고 왼다리는 풀어 虛로 두며, 팔은 자연스럽게 내려 중지를 바지선 가까이에 두고 손바닥은 안쪽을 향하게 해.','source','qualitative','접근 가능한 易簡1–64식의 預備勢 準備動作·站姿 기록을 바탕으로 정리했어.')
         : pose.id===2
           ? known('預備式 4동작이 끝난 상태가 그대로 太極起勢의 시작 상태야. 왼발이 주로 받치고 두 발은 정면으로 나란한 상태에서 손·팔의 변화가 시작돼.','inference','qualitative','앞 자세의 마지막 상태를 다음 자세의 시작으로 읽는 프로젝트 연결 규칙이야.')
           : known('이전 자세를 마친 상태에서 다음 움직임을 준비해. 세부 설명은 모으는 중이야.','illustration','qualitative','아직 동작 자료를 채우는 중인 화면이야.');
-      views[startId]={id:startId,kind:'start',postureId:pid,motionId:null,motionNumber:null,title:`${pose.name} · 시작 상태`,stateId:startState,fromStateId:null,instruction:startInstruction,checks:[],events:[],contactSymbols:{left:null,right:null},interpretationIds:pose.id===1?['p001-application']:pose.id===2?['p002-application']:[],sourceIds:pose.id===2?['tsaifucius-yijian64']:[]};
+      views[startId]={id:startId,kind:'start',postureId:pid,motionId:null,motionNumber:null,title:`${pose.name} · 시작 상태`,stateId:startState,fromStateId:null,instruction:startInstruction,checks:[],events:[],contactSymbols:{left:null,right:null},interpretationIds:pose.id===1?['p001-application']:pose.id===2?['p002-application']:[],sourceIds:(pose.id===1||pose.id===2)?['tsaifucius-yijian64']:[]};
       order.push(startId);
       let from=startState;
       for(let n=1;n<=pose.count;n++){
@@ -97,9 +101,9 @@
     }
   }
   const edges={};order.forEach((id,i)=>edges[id]={previous:order[i-1]||null,next:order[i+1]||null});
-  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'qishi-002',coverage:{kind:'partial',note:'預備式 4동작과 太極起勢 6동작을 시작 상태까지 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
+  const data={formatVersion:'0.1.0',profile:'collection-ui',meta:{datasetId:'yijian',datasetRevision:'preparation-start-003',coverage:{kind:'partial',note:'預備式 시작 상태·4동작과 太極起勢 시작 상태·6동작을 연결했고 나머지는 수집 중이야.'}},coordinateFrames:{'yijian-front':{id:'yijian-front',origin:'太極起勢 종료 기준',axes:{x:'initial-right',y:'initial-front'},unit:'initial-stance-width',footReference:'foot-shape-center-projection'}},catalog:{sections,postures},navigation:{order,edges},states,views,interpretations,sources:{
     'legacy-preparation':{id:'legacy-preparation',title:'eztaiji 기존 예비식 4동작과 학습용 도해',url:'https://github.com/winterrainlee/eztaiji/blob/b228b007d48756bdf83d6d2d3a0050a2b34a7f5e/training/datasets/yijian.json',note:'접근 가능한 기존 수련 기록을 바탕으로 모은 자료야. 원문과 사부님 실연의 대조는 이어서 보완해.'},
-    'tsaifucius-yijian64':{id:'tsaifucius-yijian64',title:'Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述',url:'https://tsaitaiji.blogspot.com/2024/03/1-64.html',note:'太極起勢 1–6동의 순서와 原空位·鬆肘·손바닥 방향 설명을 이번 수집에서 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해.'}
+    'tsaifucius-yijian64':{id:'tsaifucius-yijian64',title:'Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述',url:'https://tsaitaiji.blogspot.com/2024/03/1-64.html',note:'預備勢의 준비 자세와 太極起勢 1–6동의 순서·原空位·鬆肘·손바닥 방향 설명을 이번 수집에서 직접 확인한 온라인 기록이야. 현장 지도와 다르면 사부님의 지도를 우선해.'}
   }};
   globalThis.EZTAIJI_DATA=data;
   globalThis.EZTAIJI_READY=Promise.resolve(data);
