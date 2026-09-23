@@ -32,9 +32,10 @@ class SchemaContracts(unittest.TestCase):
         self.assertEqual(self.source["postures"]["p001"]["motionIds"], [])
         self.assertEqual(self.deployed["catalog"]["postures"]["p001"]["motionCount"], 0)
 
-    def test_unregistered_qishi_start_is_valid(self):
-        self.assertEqual(self.source["postures"]["p002"]["start"]["kind"], "unregistered")
-        self.assertIsNone(self.deployed["views"]["p002-start-view"]["stateId"])
+    def test_explicit_qishi_coordinate_start_is_valid(self):
+        self.assertEqual(self.source["postures"]["p002"]["start"]["kind"], "explicitState")
+        self.assertEqual(self.deployed["views"]["p002-start-view"]["stateId"], "p002-start")
+        self.assertEqual(self.deployed["states"]["p002-start"]["feet"]["left"]["position"]["basis"], "illustration")
 
     def test_unknown_cannot_contain_value(self):
         x = copy.deepcopy(self.source)
