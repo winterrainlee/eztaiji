@@ -39,7 +39,7 @@ class SchemaContracts(unittest.TestCase):
 
     def test_unknown_cannot_contain_value(self):
         x = copy.deepcopy(self.source)
-        x["states"]["p001-start"]["feet"]["left"]["position"]["value"] = {"x": 0, "y": 0}
+        x["states"]["p001-start"]["feet"]["left"]["groundContact"]["value"] = "sole"
         self.bad("training", x)
 
     def test_string_coordinate_rejected(self):
