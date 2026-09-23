@@ -32,7 +32,7 @@ function validateReferences(d) {
   check(Object.keys(d.groups).length === 0, 'groups are not supported by preparation-pilot');
   const allIds = new Set();
   for (const key of ['postures','motions','states','sources','interpretations','principles','coordinateFrames']) {
-    for (const [id, item] of Object.entries(d[key])) {
+    for (const [id, item] of Object.entries(d[key] ?? {})) {
       check(id === item.id && /^[a-z][a-z0-9-]*$/.test(id), `${key}/${id}: ID mismatch/invalid ID`);
       check(!allIds.has(id), `${key}/${id}: duplicate global ID`); allIds.add(id);
     }
@@ -56,7 +56,7 @@ function validateReferences(d) {
       check(m.number === j + 1, `${mid}: motion number/order mismatch`);
       check(m.checkpointStateIds.length === 0 && m.eventRelations.length === 0, `${mid}: checkpoints/timing are outside preparation-pilot`);
       if (m.endStateId !== null) requireItem(d.states, m.endStateId, `${mid}/endStateId`);
-      for (const principleId of m.principleIds) requireItem(d.principles, principleId, `${mid}/principleIds`);
+      for (const principleId of m.principleIds ?? []) requireItem(d.principles ?? {}, principleId, `${mid}/principleIds`);
       for (const e of m.events) {
         check(!allIds.has(e.id), `${e.id}: duplicate event ID`); allIds.add(e.id);
       }
@@ -102,7 +102,7 @@ export function compileData(d) {
     const related = Object.values(d.interpretations).filter(x =>
       (x.scope.kind === 'posture' && x.scope.postureId === p.id) ||
       (m && x.scope.kind === 'motion' && x.scope.motionId === m.id)).map(x => x.id).sort();
-    const principleIds = m ? copy(m.principleIds) : [];
+    const principleIds = m ? copy(m.principleIds ?? []) : [];
     const state = current === null ? null : d.states[current];
     const symbols = {left:null,right:null};
     for (const side of ['left','right']) {

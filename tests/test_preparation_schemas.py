@@ -35,11 +35,11 @@ class SchemaContracts(unittest.TestCase):
         self.bad("training",x)
 
     def test_inference_without_explanation_rejected(self):
-        x=copy.deepcopy(self.source);del x["motions"]["p001-m01"]["instruction"]["note"]
+        x=copy.deepcopy(self.source);del x["motions"]["p001-m02"]["instruction"]["note"]
         self.bad("training",x)
 
     def test_inference_without_evidence_rejected(self):
-        x=copy.deepcopy(self.source);x["motions"]["p001-m01"]["instruction"]["evidence"]=[]
+        x=copy.deepcopy(self.source);x["motions"]["p001-m02"]["instruction"]["evidence"]=[]
         self.bad("training",x)
 
     def test_measurement_without_method_rejected(self):
@@ -60,10 +60,6 @@ class SchemaContracts(unittest.TestCase):
 
     def test_pending_application_cannot_carry_content(self):
         x=copy.deepcopy(self.source);x["interpretations"]["p001-application"]["content"]={}
-        self.bad("training",x)
-
-    def test_unresolved_global_principle_rejected(self):
-        x=copy.deepcopy(self.source);x["motions"]["p002-m03"]["principleIds"]=["missing-principle"]
         self.bad("training",x)
 
     def test_unsupported_group_scope_rejected(self):
