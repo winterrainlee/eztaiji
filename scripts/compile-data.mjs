@@ -46,10 +46,11 @@ function validateReferences(d) {
     if (i === 0) {
       check(p.start.kind === 'initial', `${id}: first posture must use initial`);
       requireItem(d.states, p.start.stateId, `${id}/start`);
+    } else if (p.start.kind === 'previousEnd') {
+      check(p.start.postureId === order[i-1], `${id}: start must reference immediate predecessor`);
     } else {
-      check(p.start.kind === 'previousEnd' && p.start.postureId === order[i-1], `${id}: start must reference immediate predecessor`);
+      check(p.start.kind === 'unregistered', `${id}: unsupported start kind`);
     }
-    check(p.motionIds.length > 0, `${id}: numbered motion slots required`);
     p.motionIds.forEach((mid, j) => {
       const m = requireItem(d.motions, mid, `${id}/motions`);
       check(!motionOwner.has(mid), `${mid}: duplicate motion ownership`); motionOwner.set(mid, id);
@@ -127,7 +128,8 @@ export function compileData(d) {
     return id;
   };
   for (const pid of order) {
-    const p=d.postures[pid], start=p.start.kind === 'initial' ? p.start.stateId : previousEnd;
+    const p=d.postures[pid], start=p.start.kind === 'initial' ? p.start.stateId
+      : p.start.kind === 'unregistered' ? null : previousEnd;
     const startViewId=add(p,null,start,null), motionViewIds=[];
     let from=start;
     for (const mid of p.motionIds) {
