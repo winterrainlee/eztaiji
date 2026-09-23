@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "lanquewei-relative-arm-001",
+  "revision": "qishi-relative-arm-001",
   "coverage": {
     "kind": "partial",
     "note": "預備式 4동작, 太極起勢 6동작, 攬雀尾 21동작을 시작 상태부터 연결한 부분 데이터다. 나머지 권가는 수집 중이다."
@@ -4436,6 +4436,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         },
         "right": {
@@ -4451,6 +4468,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         }
       }
@@ -4673,6 +4707,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         },
         "right": {
@@ -4688,6 +4739,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         }
       }
@@ -4910,6 +4978,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         },
         "right": {
@@ -4925,6 +5010,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         }
       }
@@ -5147,6 +5249,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         },
         "right": {
@@ -5162,6 +5281,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         }
       }
@@ -5384,6 +5520,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         },
         "right": {
@@ -5399,6 +5552,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         }
       }
@@ -5621,6 +5791,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 6動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         },
         "right": {
@@ -5636,6 +5823,23 @@
                 "support": "explicit"
               }
             ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "太極起勢 6動",
+                "support": "contextual"
+              }
+            ],
+            "note": "太極起勢에서는 몸 방향 B가 기준 정면을 유지하고, 1~6동의 주요 변화가 높이·팔꿈치·손목 관계에 있으므로 팔 구조의 평면상 주방향은 몸 정면으로 정리한 학습용 근사다."
           }
         }
       }
@@ -12723,7 +12927,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "2026-09-23 좌표판 원칙을 C·발·팔의 최종 자세 중심으로 정리했다. 攬雀尾 21동의 팔 방향은 고정 좌표계 절대값 대신 body.heading에 대한 relativeDirection으로 저장한다. 화면의 빨간 팔 화살표는 B와 relativeDirection을 합성해 계산하며, 몸통·고관절·어깨·팔꿈치의 연결 과정은 configuration·events·instruction 등 데이터에 남긴다.",
+    "note": "2026-09-23 좌표판 원칙 1.4에 맞춰 太極起勢 1~6동의 좌우 팔 relativeDirection을 front로 추가했다. 몸 방향 B는 전 동작에서 front를 유지하며, 실제 핵심 변화는 높이·팔꿈치·손목·原空位 관계이므로 평면 팔 방향은 정면으로 단순화한다. 預備式은 평면 팔 방향을 억지로 부여하지 않고 configuration만 유지한다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": [
