@@ -6,7 +6,7 @@
   const value=c=>c?.status==='known'?c.value:null;
   const text=c=>typeof value(c)==='string'?value(c):'';
   const basis=c=>c?.basis==='inference'?'해석':c?.basis==='illustration'?'학습용 근사':c?.basis==='source'?'자료 기록':c?.basis==='observation'?'관찰 기록':'미등록';
-  function fail(error){$('app').hidden=true;const box=$('load-message');box.hidden=false;box.replaceChildren(el('h1','연습 데이터를 불러오지 못했어'),el('p','새로고침핔 뒤 다시 확인해줘. 자료가 없는 동작과는 다른 로딩 오류야.'));const b=el('button','새로고침');b.onclick=()=>location.reload();box.append(b);console.error('eztaiji:',error);}
+  function fail(error){$('app').hidden=true;const box=$('load-message');box.hidden=false;box.replaceChildren(el('h1','연습 데이터를 불러오지 못했어'),el('p','새로고침한 뒤 다시 확인해줘. 자료가 없는 동작과는 다른 로딩 오류야.'));const b=el('button','새로고침');b.onclick=()=>location.reload();box.append(b);console.error('eztaiji:',error);}
   try {
     // Plain-data and compressed-data transports share this promise contract.
     if(globalThis.EZTAIJI_READY) await globalThis.EZTAIJI_READY;
@@ -23,7 +23,7 @@
     const claimLabel=(c,formatter=v=>String(v))=>c?.status==='known'?`${formatter(c.value)} · ${basis(c)}`:c?.status==='not_applicable'?'해당 없음':'미등록';
     const stateDescription=s=>!s?'몸 상태 미등록':['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');
     const svg=(tag,attrs={},label)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(label!==undefined)e.textContent=label;return e;};
-    // One fixed world-to-view transform across the preparation's frames.
+    // One fixed world-to-view transform across the current training frames.
     function draw(v,s){
       const plot=$('plot');plot.replaceChildren(svg('title',{id:'diagram-title'},v.title),svg('desc',{id:'diagram-desc'},stateDescription(s)));
       const hasFeet=s&&['left','right'].some(k=>value(s.feet[k].position));
@@ -32,12 +32,12 @@
       const c=value(s?.center?.location);
       $('center-summary').textContent=c?`C 중심 · ${c.kind==='region'?regionText[c.anchor]+' (영역)':`≈ (${c.x}, ${c.y})`}`:hasFeet?'C 중심 · 미등록':'';
       if(!hasFeet)return;
-      const blue='#225bd6',muted='#5e7184',x0=80,y0=105,unit=135;
+      const blue='#225bd6',muted='#5e7184',x0=60,y0=138,unit=88;
       for(let x=26;x<=334;x+=27)plot.append(svg('path',{d:`M${x} 18V150`,stroke:'#dce5f0','stroke-width':.7}));
       for(let y=24;y<=150;y+=27)plot.append(svg('path',{d:`M26 ${y}H334`,stroke:'#dce5f0','stroke-width':.7}));
-      plot.append(svg('path',{d:`M26 ${y0}H256 M${x0} 150V22`,stroke:'#aabdd1','stroke-width':1}));
-      plot.append(svg('text',{x:x0,y:14,fill:muted,'font-size':11,'text-anchor':'middle'},'+y 정면'),svg('text',{x:260,y:119,fill:muted,'font-size':11},'+x'));
-      for(const n of [0,1])plot.append(svg('text',{x:x0+unit*n,y:166,fill:muted,'font-size':11,'text-anchor':'middle'},String(n)));
+      plot.append(svg('path',{d:`M26 ${y0}H270 M${x0} 150V22`,stroke:'#aabdd1','stroke-width':1}));
+      plot.append(svg('text',{x:x0,y:14,fill:muted,'font-size':11,'text-anchor':'middle'},'+y 정면'),svg('text',{x:274,y:y0+14,fill:muted,'font-size':11},'+x'));
+      for(const n of [0,1,2])plot.append(svg('text',{x:x0+unit*n,y:166,fill:muted,'font-size':11,'text-anchor':'middle'},String(n)));
       function arrow(x,y,angle,length,color){const a=angle*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),xx=x+dx*length,yy=y+dy*length;plot.append(svg('path',{d:`M${x} ${y}L${xx} ${yy}`,stroke:color,'stroke-width':2.4,'stroke-linecap':'round'}),svg('path',{d:`M${xx-dx*7-dy*4} ${yy-dy*7+dx*4}L${xx} ${yy}L${xx-dx*7+dy*4} ${yy-dy*7-dx*4}`,fill:'none',stroke:color,'stroke-width':2.2,'stroke-linejoin':'round'}));}
       for(const side of ['left','right']){
         const f=s.feet[side],p=value(f.position);if(!p)continue;const x=x0+p.x*unit,y=y0-p.y*unit,h=value(f.heading),role=value(f.supportRole);
