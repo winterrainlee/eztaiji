@@ -10,12 +10,15 @@ const qishiEnd='p002-m06-end';
 
 function freeze(x){if(x&&typeof x==='object'){Object.freeze(x);Object.values(x).forEach(freeze);}return x;}
 
-test('current partial dataset has three starts and 28 numbered motions',()=>{
+test('current partial dataset has six starts and 39 numbered motions',()=>{
   const d=compileData(fresh());
-  assert.equal(d.navigation.order.length,31);
+  assert.equal(d.navigation.order.length,45);
   assert.equal(d.catalog.postures.p001.motionCount,1);
   assert.equal(d.catalog.postures.p002.motionCount,6);
   assert.equal(d.catalog.postures.p003.motionCount,21);
+  assert.equal(d.catalog.postures.p004.motionCount,5);
+  assert.equal(d.catalog.postures.p005.motionCount,3);
+  assert.equal(d.catalog.postures.p006.motionCount,3);
 });
 
 test('preparation keeps only its verified start view',()=>{
