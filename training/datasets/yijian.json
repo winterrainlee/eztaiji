@@ -2,10 +2,10 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "original-space-body-001",
+  "revision": "postures-4-6-001",
   "coverage": {
     "kind": "partial",
-    "note": "預備式은 확인된 시작 상태와 2026-09-23 현장 지도에 근거한 1동작만 제공한다. 예전 4동작 후보는 복구하지 않는다. 太極起勢 6동작은 학습용 평면 좌표와 확인된 동작 기록을 구분해 제공하고, 攬雀尾 21동작은 확인한 기록과 프로젝트 해석을 함께 제공한다."
+    "note": "預備式은 확인된 시작 상태와 2026-09-23 현장 지도에 근거한 1동작만 제공한다. 太極起勢 6동작과 攬雀尾 21동작에 이어, 2026-09-22 복습 기록과 대조한 單鞭 5동작·提手 3동작·右靠 3동작까지 학습용 좌표·허실·방향·접촉 정보를 제공한다."
   },
   "coordinateFrames": {
     "yijian-front": {
@@ -26,7 +26,10 @@
       "postureIds": [
         "p001",
         "p002",
-        "p003"
+        "p003",
+        "p004",
+        "p005",
+        "p006"
       ]
     }
   ],
@@ -127,6 +130,89 @@
           {
             "sourceId": "tsaifucius-yijian64",
             "locator": "攬雀尾 3-1~3-5",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
+    "p004": {
+      "id": "p004",
+      "number": 4,
+      "name": "單鞭",
+      "start": {
+        "kind": "previousEnd",
+        "postureId": "p003"
+      },
+      "motionIds": [
+        "p004-m01",
+        "p004-m02",
+        "p004-m03",
+        "p004-m04",
+        "p004-m05"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "攬雀尾 다음에 이어지는 5동작이야. 오른발로 중심을 옮기며 오른손을 勾手로 만들고, 오른발 축으로 몸을 열어 빈 왼발을 서쪽에 놓은 뒤 왼발로 중심을 옮겨 왼손을 펼치고 서쪽으로 정렬해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "單鞭 第1–5動",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
+    "p005": {
+      "id": "p005",
+      "number": 5,
+      "name": "提手",
+      "start": {
+        "kind": "previousEnd",
+        "postureId": "p004"
+      },
+      "motionIds": [
+        "p005-m01",
+        "p005-m02",
+        "p005-m03"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "單鞭 다음의 3동작이야. 왼발에 중심을 둔 채 몸을 오른쪽으로 돌려 두 손을 合抱하고, 오른발 뒤꿈치를 북쪽에 놓은 다음 몸을 가라앉히며 오른발을 평답 虛支해 提手 구조를 완성해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "提手 第1–3動",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
+    "p006": {
+      "id": "p006",
+      "number": 6,
+      "name": "右靠",
+      "start": {
+        "kind": "previousEnd",
+        "postureId": "p005"
+      },
+      "motionIds": [
+        "p006-m01",
+        "p006-m02",
+        "p006-m03"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "提手 다음의 3동작이야. 왼발을 축으로 몸을 왼쪽으로 감으며 오른발을 회수하고, 빈 오른발을 북쪽으로 내보낸 뒤 오른쪽 어깨를 앞세워 중심을 옮겨 靠를 완성해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "右靠 第1–3動",
             "support": "explicit"
           }
         ]
@@ -2748,6 +2834,1245 @@
       },
       "checks": [],
       "principleIds": []
+    },
+    "p004-m01": {
+      "id": "p004-m01",
+      "number": 1,
+      "title": "오른발을 坐實하며 勾手를 만들어",
+      "endStateId": "p004-m01-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p004-m01-e1",
+          "target": "center",
+          "kind": "weight_shift",
+          "description": {
+            "status": "known",
+            "value": "중심을 왼발에서 오른발로 옮겨 오른발을 坐實한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p004-m01-e2",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른 어깨·팔꿈치·손목을 풀며 다섯 손가락을 모아 勾手를 만든다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p004-m01-e3",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "왼팔을 풀어 오른아랫배 앞에 가로로 받치고 손바닥을 위로 향하게 한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "몸을 오른발 쪽으로 평이동해 오른발을 坐實하고 약 1시30분 방향으로 오른쪽 회전해. 오른 어깨·팔꿈치·손목을 풀어 다섯 손가락을 가볍게 모아 勾手를 만들고 오른가슴 앞에 둬. 왼팔도 힘을 풀어 오른아랫배 앞에서 손바닥이 위를 향하게 해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "單鞭 第1動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른발이 충분히 實이 된 뒤 왼발을 자유롭게 움직일 수 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "勾手를 손가락 힘으로 세게 집지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "양어깨가 올라가지 않고 팔꿈치가 자연스럽게 가라앉아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
+      ]
+    },
+    "p004-m02": {
+      "id": "p004-m02",
+      "number": 2,
+      "title": "오른발 축으로 왼쪽을 향해 열어",
+      "endStateId": "p004-m02-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p004-m02-e1",
+          "target": "leftFoot",
+          "kind": "heel_raise",
+          "description": {
+            "status": "known",
+            "value": "왼무릎을 들어 왼발 뒤꿈치를 띄우고 발끝만 바닥에 댄다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p004-m02-e2",
+          "target": "body",
+          "kind": "foot_turn",
+          "description": {
+            "status": "known",
+            "value": "오른발을 축으로 몸통을 왼쪽으로 약 105도 돌려 10시 방향을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p004-m02-e3",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른 勾手를 1시30분 방향의 공간 기준에 두고 팔을 거의 편다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른발을 계속 坐實한 채 몸통을 왼쪽으로 약 105도 돌려 10시 방향을 향해. 왼무릎을 들어 발끝만 바닥에 가볍게 대고, 오른 勾手는 1시30분 방향의 공간 기준을 유지하며 거의 펴되 팔꿈치를 잠그지 않아. 왼손은 몸과의 상대 위치를 유지해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "單鞭 第2動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른발이 계속 ●實이고 왼발 끝은 위치를 찾는 ○虛이야.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른팔꿈치를 완전히 잠그지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른 勾手를 몸과 함께 왼쪽으로 끌고 가지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity",
+        "gp-spatial-reference"
+      ]
+    },
+    "p004-m03": {
+      "id": "p004-m03",
+      "number": 3,
+      "title": "왼발을 서쪽으로 내딛어",
+      "endStateId": "p004-m03-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p004-m03-e1",
+          "target": "leftFoot",
+          "kind": "foot_move",
+          "description": {
+            "status": "known",
+            "value": "빈 왼발을 서쪽으로 내보내 어깨너비 선에 놓고 서쪽으로 直踏한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "중심은 오른발에 그대로 둔 채 왼발을 왼쪽, 즉 서쪽으로 가로 내보내. 오른발 뒤꿈치의 왼뒤쪽 어깨너비 선에 왼발을 놓고 서쪽을 향해 直踏해. 이때는 발만 먼저 자리를 잡고 중심은 아직 따라가지 않아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "單鞭 第3動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "왼발이 닿아도 중심은 아직 오른발에 남아 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "발을 멀리 던지지 말고 골반이 흔들리지 않는 범위에서 놓아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "발의 위치를 먼저 만들고 체중 이동은 다음 동작으로 분리해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
+      ]
+    },
+    "p004-m04": {
+      "id": "p004-m04",
+      "number": 4,
+      "title": "왼발로 이동하며 왼손을 펼쳐",
+      "endStateId": "p004-m04-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p004-m04-e1",
+          "target": "center",
+          "kind": "weight_shift",
+          "description": {
+            "status": "known",
+            "value": "중심을 오른발에서 왼발로 옮겨 왼발을 坐實한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p004-m04-e2",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "왼어깨와 팔꿈치의 연결을 따라 왼손이 왼쪽 위로 펼쳐진다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "몸을 새로 놓은 왼발 쪽으로 천천히 옮겨 왼발을 坐實하고 弓步를 만들어. 허리와 고관절은 9시30분 쪽으로 왼쪽 회전해. 왼어깨가 팔꿈치를, 팔꿈치가 손을 데려가듯 왼손이 왼쪽 위로 펼쳐지고, 오른 勾手는 공간 기준을 유지해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "單鞭 第4動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "왼손을 먼저 휘두르지 않고 중심 이동과 허리 회전이 팔을 데려가.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第4動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "왼무릎이 발끝 안쪽으로 무너지지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第4動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른 勾手의 공간 기준을 잃지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第4動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity",
+        "gp-spatial-reference"
+      ]
+    },
+    "p004-m05": {
+      "id": "p004-m05",
+      "number": 5,
+      "title": "허리·고관절을 서쪽으로 정렬해",
+      "endStateId": "p004-m05-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p004-m05-e1",
+          "target": "rightFoot",
+          "kind": "foot_turn",
+          "description": {
+            "status": "known",
+            "value": "오른발 끝이 바닥에서 왼쪽으로 약 45도 돌아 10시 방향을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p004-m05-e2",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "왼손이 허리 회전을 따라 축회전해 서쪽으로 정렬된다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼발을 坐實한 채 허리와 고관절을 다시 왼쪽으로 약 15도 돌려 정서쪽을 향해. 그 회전에 따라 오른발 끝이 바닥에서 왼쪽으로 약 45도 돌아 10시 방향을 향하고, 왼손은 축회전해 서쪽을 향해 정렬돼. 오른 勾手는 공간 기준을 유지해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "單鞭 第5動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "발끝만 억지로 비틀지 말고 허리·고관절 회전이 먼저야.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第5動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "중심은 계속 왼발에 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第5動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른 勾手의 공간 위치를 몸 쪽으로 당겨오지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第5動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity",
+        "gp-spatial-reference"
+      ]
+    },
+    "p005-m01": {
+      "id": "p005-m01",
+      "number": 1,
+      "title": "몸을 오른쪽으로 돌리며 合抱해",
+      "endStateId": "p005-m01-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p005-m01-e1",
+          "target": "rightFoot",
+          "kind": "heel_raise",
+          "description": {
+            "status": "known",
+            "value": "오른무릎을 들어 오른발 뒤꿈치를 띄우고 발끝만 북쪽을 향해 바닥에 댄다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p005-m01-e2",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른 勾手의 손가락을 풀어 掌으로 바꾸고 몸의 회전에 따라 가라앉힌다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p005-m01-e3",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "왼손도 풀어 오른손과 서로 마주 보는 合抱 자세를 만든다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼발을 坐實한 채 허리와 고관절을 오른쪽으로 약 60도 돌려 11시 방향을 향해. 오른무릎을 들어 오른발 끝만 북쪽을 향해 가볍게 대고, 오른 勾手는 손목의 공간 기준을 유지한 채 다섯 손가락을 풀어 掌으로 바꿔. 왼손도 힘을 풀어 두 손바닥이 서로 마주 보는 合抱를 만들어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "提手 第1動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "왼발이 계속 ●實이라 오른발을 가볍게 들 수 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른손의 공간 기준은 남기되 손가락은 풀어 勾手를 해제해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "두 손을 서로 조여 잡지 말고 둥근 공간을 남겨.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity",
+        "gp-spatial-reference"
+      ]
+    },
+    "p005-m02": {
+      "id": "p005-m02",
+      "number": 2,
+      "title": "오른발 뒤꿈치를 북쪽에 놓아",
+      "endStateId": "p005-m02-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p005-m02-e1",
+          "target": "rightFoot",
+          "kind": "foot_move",
+          "description": {
+            "status": "known",
+            "value": "빈 오른발을 북쪽으로 내보내 오른발 뒤꿈치부터 바닥에 닿게 한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p005-m02-e2",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른손이 앞쪽으로 더 길게 뻗고 왼손은 오른팔꿈치 높이에서 보조한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "중심은 왼발에 둔 채 오른발을 북쪽으로 대략 한 걸음보다 짧게 내보내. 어깨너비 중선의 왼쪽 쪽에 오른발 뒤꿈치부터 닿게 하고, 허리·고관절은 11시30분 방향으로 조금 더 돌아. 오른손은 앞쪽으로 더 길게, 왼손은 오른팔꿈치 높이에서 보조해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "提手 第2動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른발 뒤꿈치가 닿아도 중심은 왼발에 남아 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "발을 놓는 동안 상체가 먼저 앞으로 쏠리지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "두 팔이 발과 따로 움직이지 않고 몸의 작은 회전을 함께 따라가.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
+      ]
+    },
+    "p005-m03": {
+      "id": "p005-m03",
+      "number": 3,
+      "title": "몸을 가라앉히며 提手를 완성해",
+      "endStateId": "p005-m03-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p005-m03-e1",
+          "target": "body",
+          "kind": "body_lower",
+          "description": {
+            "status": "known",
+            "value": "허리와 고관절을 수직으로 5~10cm 가라앉히며 정북쪽으로 정렬한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p005-m03-e2",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른전완을 축회전해 손끝을 앞위쪽으로 향하게 하고 왼손은 오른팔꿈치 안쪽을 보조한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리와 고관절을 수직으로 5~10cm 가라앉히면서 정북쪽으로 정렬해. 왼무릎이 함께 굽어 왼발은 계속 坐實하고, 오른발 끝을 내려 평답하되 ○虛로만 지지해. 오른전완은 축회전해 손끝이 앞위쪽을 향하고 손 높이는 코를 넘지 않게 해. 왼손은 오른팔꿈치 안쪽 한 주먹 정도 거리에서 보조해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "提手 第3動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른발은 평평하게 닿아도 ○虛라서 즉시 다시 움직일 수 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "몸을 숙이는 게 아니라 고관절과 무릎을 통해 수직으로 가라앉아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른손이 코보다 높이 올라가지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity",
+        "gp-spatial-reference"
+      ]
+    },
+    "p006-m01": {
+      "id": "p006-m01",
+      "number": 1,
+      "title": "몸을 왼쪽으로 감아 오른발을 회수해",
+      "endStateId": "p006-m01-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p006-m01-e1",
+          "target": "rightFoot",
+          "kind": "foot_move",
+          "description": {
+            "status": "known",
+            "value": "오른발을 왼발 오른쪽 옆으로 회수해 발끝만 바닥에 댄다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p006-m01-e2",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른손을 왼쪽 고관절 앞까지 가라앉혀 사타구니 앞을 보호한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p006-m01-e3",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "왼팔꿈치를 가라앉혀 왼손가락이 오른손목 등에 닿게 한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼발을 계속 坐實한 채 몸을 왼쪽으로 약 75도 돌려 9시30분 방향을 향해. 오른손은 왼쪽 고관절 앞까지 가라앉혀 사타구니 앞을 보호하고, 왼팔꿈치도 가라앉혀 왼손가락이 오른손목 등에 닿게 해. 오른발은 몸의 회전을 따라 왼발 오른쪽 옆으로 회수해 발끝만 대.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "右靠 第1動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "왼발이 계속 ●實이고 회수한 오른발은 Toe만 닿는 ○虛이야.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "몸을 왼쪽으로 돌릴 때 두 손을 따로 끌어당기지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "어깨를 웅크리지 않고 팔꿈치가 아래로 가라앉아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
+      ]
+    },
+    "p006-m02": {
+      "id": "p006-m02",
+      "number": 2,
+      "title": "오른발을 북쪽으로 내딛어",
+      "endStateId": "p006-m02-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p006-m02-e1",
+          "target": "rightFoot",
+          "kind": "foot_move",
+          "description": {
+            "status": "known",
+            "value": "빈 오른발을 북쪽으로 내보내 왼발 뒤꿈치 오른쪽 선에 直踏한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "중심과 손 구조는 왼발 쪽에 그대로 둔 채 오른발을 들어 북쪽으로 내보내. 왼발 뒤꿈치의 오른쪽 선에 오른발을 곧게 놓아 直踏해. 이 동작에서는 아직 오른발로 중심을 넘기지 않아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "右靠 第2動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른발이 닿아도 중심은 여전히 왼발에 있어.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "발을 내보내는 동안 손과 몸통의 압축된 구조가 풀리지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른발을 내딛는 것과 체중 이동을 한꺼번에 하지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
+      ]
+    },
+    "p006-m03": {
+      "id": "p006-m03",
+      "number": 3,
+      "title": "오른쪽 어깨로 靠하며 전진해",
+      "endStateId": "p006-m03-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p006-m03-e1",
+          "target": "center",
+          "kind": "weight_shift",
+          "description": {
+            "status": "known",
+            "value": "중심을 왼발에서 오른발로 옮겨 오른 弓步를 만든다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p006-m03-e2",
+          "target": "rightArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "오른어깨가 먼저 靠한 뒤 오른팔꿈치는 북쪽·위쪽으로 계속 나가고 오른손은 가슴 앞으로 들어온다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p006-m03-e3",
+          "target": "leftFoot",
+          "kind": "foot_turn",
+          "description": {
+            "status": "known",
+            "value": "마지막에 왼발 끝이 오른쪽으로 약 45도 돌아 10시30분 방향을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "몸을 오른쪽 앞발 쪽으로 옮겨 오른 弓步를 만들어. 처음에는 오른쪽 어깨가 북쪽으로 앞서 들어가지만 상체를 앞으로 기울이지 않아. 오른발이 완전히 坐實되기 직전이 肩靠가 가장 선명한 순간이고, 이후 허리·고관절은 계속 전진하며 오른쪽으로 돌아. 오른팔꿈치는 회전에 휩쓸려 옆으로 가지 않고 북쪽·위쪽으로 계속 나가며, 오른손은 가슴 앞 왼팔꿈치 아래로 들어오고 왼손은 오른팔꿈치 위를 보조해. 마지막에 왼발 끝은 오른쪽으로 약 45도 돌아 10시30분을 향해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "右靠 第3動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른어깨를 앞세워도 상체 전체가 앞으로 꺾이지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "오른발이 완전히 實이 되기 직전 어깨의 靠가 먼저 나온다는 순서를 느껴.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "허리·고관절의 오른쪽 회전 속에서도 오른팔꿈치는 북쪽으로 계속 진행해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "왼발끝 회전은 몸의 마지막 정렬을 따라와.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
+        }
+      ],
+      "principleIds": [
+        "gp-nonrigidity"
+      ]
     }
   },
   "states": {
@@ -10751,6 +12076,3052 @@
           }
         }
       }
+    },
+    "p004-m01-end": {
+      "id": "p004-m01-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 발바닥의 세부 접촉 부위를 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 뒤꿈치 높이를 별도 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ]
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 2,
+              "y": 0
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 발바닥의 세부 접촉 부위를 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 뒤꿈치 높이를 별도 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front-right"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "중심이 오른발로 이동하고 몸통이 오른쪽으로 약 45도 회전한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 오른아랫배 앞에서 손바닥을 위로 받치고 오른 勾手 아래와 마주한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른손은 오른가슴 앞 약 10cm에서 勾手를 이루며 팔꿈치와 어깨는 가라앉아 있다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p004-m02-end": {
+      "id": "p004-m02-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "toe",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": true,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝만 점지하므로 뒤꿈치는 들린 상태로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 2,
+              "y": 0
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 발바닥의 세부 접촉 부위를 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 뒤꿈치 높이를 별도 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front-left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "오른발 위의 축을 유지한 채 몸통만 왼쪽으로 크게 돌아 다음 보폭을 위한 공간을 연다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 몸과의 상대 위치를 유지하며 오른쪽 몸통 앞에 남는다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른 勾手는 1시30분 방향의 공간 기준을 유지하며 어깨 높이 부근으로 거의 펴진다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p004-m03-end": {
+      "id": "p004-m03-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "直踏한 발은 뒤꿈치를 들지 않은 평답으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 2,
+              "y": 0
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 발바닥의 세부 접촉 부위를 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 뒤꿈치 높이를 별도 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front-left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "오른발 지지를 유지한 채 왼발만 서쪽의 다음 지점으로 배치한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 앞 동작의 몸 기준 위치를 유지한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른 勾手는 1시30분 방향의 공간 기준을 유지한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p004-m04-end": {
+      "id": "p004-m04-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "弓步로 坐實한 왼발의 접촉을 평답으로 정리한 프로젝트 해석이다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발을 坐實한 弓步이므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 2,
+              "y": 0
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 발바닥의 세부 접촉 부위를 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 뒤꿈치 높이를 별도 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第4動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第4動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "중심이 왼발로 넘어가며 허리·고관절이 서쪽 가까운 방향으로 돌아 왼팔의 펼침을 만든다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第4動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 오른옆구리 쪽에서 시작해 왼쪽 위로 펼쳐지며 손바닥은 몸 쪽을 비스듬히 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른 勾手는 공간 기준을 유지한 채 몸의 회전과 분리되어 남는다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "back-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第4動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p004-m05-end": {
+      "id": "p004-m05-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "앞 동작의 坐實 상태를 이어 평답으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발을 坐實한 상태가 유지되므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 2,
+              "y": 0
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 平地弧轉을 바닥 전체 접촉을 유지한 회전으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "平地弧轉이므로 뒤꿈치를 들어 올리는 동작으로 보지 않았다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第5動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第5動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "왼발 지지를 유지한 채 허리·고관절을 서쪽으로 정렬하고 오른발 끝이 그 회전을 따라 조정된다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "單鞭 第5動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼팔은 서쪽으로 펼쳐져 손바닥이 전하방을 향하도록 정렬된다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른 勾手는 원래의 공간 기준을 유지한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "back-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "單鞭 第5動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p005-m01-end": {
+      "id": "p005-m01-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "앞 동작의 坐實 왼발을 평답으로 이어서 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발을 坐實한 상태가 유지되므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 2,
+              "y": 0
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "toe",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": true,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝만 점지하므로 뒤꿈치는 들린 상태로 해석했다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front-left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "왼발 지지를 유지하면서 몸을 오른쪽으로 돌리고 오른다리를 비워 다음 발 위치를 탐색한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 오른손과 마주 보며 앞쪽에 둥근 合抱 구조를 만든다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른손은 勾手를 풀어 掌으로 바꾸고 앞쪽으로 가라앉아 왼손과 마주한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p005-m02-end": {
+      "id": "p005-m02-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되는 것으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1.7,
+              "y": 0.7
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "heel",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front-left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "왼발에 중심을 둔 채 오른발의 뒤꿈치만 북쪽 새 위치에 놓고 몸은 11시30분 쪽으로 미세하게 정렬한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 오른팔꿈치 높이의 왼쪽에서 구조를 보조한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른손은 오른무릎 앞쪽 방향으로 더 길게 뻗는다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p005-m03-end": {
+      "id": "p005-m03-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되는 것으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1.7,
+              "y": 0.7
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "왼발 중심은 유지하고 몸의 높이만 낮춰 오른발의 평답과 두 팔의 提手 구조를 완성한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "提手 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 가슴 높이에서 오른팔꿈치 안쪽 한 주먹 정도 거리를 두고 보조한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른전완은 축회전해 손바닥이 뒤위쪽, 손끝이 앞위쪽을 향하며 손 높이는 코 아래다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "提手 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p006-m01-end": {
+      "id": "p006-m01-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되는 것으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 동작 기록만으로 발끝의 최종 방향을 확정하지 않았다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ]
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "toe",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": true,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝만 점지하므로 뒤꿈치는 들린 상태로 해석했다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "왼발을 축으로 몸 전체를 왼쪽으로 감으며 오른발과 두 팔을 몸 가까이 회수해 구조를 압축한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第1動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼팔은 복부 왼쪽을 가로질러 오른손목 등을 보조한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른손은 왼쪽 고관절 앞에서 사타구니 쪽을 보호한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p006-m02-end": {
+      "id": "p006-m02-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되는 것으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발 坐實 상태가 유지되므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 2.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "直踏한 오른발을 뒤꿈치를 들지 않은 평답으로 해석했다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "왼발 지지를 유지한 채 빈 오른발만 북쪽의 다음 지점에 배치하고, 몸통과 손 구조는 앞 동작의 방향을 유지한다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第2動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 오른손목 등을 보조하는 압축 구조를 유지한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른손은 왼쪽 고관절 앞의 보호 위치를 유지한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "p006-m03-end": {
+      "id": "p006-m03-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": -0.3,
+              "y": 1.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-left"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "마지막 발끝 회전 뒤에도 바닥 접촉을 유지하는 것으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝의 평면 회전으로 기록되어 뒤꿈치를 들어 올리는 동작으로 보지 않았다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 2.1
+            },
+            "basis": "inference",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 보법·방향과 2026-09-22 복습에서 정한 eztaiji 좌표 규칙을 고정 바닥 좌표에 옮긴 학습용 근사다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 시계방향·방위를 여덟 방향 좌표판에 근사해 옮긴 값이다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 坐實·虛踏 및 앞뒤 동작의 중심 이동을 eztaiji의 ●實/○虛 표기로 옮긴 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "sole",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "右弓步로 坐實한 오른발의 접촉을 평답으로 정리했다."
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "오른발을 坐實한 弓步이므로 뒤꿈치는 들리지 않은 것으로 해석했다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "坐實·虛踏 관계를 중심 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front-left"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문은 9시30분에서 오른쪽으로 회전한다고만 하고 최종 몸 각도를 수치로 확정하지 않는다. eztaiji에서는 왼발끝 10시30분 정렬과 오른쪽 회전을 함께 고려해 front-left 섹터로 근사했다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "오른어깨가 먼저 북쪽으로 들어가 靠를 만들고, 중심이 오른발로 넘어가는 동안 허리·고관절이 계속 전진·우회전해 어깨의 전진을 팔꿈치의 북쪽 진행으로 바꾼다.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "右靠 第3動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문 동작 관계를 신체 물리 관점으로 풀어쓴 프로젝트 해석이다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "왼손은 오른팔꿈치 위를 보조하며 발경 구조를 받친다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "오른팔꿈치는 북쪽·위쪽으로 진행하고 오른손은 가슴 앞, 왼팔꿈치 아래로 들어온다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "relativeDirection": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "右靠 第3動",
+                "support": "contextual"
+              }
+            ],
+            "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
     }
   },
   "groups": {},
@@ -11743,12 +16114,12 @@
       "id": "tsaifucius-yijian64",
       "kind": "document",
       "reviewStatus": "checked",
-      "location": "https://tsaitaiji.blogspot.com/2024/03/1-64.html — 預備勢, 二、太極起勢 1–6動, 三、攬雀尾 3-1~3-5",
+      "location": "https://tsaitaiji.blogspot.com/2024/03/1-64.html — 預備勢, 太極起勢 1–6動, 攬雀尾 3-1~3-5, 單鞭 1–5動, 提手 1–3動, 右靠 1–3動",
       "public": {
         "id": "tsaifucius-yijian64",
         "title": "Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述",
         "url": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
-        "note": "預備勢, 太極起勢 1–6동과 攬雀尾 21동의 순서·방향·坐實/虛踏·팔 배치 설명을 직접 대조한 온라인 기록이야. 좌표와 무술적 해석은 eztaiji의 학습용 정리이며, 현장 지도와 다르면 사부님의 지도를 우선해."
+        "note": "預備勢, 太極起勢, 攬雀尾에 이어 單鞭 5동·提手 3동·右靠 3동의 순서·방향·坐實/虛踏·발 접촉·팔 배치를 직접 대조한 온라인 기록이야. 좌표와 무술적 해석은 eztaiji의 학습용 정리이며, 현장 지도와 다르면 사부님의 지도를 우선해."
       }
     },
     "sifu-2026-09-23": {
@@ -11778,7 +16149,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "舊 預備式 4동작 후보는 복구하지 않는다. 현재 p001-m01은 2026-09-23 수련 메모에서 확인된 몸의 하강·손의 상대적 상승만으로 새로 구성했다. 발 좌표는 학습용 근사이며 미확인 뒤꿈치 동작은 넣지 않는다. 2026-09-24에는 自然運動八法의 原空位·原體位 정의를 별도 출처로 대조하고, 攬雀尾에서 원문이 명시한 동작에만 📌空 / ↔體 학습 표기를 추가했다.",
+    "note": "舊 預備式 4동작 후보는 복구하지 않는다. 현재 預備式은 2026-09-23 수련 메모에서 확인된 내용만 사용한다. 2026-09-24에는 2026-09-22 복습에서 정리한 좌표를 원문과 다시 대조해 單鞭 5동·提手 3동·右靠 3동을 추가했다. 발 좌표와 팔 상대 방향은 eztaiji 학습용 근사이며, 원문이 확정하지 않은 右靠 최종 몸 각도는 front-left 섹터의 추론값으로 명시했다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": []
