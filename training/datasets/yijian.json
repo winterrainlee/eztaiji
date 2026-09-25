@@ -2,10 +2,10 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "postures-4-6-001",
+  "revision": "postures-4-6-shujin12-001",
   "coverage": {
     "kind": "partial",
-    "note": "預備式은 확인된 시작 상태와 2026-09-23 현장 지도에 근거한 1동작만 제공한다. 太極起勢 6동작과 攬雀尾 21동작에 이어, 2026-09-22 복습 기록과 대조한 單鞭 5동작·提手 3동작·右靠 3동작까지 학습용 좌표·허실·방향·접촉 정보를 제공한다."
+    "note": "預備式의 확인된 시작 상태와 2026-09-23 현장 지도 1동작, 太極起勢 6동작·攬雀尾 21동작·單鞭 5동작·提手 3동작·右靠 3동작에 더해, 2026-09-25 國立東華大學 태극권 동아리에서 촬영한 「太極拳舒筋十二式」 교육자료의 12식·38개 세부 동작을 원문 순서대로 옮겨 제공한다."
   },
   "coordinateFrames": {
     "yijian-front": {
@@ -30,6 +30,24 @@
         "p004",
         "p005",
         "p006"
+      ]
+    },
+    {
+      "id": "shujin12",
+      "name": "舒筋十二式",
+      "postureIds": [
+        "sj01",
+        "sj02",
+        "sj03",
+        "sj04",
+        "sj05",
+        "sj06",
+        "sj07",
+        "sj08",
+        "sj09",
+        "sj10",
+        "sj11",
+        "sj12"
       ]
     }
   ],
@@ -216,6 +234,332 @@
             "support": "explicit"
           }
         ]
+      }
+    },
+    "sj01": {
+      "id": "sj01",
+      "number": 1,
+      "name": "前俯",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj01-m01",
+        "sj01-m02",
+        "sj01-m03",
+        "sj01-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "혀끝을 윗입천장에 대고 어깨너비로 바로 서. 온몸의 힘을 풀고 두 손은 몸 양옆에 둬.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "一、前俯 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 舌抵上顎，一肩寬立正，全身放鬆，雙手放兩側。"
+      }
+    },
+    "sj02": {
+      "id": "sj02",
+      "number": 2,
+      "name": "後仰",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj02-m01",
+        "sj02-m02",
+        "sj02-m03",
+        "sj02-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "앞 식과 같은 준비식이야.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "二、後仰 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同前式。"
+      }
+    },
+    "sj03": {
+      "id": "sj03",
+      "number": 3,
+      "name": "側彎",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj03-m01",
+        "sj03-m02",
+        "sj03-m03",
+        "sj03-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "앞 식과 같은 준비식이야.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "三、側彎 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同前式。"
+      }
+    },
+    "sj04": {
+      "id": "sj04",
+      "number": 4,
+      "name": "轉臀",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj04-m01",
+        "sj04-m02"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "앞 식과 같은 준비식에서 두 무릎을 굽혀.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "四、轉臀 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同前式，雙腿屈膝。"
+      }
+    },
+    "sj05": {
+      "id": "sj05",
+      "number": 5,
+      "name": "仰轉",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj05-m01",
+        "sj05-m02",
+        "sj05-m03",
+        "sj05-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "어깨너비로 서서 두 손을 허리에 짚어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "五、仰轉 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 兩肩寬站立，雙手插腰。"
+      }
+    },
+    "sj06": {
+      "id": "sj06",
+      "number": 6,
+      "name": "下蹲式",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj06-m01",
+        "sj06-m02",
+        "sj06-m03",
+        "sj06-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "앞 식과 같은 준비식이야.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "六、下蹲式 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同前式。"
+      }
+    },
+    "sj07": {
+      "id": "sj07",
+      "number": 7,
+      "name": "抖腕抖跗",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj07-m01",
+        "sj07-m02"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "어깨너비로 서서 두 무릎을 굽히고 중심을 오른발로 옮겨.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "七、抖腕抖跗 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 一肩寬，雙腿彎曲，重心移到右腳。"
+      }
+    },
+    "sj08": {
+      "id": "sj08",
+      "number": 8,
+      "name": "舒腰",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj08-m01",
+        "sj08-m02"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "어깨너비로 서서 두 손을 허리에 짚어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "八、舒腰 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 一肩寬，雙手插腰。"
+      }
+    },
+    "sj09": {
+      "id": "sj09",
+      "number": 9,
+      "name": "舒胯",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj09-m01",
+        "sj09-m02"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "두 발을 모으고 두 손을 허리에 짚어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "九、舒胯 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙腳併攏，雙手插腰。"
+      }
+    },
+    "sj10": {
+      "id": "sj10",
+      "number": 10,
+      "name": "踢腿",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj10-m01",
+        "sj10-m02",
+        "sj10-m03",
+        "sj10-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "어깨너비로 서서 무릎을 굽히고 두 손은 자연스럽게 내려. 중심은 왼발로 옮겨.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "十、踢腿 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 一肩寬，雙腿彎曲，雙手自然下垂，重心移至左腳。"
+      }
+    },
+    "sj11": {
+      "id": "sj11",
+      "number": 11,
+      "name": "蹬腿",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj11-m01",
+        "sj11-m02",
+        "sj11-m03",
+        "sj11-m04"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "앞 식과 같은 준비식이야.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "十一、蹬腿 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同前式。"
+      }
+    },
+    "sj12": {
+      "id": "sj12",
+      "number": 12,
+      "name": "鬆膝",
+      "start": {
+        "kind": "unregistered"
+      },
+      "motionIds": [
+        "sj12-m01",
+        "sj12-m02"
+      ],
+      "introduction": {
+        "status": "known",
+        "value": "두 발을 모으고 두 손으로 무릎을 짚어. 몸은 굽힌 상태야.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "十二、鬆膝 · 預備式",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙腳併攏，雙手扶膝蓋（身體彎曲）。"
       }
     }
   },
@@ -4073,6 +4417,956 @@
       "principleIds": [
         "gp-nonrigidity"
       ]
+    },
+    "sj01-m01": {
+      "id": "sj01-m01",
+      "number": 1,
+      "title": "두 손을 귀 가까이 올려 교차해",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "두 손을 몸 양옆에서 귀 가까이 올리고, 양 손바닥을 교차해 위로 뒤집어 올려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "前俯 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙手由身體兩側上舉靠雙耳，兩手掌交叉向上翻舉。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj01-m02": {
+      "id": "sj01-m02",
+      "number": 2,
+      "title": "귀에 붙인 채 앞으로 숙여",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "두 손을 귀에 바짝 붙인 채 허리를 굽혀 양손으로 바닥을 짚어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "前俯 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙手緊貼耳朵，彎腰，雙手觸地。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj01-m03": {
+      "id": "sj01-m03",
+      "number": 3,
+      "title": "허리를 세워 1동작으로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 세워 1동작의 자세로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "前俯 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腰直立，恢復成（1動）的姿勢。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj01-m04": {
+      "id": "sj01-m04",
+      "number": 4,
+      "title": "두 손을 허벅지 옆으로 내려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "두 손을 천천히 내려 허벅지 바깥쪽에 둬.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "前俯 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙手緩緩放下至大腿外側。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj02-m01": {
+      "id": "sj02-m01",
+      "number": 1,
+      "title": "두 팔을 등 뒤에서 교차해 잡아",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "두 팔을 등 뒤에서 교차해 서로 잡아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "後仰 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙手將手臂在後背交叉相扣。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj02-m02": {
+      "id": "sj02-m02",
+      "number": 2,
+      "title": "무릎을 펴 둔 채 뒤로 젖혀",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "몸을 뒤로 젖혀. 무릎은 굽히지 않아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "後仰 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 身體後仰，膝蓋不可彎曲。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj02-m03": {
+      "id": "sj02-m03",
+      "number": 3,
+      "title": "허리를 세워 1동작으로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 곧게 세워 1동작의 자세로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "後仰 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腰挺直，恢復成（1動）之姿勢。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj02-m04": {
+      "id": "sj02-m04",
+      "number": 4,
+      "title": "두 손을 천천히 내려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "두 손을 천천히 내려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "後仰 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙手緩緩放下。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj03-m01": {
+      "id": "sj03-m01",
+      "number": 1,
+      "title": "오른팔을 머리 위로 올려 준비해",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른손은 손바닥을 아래로 하고 위로 평행하게 들어 머리 위에서 팔꿈치를 굽혀 손바닥이 위를 보게 해. 왼손은 원래 자세에서 손바닥을 바깥으로 뒤집고 중지를 바지 솔기에 붙여.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "側彎 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 右手掌心向下，向上平舉，至頭頂手肘彎曲，掌心向上，左手原姿勢翻轉掌心朝外，中指貼褲縫。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj03-m02": {
+      "id": "sj03-m02",
+      "number": 2,
+      "title": "몸을 왼쪽으로 굽혀",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른손 자세는 그대로 두고 몸을 왼쪽으로 굽히면서 왼손을 아래로 미끄러뜨려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "側彎 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 身體向左彎曲（右手姿勢不變）左手向下滑動。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj03-m03": {
+      "id": "sj03-m03",
+      "number": 3,
+      "title": "허리를 세워 1동작으로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 곧게 세워 1동작의 자세로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "側彎 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腰挺直，恢復成（1動）的姿勢。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj03-m04": {
+      "id": "sj03-m04",
+      "number": 4,
+      "title": "오른손을 내리고 왼손을 허벅지에",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른손을 천천히 내리면서 왼손도 동시에 뒤집어 손바닥을 허벅지에 붙여.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "側彎 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 右手緩慢放下，左手同時翻掌掌心貼大腿。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj04-m01": {
+      "id": "sj04-m01",
+      "number": 1,
+      "title": "허리를 왼쪽으로 돌리며 양손을 휘둘러",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 왼쪽으로 돌리고 허리의 힘으로 두 손을 흔들어. 오른손은 왼쪽 허리를, 왼손은 오른쪽 허리를 쳐.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "轉臀 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腰轉向左，並靠腰力擺盪雙手，右手拍左腰，左手拍右腰。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj04-m02": {
+      "id": "sj04-m02",
+      "number": 2,
+      "title": "허리를 오른쪽으로 돌리며 반대로",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 오른쪽으로 돌리고 허리의 힘으로 두 손을 흔들어. 왼손은 오른쪽 허리를, 오른손은 왼쪽 허리를 쳐.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "轉臀 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腰轉向右，並靠腰力擺盪雙手，左手拍右腰，右手拍左腰。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj05-m01": {
+      "id": "sj05-m01",
+      "number": 1,
+      "title": "몸을 왼쪽으로 돌리며 중심을 조금 앞으로",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리·고관절을 써 몸을 왼쪽으로 돌리고 중심을 조금 앞쪽으로 옮겨. 원문의 괄호 끝부분은 사진에서 판독되지 않아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "仰轉 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문 끝의 （左　）는 촬영본에서도 판독이 불확실해 임의로 보충하지 않았다. 원문: 腰跨，身體轉向左方，重心稍微移向前（左　）。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj05-m02": {
+      "id": "sj05-m02",
+      "number": 2,
+      "title": "왼무릎을 내밀고 몸을 뒤로 젖혀",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼무릎을 앞으로 굽히고 오른무릎도 굽혀. 몸을 뒤로 젖히고 머리를 뒤로 떨어뜨려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "仰轉 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 左膝向前弓，右膝彎曲，身體向後仰，頭向後掉下。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj05-m03": {
+      "id": "sj05-m03",
+      "number": 3,
+      "title": "오른손을 왼쪽 가슴 앞에 들고 왼뒤꿈치를 봐",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른손을 들어 왼쪽 가슴 앞에 두고, 왼눈으로 왼쪽 뒤꿈치를 봐.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "仰轉 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 右手抬起攔在左胸前，左眼移看左跟。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj05-m04": {
+      "id": "sj05-m04",
+      "number": 4,
+      "title": "몸을 세워 1동작으로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "몸을 곧게 세워 1동작의 자세로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "仰轉 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 身體直立恢復成（1動）的姿勢。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj06-m01": {
+      "id": "sj06-m01",
+      "number": 1,
+      "title": "중심을 오른쪽에 두고 양팔을 크게 열어",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "중심을 오른무릎 쪽에 두고 오른손을 오른쪽으로 곧게 뻗어. 왼손은 오른겨드랑이 아래로 넣어 오른쪽 등까지 뻗어 견갑골을 잡아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "下蹲式 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 重心弓在右膝，右手向右伸直，左手由右腋下伸至右背扣住肩胛骨。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj06-m02": {
+      "id": "sj06-m02",
+      "number": 2,
+      "title": "오른손으로 왼발목을 짚어",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "중심은 계속 오른쪽에 두고 오른손을 왼쪽으로 보내 왼발목을 짚어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "下蹲式 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 重心仍在右，右手向左扶左踝。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj06-m03": {
+      "id": "sj06-m03",
+      "number": 3,
+      "title": "아래로 앉아 고관절과 허리를 돌려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "아래로 앉으며 고관절과 허리를 돌려 왼쪽 갈비뼈가 왼쪽 허벅지에 닿게 해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "下蹲式 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 向下坐胯轉腰，以左胸肋骨碰觸左大腿。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj06-m04": {
+      "id": "sj06-m04",
+      "number": 4,
+      "title": "준비식으로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "준비식으로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "下蹲式 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 恢復成預備式。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj07-m01": {
+      "id": "sj07-m01",
+      "number": 1,
+      "title": "왼다리를 들고 손목과 왼발을 떨어",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "두 손을 가슴 앞으로 들어 손바닥을 아래로 늘어뜨려. 왼다리를 들어 허벅지는 수평, 종아리는 약 45도로 두고, 두 손을 위아래로 떨면서 왼발도 떨어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "抖腕抖跗 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 雙手舉至胸前，手掌下垂，提左腳大腿平（小腿45度），雙手上下抖動，左腳抖動。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj07-m02": {
+      "id": "sj07-m02",
+      "number": 2,
+      "title": "반대쪽으로 바꿔 오른발을 떨어",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "반대로 바꿔 중심을 왼발로 옮기고 오른다리를 들어 허벅지를 수평으로 둬. 두 손은 가슴 앞에서 수평으로 들고 손끝을 서로 마주 보게 한 뒤 오른발을 떨고 동시에 양손도 떨어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "抖腕抖跗 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "마지막 ‘同時抖動’은 원문에서 목적어가 생략되어 있어 앞 문맥의 양손 움직임으로 옮겼다. 원문: 換邊、重心移至左腳，右腿提平，雙手平舉胸前雙手指尖相對。抖動右腳，同時抖動。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj08-m01": {
+      "id": "sj08-m01",
+      "number": 1,
+      "title": "허리를 왼쪽부터 한 바퀴 돌려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 굽힌 채 왼쪽 → 뒤 → 오른쪽 → 앞 순서로 한 바퀴 돌려. 두 무릎은 굽히지 않아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "舒腰 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 彎腰同時向左、向後、向右、向前轉一圈（雙腿不可彎曲）。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj08-m02": {
+      "id": "sj08-m02",
+      "number": 2,
+      "title": "반대 방향으로 한 바퀴 돌려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "허리를 굽힌 채 앞 → 오른쪽 → 뒤 → 왼쪽 → 앞 순서로 한 바퀴 돌려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "舒腰 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 彎腰向前、向右、向後、向左、向前轉一圈。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj09-m01": {
+      "id": "sj09-m01",
+      "number": 1,
+      "title": "머리와 발은 두고 허리·고관절을 좌우로 돌려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "머리 꼭대기와 발바닥은 움직이지 않고 같은 중심을 유지하면서 허리와 고관절을 좌우로 돌려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "舒胯 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 頭頂與腳底不動，維持同一重心，腰胯左右旋轉。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj09-m02": {
+      "id": "sj09-m02",
+      "number": 2,
+      "title": "좌우 각각 네 번 반복해",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼쪽과 오른쪽 각각 네 번 해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "舒胯 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 左右各做四次。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj10-m01": {
+      "id": "sj10-m01",
+      "number": 1,
+      "title": "오른다리를 들어 발끝을 내려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른발을 들어 허벅지를 수평으로 만들고 발끝을 아래로 눌러.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "踢腿 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 提起右腳，大腿平，腳尖下壓。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj10-m02": {
+      "id": "sj10-m02",
+      "number": 2,
+      "title": "발끝으로 앞으로 평평하게 차",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "발끝을 앞으로 수평으로 차.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "踢腿 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腳尖向前平踢。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj10-m03": {
+      "id": "sj10-m03",
+      "number": 3,
+      "title": "1동작 자세로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "1동작의 자세로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "踢腿 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 恢復成（1動）之姿勢。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj10-m04": {
+      "id": "sj10-m04",
+      "number": 4,
+      "title": "발끝을 평평하게 하고 준비식으로",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "발끝을 평평하게 하고 준비식으로 돌아와.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "踢腿 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腳尖放平，恢復成預備式。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj11-m01": {
+      "id": "sj11-m01",
+      "number": 1,
+      "title": "오른다리를 들어 발끝을 세워",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "오른발을 들어 허벅지를 수평으로 만들고 발끝을 위로 세워.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "蹬腿 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 提起右腳，大腿平腳尖翹起。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj11-m02": {
+      "id": "sj11-m02",
+      "number": 2,
+      "title": "뒤꿈치로 앞으로 밀어내",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "발뒤꿈치를 앞으로 밀어내.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "蹬腿 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 腳跟向前蹬出。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj11-m03": {
+      "id": "sj11-m03",
+      "number": 3,
+      "title": "1동작 자세로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "1동작과 같아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "蹬腿 3動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同（1）。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj11-m04": {
+      "id": "sj11-m04",
+      "number": 4,
+      "title": "준비식으로 돌아와",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "준비식과 같아.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "蹬腿 4動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 同預備式。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj12-m01": {
+      "id": "sj12-m01",
+      "number": 1,
+      "title": "무릎을 좌우로 돌려",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "무릎을 좌우로 돌려.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "鬆膝 1動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 膝蓋左右轉動。"
+      },
+      "checks": [],
+      "principleIds": []
+    },
+    "sj12-m02": {
+      "id": "sj12-m02",
+      "number": 2,
+      "title": "무릎을 굽혔다 펴며 위아래로 움직여",
+      "endStateId": null,
+      "checkpointStateIds": [],
+      "events": [],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "무릎을 위아래로 굽혔다 펴.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "donghwa-shujin12-20260925",
+            "locator": "鬆膝 2動",
+            "support": "explicit"
+          }
+        ],
+        "note": "원문: 膝蓋上下蹲立。"
+      },
+      "checks": [],
+      "principleIds": []
     }
   },
   "states": {
@@ -16144,6 +17438,18 @@
         "title": "中華易簡太極拳協會 · 自然運動八法",
         "url": "https://lotushilltaichi.pixnet.net/blog/posts/8010320731",
         "note": "張榮達가 2003년에 정리한 自然運動八法 자료의 전재본이야. 原體位를 두 점의 상대 위치 유지, 原空位를 몸이 이동할 때 지정점과 지면 공간의 관계 유지로 설명해. eztaiji의 📌空 / ↔體 표기는 이 정의를 개인 연습 화면에 옮긴 보조 표기야."
+      }
+    },
+    "donghwa-shujin12-20260925": {
+      "id": "donghwa-shujin12-20260925",
+      "kind": "document",
+      "reviewStatus": "checked",
+      "location": "docs/sources/donghwa-shujin12.md",
+      "public": {
+        "id": "donghwa-shujin12-20260925",
+        "title": "國立東華大學 태극권 동아리 · 太極拳舒筋十二式",
+        "url": "https://github.com/winterrainlee/eztaiji/blob/main/docs/sources/donghwa-shujin12.md",
+        "note": "2026-09-25 동아리 수련 현장에서 사용자가 직접 촬영한 교육자료를 전사한 문서야. 사이트의 한국어 문장은 이 원문을 옮긴 것이고, 별도 원리 해석은 아직 덧붙이지 않았어."
       }
     }
   },
