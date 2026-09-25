@@ -108,7 +108,7 @@
       const checks=v.checks.map(text).filter(Boolean);$('checks').hidden=!checks.length;$('check-list').replaceChildren(...checks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length||checks.length);
       const sb=$('source-list');sb.replaceChildren();for(const id of v.sourceIds){const source=d.sources[id];if(!source)continue;const item=el('div',undefined,'source-item');const a=el('a',source.title);if(/^https?:\/\//i.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}else item.append(el('strong',source.title));item.append(el('p',source.note));sb.append(item);}if(!sb.childNodes.length)sb.append(el('p','이 화면에는 별도로 연결된 출처가 없어.'));
       draw(v,s);fillDetails(s);$('open-details').disabled=!s;
-      const plotPanel=$('plot-panel');if(plotPanel)plotPanel.hidden=section.id==='shujin12';
+      const plotPanel=$('plot-panel');const hasPlotCoordinates=['left','right'].some(side=>value(s?.feet?.[side]?.position));if(plotPanel)plotPanel.hidden=section.id==='shujin12'&&!hasPlotCoordinates;
       const edges={previous:localEdge(current,'previous'),next:localEdge(current,'next')};$('prev').disabled=edges.previous===null;$('next').disabled=edges.next===null;
       $('prev').textContent=v.kind==='start'&&edges.previous?'← 이전 자세':'← 이전';$('next').textContent=v.kind==='start'?(p.motionCount?'1동작 →':edges.next?'다음 자세 →':'끝'):v.motionNumber===p.motionCount&&edges.next?'다음 자세 →':'다음 →';
       $('motion-current').textContent=v.kind==='start'?p.name+' · 0동작':v.motionNumber+' / '+p.motionCount+'동작';
