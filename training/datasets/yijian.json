@@ -2,15 +2,25 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "postures-4-6-shujin12-001",
+  "revision": "postures-4-6-shujin12-coordinates-002",
   "coverage": {
     "kind": "partial",
-    "note": "預備式의 확인된 시작 상태와 2026-09-23 현장 지도 1동작, 太極起勢 6동작·攬雀尾 21동작·單鞭 5동작·提手 3동작·右靠 3동작에 더해, 2026-09-25 國立東華大學 태극권 동아리에서 촬영한 「太極拳舒筋十二式」 교육자료의 12식·38개 세부 동작을 원문 순서대로 옮겨 제공한다."
+    "note": "기존 易簡太極拳 자료와 舒筋十二式 12식·38개 동작에 더해, 현장 자료가 중심 이동·한쪽 다리 들기·전방 차기/蹬出을 명시하는 下蹲式·抖腕抖跗·踢腿·蹬腿 일부 단계에 학습용 좌표·허실 도식을 추가한다. 좌표 거리는 실측값이 아니며 원문 지시와 프로젝트 해석을 구분한다."
   },
   "coordinateFrames": {
     "yijian-front": {
       "id": "yijian-front",
       "origin": "학습용 좌표 정의상 太極起勢 종료 시점의 왼발을 원점으로 삼는다. 실제 위치를 측정한 값이라는 뜻은 아니다.",
+      "axes": {
+        "x": "initial-right",
+        "y": "initial-front"
+      },
+      "unit": "initial-stance-width",
+      "footReference": "foot-shape-center-projection"
+    },
+    "shujin-front": {
+      "id": "shujin-front",
+      "origin": "각 舒筋式의 預備式에서 왼발의 학습용 투영 위치를 (0,0)으로 둔다. 실제 측정 좌표가 아니다.",
       "axes": {
         "x": "initial-right",
         "y": "initial-front"
@@ -407,7 +417,8 @@
       "number": 7,
       "name": "抖腕抖跗",
       "start": {
-        "kind": "unregistered"
+        "kind": "explicitState",
+        "stateId": "sj07-start"
       },
       "motionIds": [
         "sj07-m01",
@@ -485,7 +496,8 @@
       "number": 10,
       "name": "踢腿",
       "start": {
-        "kind": "unregistered"
+        "kind": "explicitState",
+        "stateId": "sj10-start"
       },
       "motionIds": [
         "sj10-m01",
@@ -513,7 +525,8 @@
       "number": 11,
       "name": "蹬腿",
       "start": {
-        "kind": "unregistered"
+        "kind": "explicitState",
+        "stateId": "sj11-start"
       },
       "motionIds": [
         "sj11-m01",
@@ -4872,7 +4885,7 @@
       "id": "sj06-m01",
       "number": 1,
       "title": "중심을 오른쪽에 두고 양팔을 크게 열어",
-      "endStateId": null,
+      "endStateId": "sj06-m01-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -4897,7 +4910,7 @@
       "id": "sj06-m02",
       "number": 2,
       "title": "오른손으로 왼발목을 짚어",
-      "endStateId": null,
+      "endStateId": "sj06-m02-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -4972,7 +4985,7 @@
       "id": "sj07-m01",
       "number": 1,
       "title": "왼다리를 들고 손목과 왼발을 떨어",
-      "endStateId": null,
+      "endStateId": "sj07-m01-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -4997,7 +5010,7 @@
       "id": "sj07-m02",
       "number": 2,
       "title": "반대쪽으로 바꿔 오른발을 떨어",
-      "endStateId": null,
+      "endStateId": "sj07-m02-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5122,7 +5135,7 @@
       "id": "sj10-m01",
       "number": 1,
       "title": "오른다리를 들어 발끝을 내려",
-      "endStateId": null,
+      "endStateId": "sj10-m01-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5147,7 +5160,7 @@
       "id": "sj10-m02",
       "number": 2,
       "title": "발끝으로 앞으로 평평하게 차",
-      "endStateId": null,
+      "endStateId": "sj10-m02-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5172,7 +5185,7 @@
       "id": "sj10-m03",
       "number": 3,
       "title": "1동작 자세로 돌아와",
-      "endStateId": null,
+      "endStateId": "sj10-m03-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5197,7 +5210,7 @@
       "id": "sj10-m04",
       "number": 4,
       "title": "발끝을 평평하게 하고 준비식으로",
-      "endStateId": null,
+      "endStateId": "sj10-start",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5222,7 +5235,7 @@
       "id": "sj11-m01",
       "number": 1,
       "title": "오른다리를 들어 발끝을 세워",
-      "endStateId": null,
+      "endStateId": "sj11-m01-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5247,7 +5260,7 @@
       "id": "sj11-m02",
       "number": 2,
       "title": "뒤꿈치로 앞으로 밀어내",
-      "endStateId": null,
+      "endStateId": "sj11-m02-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5272,7 +5285,7 @@
       "id": "sj11-m03",
       "number": 3,
       "title": "1동작 자세로 돌아와",
-      "endStateId": null,
+      "endStateId": "sj11-m03-end",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -5297,7 +5310,7 @@
       "id": "sj11-m04",
       "number": 4,
       "title": "준비식으로 돌아와",
-      "endStateId": null,
+      "endStateId": "sj11-start",
       "checkpointStateIds": [],
       "events": [],
       "eventRelations": [],
@@ -16413,6 +16426,2275 @@
               }
             ],
             "note": "몸통 방향 B를 기준으로 팔 구조의 주방향을 여덟 방향으로 근사했다. 손바닥 면이나 순간 이동 경로를 뜻하지 않는다."
+          }
+        }
+      }
+    },
+    "sj06-m01-end": {
+      "id": "sj06-m01-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "下蹲式 1動",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj06-m02-end": {
+      "id": "sj06-m02-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "下蹲式 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "下蹲式 2動",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj07-start": {
+      "id": "sj07-start",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "七、抖腕抖跗 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "七、抖腕抖跗 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "七、抖腕抖跗 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "七、抖腕抖跗 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "七、抖腕抖跗 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "七、抖腕抖跗 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "七、抖腕抖跗 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj07-m01-end": {
+      "id": "sj07-m01-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "七、抖腕抖跗 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj07-m02-end": {
+      "id": "sj07-m02-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "抖腕抖跗 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "抖腕抖跗 2動",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj10-start": {
+      "id": "sj10-start",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj10-m01-end": {
+      "id": "sj10-m01-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj10-m02-end": {
+      "id": "sj10-m02-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 1
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj10-m03-end": {
+      "id": "sj10-m03-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "踢腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj11-start": {
+      "id": "sj11-start",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十、踢腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj11-m01-end": {
+      "id": "sj11-m01-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十一、蹬腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj11-m02-end": {
+      "id": "sj11-m02-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十一、蹬腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 1
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 2動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        }
+      }
+    },
+    "sj11-m03-end": {
+      "id": "sj11-m03-end",
+      "coordinateFrameId": "shujin-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "十一、蹬腿 · 預備式",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 지지발의 세부 접촉 부위를 기록하지 않는다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "사진 원문에 적힌 어깨너비·전방 움직임을 좌표판에서 이해하기 위한 학습용 투영이다. 실제 이동 거리나 실측 위치가 아니다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝 방향은 좌표판에서 기본 정면 관계를 읽기 위한 학습용 근사다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문의 중심 이동·들어 올린 발을 허실 표기로 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "none",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "donghwa-shujin12-20260925",
+                "locator": "蹬腿 1動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문에서 발을 들어 올렸다고 명시한 것을 바닥 접촉 없음으로 표현했다."
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "원자료는 뒤꿈치 높이를 별도로 기록하지 않는다."
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "donghwa-shujin12-20260925",
+              "locator": "十、踢腿 · 預備式",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "unknown",
+          "reason": "unverified",
+          "note": "이 좌표판은 해당 동작의 발·중심 관계만 우선 표시하고 몸의 정확한 방위는 확정하지 않는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded"
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "unknown",
+            "reason": "unrecorded"
           }
         }
       }
