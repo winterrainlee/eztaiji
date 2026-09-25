@@ -42,6 +42,25 @@ test('qishi start uses an explicit learning coordinate guide',()=>{
   assert.deepEqual(d.states['p002-start'].feet.right.position.value,{x:1,y:0});
 });
 
+test('Shujin coordinates exist only for supported movement states',()=>{
+  const d=compileData(fresh());
+  assert.equal(d.views['sj01-start-view'].stateId,null);
+  assert.equal(d.views['sj06-m01-view'].stateId,'sj06-m01-end');
+  assert.equal(d.states['sj06-m01-end'].center.location.value.anchor,'rightFoot');
+
+  assert.equal(d.views['sj07-start-view'].stateId,'sj07-start');
+  assert.equal(d.states['sj07-m01-end'].feet.left.groundContact.value,'none');
+  assert.equal(d.states['sj07-m02-end'].feet.right.groundContact.value,'none');
+
+  assert.equal(d.views['sj10-start-view'].stateId,'sj10-start');
+  assert.deepEqual(d.states['sj10-m02-end'].feet.right.position.value,{x:1,y:1});
+  assert.equal(d.states['sj10-m02-end'].feet.right.position.basis,'illustration');
+  assert.equal(d.states['sj10-m02-end'].center.location.value.anchor,'leftFoot');
+
+  assert.equal(d.views['sj11-m02-view'].stateId,'sj11-m02-end');
+  assert.deepEqual(d.states['sj11-m02-end'].feet.right.position.value,{x:1,y:1});
+});
+
 test('instructions, interpretations, principles and checks survive verbatim',()=>{
   const d=compileData(fresh());
   for(const [id,m] of Object.entries(source.motions)){
