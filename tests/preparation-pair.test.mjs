@@ -10,15 +10,19 @@ const qishiEnd='p002-m06-end';
 
 function freeze(x){if(x&&typeof x==='object'){Object.freeze(x);Object.values(x).forEach(freeze);}return x;}
 
-test('current partial dataset has six starts and 39 numbered motions',()=>{
+test('current partial dataset includes Yijian and Shujin practice views',()=>{
   const d=compileData(fresh());
-  assert.equal(d.navigation.order.length,45);
+  assert.equal(d.navigation.order.length,95);
   assert.equal(d.catalog.postures.p001.motionCount,1);
   assert.equal(d.catalog.postures.p002.motionCount,6);
   assert.equal(d.catalog.postures.p003.motionCount,21);
   assert.equal(d.catalog.postures.p004.motionCount,5);
   assert.equal(d.catalog.postures.p005.motionCount,3);
   assert.equal(d.catalog.postures.p006.motionCount,3);
+  const shujin=d.catalog.sections.find(section=>section.id==='shujin12');
+  assert.equal(shujin.postureIds.length,12);
+  assert.equal(shujin.postureIds.reduce((sum,id)=>sum+d.catalog.postures[id].motionCount,0),38);
+  assert.ok(d.sources['donghwa-shujin12-20260925']);
 });
 
 test('preparation keeps only its verified start view',()=>{
