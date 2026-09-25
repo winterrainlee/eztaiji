@@ -84,11 +84,13 @@
       if(!any)box.append(el('p','확인된 세부값이 없어.'));
     }
     const sectionFor=id=>sections.find(s=>s.postureIds.includes(id));
+    const sectionLabel=s=>s?.id==='shujin12'?'舒筋十二式':`易簡太極拳 · ${s?.name??''}`;
+    const localEdge=(viewId,direction)=>{const candidate=d.navigation.edges[viewId]?.[direction];if(!candidate)return null;const here=sectionFor(d.views[viewId].postureId),there=sectionFor(d.views[candidate].postureId);return here?.id===there?.id?candidate:null;};
     function render(){
       const v=d.views[current];if(!v)throw Error('Display view missing');const p=postures[v.postureId],s=v.stateId?d.states[v.stateId]:null,section=sectionFor(p.id);
-      $('location-text').textContent=`${section.name} · ${p.number}. ${p.name}`;
-      const position=v.kind==='start'?'시작 상태':`${v.motionNumber}동작 / ${p.motionCount}동작`;
-      $('stage').textContent=`${p.name} · ${position}`;$('title').textContent=v.kind==='start'?`${p.name} · 시작 상태`:v.title;
+      $('location-text').textContent=`${sectionLabel(section)} · ${p.number}. ${p.name}`;
+      const position=v.kind==='start'?'0동작':`${v.motionNumber}동작 / ${p.motionCount}동작`;
+      $('stage').textContent=`${p.name} · ${position}`;$('title').textContent=v.kind==='start'?`${p.name} · 0동작`:v.title;
       $('instruction').textContent=text(v.instruction)||'확인된 설명이 없어.';$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
       const contacts=['left','right'].flatMap(side=>{const list=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);return list.length?[`${side==='left'?'왼발':'오른발'} · ${list.join(' / ')}`]:[];});
       $('contact-summary').hidden=!contacts.length;$('contact-summary').textContent=contacts.join('　')+(contacts.length?' · 기록 기준':'');
@@ -106,24 +108,25 @@
       const checks=v.checks.map(text).filter(Boolean);$('checks').hidden=!checks.length;$('check-list').replaceChildren(...checks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length||checks.length);
       const sb=$('source-list');sb.replaceChildren();for(const id of v.sourceIds){const source=d.sources[id];if(!source)continue;const item=el('div',undefined,'source-item');const a=el('a',source.title);if(/^https?:\/\//i.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}else item.append(el('strong',source.title));item.append(el('p',source.note));sb.append(item);}if(!sb.childNodes.length)sb.append(el('p','이 화면에는 별도로 연결된 출처가 없어.'));
       draw(v,s);fillDetails(s);$('open-details').disabled=!s;
-      const edges=d.navigation.edges[current];$('prev').disabled=edges.previous===null;$('next').disabled=edges.next===null;
+      const plotPanel=$('plot-panel');if(plotPanel)plotPanel.hidden=section.id==='shujin12';
+      const edges={previous:localEdge(current,'previous'),next:localEdge(current,'next')};$('prev').disabled=edges.previous===null;$('next').disabled=edges.next===null;
       $('prev').textContent=v.kind==='start'&&edges.previous?'← 이전 자세':'← 이전';$('next').textContent=v.kind==='start'?(p.motionCount?'1동작 →':edges.next?'다음 자세 →':'끝'):v.motionNumber===p.motionCount&&edges.next?'다음 자세 →':'다음 →';
       $('motion-current').textContent=v.kind==='start'?p.name+' · 0동작':v.motionNumber+' / '+p.motionCount+'동작';
       $('explanation').scrollTop=0;$('sources').open=false;$('application').open=false;
-      $('announce').textContent=`${section.name} ${p.name} ${position}. ${v.title}`;
+      $('announce').textContent=`${sectionLabel(section)} ${p.name} ${position}. ${v.title}`;
       try{history.replaceState(null,'','#'+current);}catch{/* file viewers may limit history */}
     }
     function go(id){if(!id)return;try{current=id;render();}catch(e){fail(e);}}
-    $('prev').onclick=()=>go(d.navigation.edges[current].previous);$('next').onclick=()=>go(d.navigation.edges[current].next);
+    $('prev').onclick=()=>go(localEdge(current,'previous'));$('next').onclick=()=>go(localEdge(current,'next'));
     function options(select,items,selected){select.replaceChildren(...items.map(([value,label])=>{const o=el('option',label);o.value=value;return o;}));select.value=selected;}
     function fillPostures(sectionId,selected){const list=sections.find(s=>s.id===sectionId).postureIds;options($('posture-select'),list.map(id=>[id,`${postures[id].number}. ${postures[id].name}`]),selected||list[0]);}
-    $('open-picker').onclick=()=>{const pid=d.views[current].postureId,s=sectionFor(pid);options($('section-select'),sections.map(s=>[s.id,s.name]),s.id);fillPostures(s.id,pid);pickerReturn=document.activeElement;$('picker-dialog').showModal();};
+    $('open-picker').onclick=()=>{const pid=d.views[current].postureId,s=sectionFor(pid);options($('section-select'),sections.map(s=>[s.id,sectionLabel(s)]),s.id);fillPostures(s.id,pid);pickerReturn=document.activeElement;$('picker-dialog').showModal();};
     $('section-select').onchange=()=>fillPostures($('section-select').value);
     $('close-picker').onclick=()=>$('picker-dialog').close();$('picker-dialog').addEventListener('close',()=>pickerReturn?.focus());
     $('apply-picker').onclick=()=>{const id=$('posture-select').value;go(postures[id].startViewId);$('picker-dialog').close();};
     $('open-details').onclick=()=>$('details-dialog').showModal();$('close-details').onclick=()=>$('details-dialog').close();$('details-dialog').addEventListener('close',()=>$('open-details').focus());
     for(const id of ['picker-dialog','details-dialog'])$(id).addEventListener('click',e=>{if(e.target!==$(id))return;const r=$(id).getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$(id).close();});
-    document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]')||/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(d.navigation.edges[current][e.key==='ArrowRight'?'next':'previous']);}});
+    document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]')||/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(localEdge(current,e.key==='ArrowRight'?'next':'previous'));}});
     render();$('load-message').hidden=true;$('app').hidden=false;
   }catch(error){fail(error);}
 })();
