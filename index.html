@@ -8,8 +8,8 @@
   <title>eztaiji · 태극권 동작 연습</title>
   <link rel="stylesheet" href="./published/assets/app.css?v=original-space-body-1">
   <script src="./catalog.js" defer></script>
-  <script src="./published/data/taiji-data.js?v=postures-4-6-1" defer></script>
-  <script src="./published/assets/app.js?v=original-space-body-1" defer></script>
+  <script src="./published/data/taiji-data.js?v=shujin12-1" defer></script>
+  <script src="./published/assets/app.js?v=shujin12-1" defer></script>
 </head>
 <body>
 <main class="app" id="app" hidden>
@@ -19,7 +19,7 @@
     <a class="about-link" href="./about.html">소개</a>
   </header>
   <div class="workspace">
-    <section class="plot-panel" aria-label="고정 좌표판">
+    <section class="plot-panel" id="plot-panel" aria-label="고정 좌표판">
       <div class="plot-head"><span>위에서 본 모습 · 학습용 좌표</span><button id="open-details" aria-haspopup="dialog" aria-controls="details-dialog">상세</button></div>
       <svg id="plot" class="plot" viewBox="0 0 360 170" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">발 위치, 몸 방향과 팔 구조 방향</title><desc id="diagram-desc"></desc></svg>
       <p id="plot-empty" class="plot-empty" hidden></p>
@@ -48,7 +48,7 @@
 </main>
 <section id="load-message" class="load-message" role="status"><p>연습 데이터를 불러오는 중이야.</p></section>
 <noscript><p class="load-message">동작을 살펴보려면 브라우저의 JavaScript를 켜줘.</p></noscript>
-<dialog id="picker-dialog" aria-labelledby="picker-title"><div class="sheet-head"><h2 id="picker-title">연습할 자세 선택</h2><button id="close-picker" autofocus>닫기</button></div><div class="picker"><div><label for="section-select">단</label><select id="section-select"></select></div><div><label for="posture-select">자세</label><select id="posture-select"></select></div></div><p class="muted">자세를 고르면 시작 상태부터 살펴볼 수 있어.</p><button id="apply-picker" class="apply">이 자세 시작</button></dialog>
+<dialog id="picker-dialog" aria-labelledby="picker-title"><div class="sheet-head"><h2 id="picker-title">연습할 자세 선택</h2><button id="close-picker" autofocus>닫기</button></div><div class="picker"><div><label for="section-select">과정</label><select id="section-select"></select></div><div><label for="posture-select">자세</label><select id="posture-select"></select></div></div><p class="muted">과정과 자세를 고르면 0동작부터 살펴볼 수 있어.</p><button id="apply-picker" class="apply">이 자세 시작</button></dialog>
 <dialog id="details-dialog" aria-labelledby="details-title"><div class="sheet-head"><h2 id="details-title">좌표 상세</h2><button id="close-details" autofocus>닫기</button></div><div id="pose-details" class="detail-lines"></div><p class="muted">확인된 세부값만 보여줘. 위치는 고정된 바닥 좌표, 발의 좌우는 몸의 좌우야. C의 ‘발 쪽’은 영역 설명이고 정확한 점이 아니야.</p></dialog>
 </body>
 </html>
