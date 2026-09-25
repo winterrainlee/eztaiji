@@ -14,7 +14,7 @@
     if(!d||d.formatVersion!=='0.1.0'||!d.views||!d.catalog?.sections?.length||!d.navigation?.order?.length)throw Error('Unsupported or missing display data');
     let current=d.views[location.hash.slice(1)]?location.hash.slice(1):d.navigation.order[0];
     let pickerReturn=null;
-    const postures=d.catalog.postures,sections=d.catalog.sections;
+    const postures=d.catalog.postures,sections=[...d.catalog.sections].sort((a,b)=>Number(b.id==='shujin12')-Number(a.id==='shujin12'));
     const sectorAngle={'front':0,'front-right':45,'right':90,'back-right':135,'back':180,'back-left':225,'left':270,'front-left':315};
     const angleSector=Object.fromEntries(Object.entries(sectorAngle).map(([name,angle])=>[angle,name]));
     const sectorText={'front':'기준 정면','front-right':'기준 오른쪽 앞','right':'기준 오른쪽','back-right':'기준 오른쪽 뒤','back':'기준 뒤','back-left':'기준 왼쪽 뒤','left':'기준 왼쪽','front-left':'기준 왼쪽 앞'};
