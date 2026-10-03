@@ -145,7 +145,10 @@ export function compileData(d) {
     out.states[id]=projection(d.states[id]);
     const fid=d.states[id].coordinateFrameId; out.coordinateFrames[fid]=copy(d.coordinateFrames[fid]);
   }
-  for (const id of [...usedPrinciples].sort()) out.principles[id]=copy(d.principles[id]);
+  for (const id of Object.keys(d.principles ?? {}).sort()) {
+    out.principles[id]=copy(d.principles[id]);
+    evidenceIds(d.principles[id]).forEach(x => usedSources.add(x));
+  }
   for (const id of [...usedInterpretations].sort()) {
     const x=d.interpretations[id];
     out.interpretations[id]={id:x.id,category:x.category,scope:copy(x.scope),availability:x.availability,
