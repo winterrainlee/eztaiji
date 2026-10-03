@@ -28,15 +28,20 @@ class SchemaContracts(unittest.TestCase):
     def test_semantics_preserved(self):
         verify_preservation(self.source, self.deployed)
 
-    def test_verified_preparation_motion_is_valid(self):
-        self.assertEqual(self.source["postures"]["p001"]["motionIds"], ["p001-m01"])
-        self.assertEqual(self.deployed["catalog"]["postures"]["p001"]["motionCount"], 1)
+    def test_source_verified_preparation_sequence_is_valid(self):
+        self.assertEqual(
+            self.source["postures"]["p001"]["motionIds"],
+            ["p001-m01", "p001-m02", "p001-m03", "p001-m04"],
+        )
+        self.assertEqual(self.deployed["catalog"]["postures"]["p001"]["motionCount"], 4)
         self.assertEqual(self.deployed["navigation"]["edges"]["p001-start-view"]["next"], "p001-m01-view")
+        self.assertEqual(self.deployed["navigation"]["edges"]["p001-m04-view"]["next"], "p002-start-view")
 
-    def test_explicit_qishi_coordinate_start_is_valid(self):
-        self.assertEqual(self.source["postures"]["p002"]["start"]["kind"], "explicitState")
-        self.assertEqual(self.deployed["views"]["p002-start-view"]["stateId"], "p002-start")
-        self.assertEqual(self.deployed["states"]["p002-start"]["feet"]["left"]["position"]["basis"], "illustration")
+    def test_qishi_start_reuses_preparation_final_state(self):
+        self.assertEqual(self.source["postures"]["p002"]["start"]["kind"], "previousEnd")
+        self.assertEqual(self.source["postures"]["p002"]["start"]["postureId"], "p001")
+        self.assertEqual(self.deployed["views"]["p002-start-view"]["stateId"], "p001-m04-end")
+        self.assertNotIn("p002-start", self.deployed["states"])
 
     def test_unknown_cannot_contain_value(self):
         x = copy.deepcopy(self.source)
@@ -50,7 +55,7 @@ class SchemaContracts(unittest.TestCase):
 
     def test_inference_without_explanation_rejected(self):
         x = copy.deepcopy(self.source)
-        del x["postures"]["p002"]["introduction"]["note"]
+        del x["states"]["p001-m04-end"]["feet"]["right"]["supportRole"]["note"]
         self.bad("training", x)
 
     def test_inference_without_evidence_rejected(self):
