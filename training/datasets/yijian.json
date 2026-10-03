@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "principles-cat-step-001",
+  "revision": "principles-shi-xu-001",
   "coverage": {
     "kind": "partial",
     "note": "易簡太極拳 預備式 4동작을 Tsaifucius 易簡1–64식 원문과 다시 대조해 복원했다. 발의 수치 좌표와 여덟 방향 섹터는 학습용 근사이며, 원문이 전후 위치를 정확히 고정하지 않는 부분은 수치로 확정하지 않는다. 太極起勢는 預備式 4동작 종료 상태에서 이어진다."
@@ -1456,7 +1456,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-shi-xu"
+      ]
     },
     "p003-m04": {
       "id": "p003-m04",
@@ -1653,6 +1655,7 @@
         }
       ],
       "principleIds": [
+        "gp-shi-xu",
         "gp-spatial-reference"
       ]
     },
@@ -2069,6 +2072,7 @@
         }
       ],
       "principleIds": [
+        "gp-shi-xu",
         "gp-spatial-reference"
       ]
     },
@@ -5648,7 +5652,9 @@
           "note": "3동작의 오른발 60도 斜踏 유지와 4동작의 內扣 순서를 자기 점검 문장으로 바꿨다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-shi-xu"
+      ]
     },
     "p001-m04": {
       "id": "p001-m04",
@@ -20821,6 +20827,52 @@
     "legacyRendering": []
   },
   "principles": {
+    "gp-shi-xu": {
+      "id": "gp-shi-xu",
+      "order": 1,
+      "title": "實과 虛를 구분하기",
+      "summary": {
+        "status": "known",
+        "value": "eztaiji에서 ●實은 현재 몸의 중심을 주로 받아 움직임의 기반이 되는 발, ○虛는 지지 부담을 덜어 위치·방향을 바꿀 여유가 있는 발로 읽어. 핵심은 어느 발이 지금 몸을 받치고 어느 발이 변화할 수 있는지를 구분하는 거야.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "第一式 預備式 站姿·第三動 / 攬雀尾 左掤 第3–5動·右掤 第2–4動",
+            "support": "contextual"
+          }
+        ],
+        "note": "원문의 坐實·虛 및 연속 동작에서 나타나는 중심 이동을 eztaiji의 발별 지지 역할로 정리한 프로젝트 해석이다."
+      },
+      "explanation": {
+        "status": "known",
+        "value": "虛는 발이 반드시 공중에 떠 있다는 뜻이 아니야. 발끝이나 뒤꿈치가 바닥에 닿아 있어도 몸을 주로 받치지 않는 쪽이면 虛로 볼 수 있어. 實도 체중 100% 같은 수치가 아니라 현재 몸을 주로 받치는 역할을 뜻해. 중심이 옮겨지면 두 발의 實·虛 역할도 바뀔 수 있어. eztaiji의 ●/○ 표시는 이 지지 역할과 그 전환을 보기 위한 학습 표기야.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "第一式 預備式 站姿·第三動 / 攬雀尾 左掤 第3–5動·右掤 第2–4動 / 提手 第2–3動",
+            "support": "contextual"
+          }
+        ],
+        "note": "원문이 實·虛를 체중 백분율로 정의하지 않으므로 수치 비율을 만들지 않고 질적인 지지 역할로만 정리한다."
+      },
+      "example": {
+        "status": "known",
+        "value": "攬雀尾 左掤에서는 3동작에서 오른발을 坐實해 왼발을 虛로 만들고, 4동작에서 그 虛한 왼발을 앞으로 보내도 중심은 오른발에 남겨. 5동작에서야 중심을 왼발로 옮겨 왼발이 實이 돼. ‘오른實·왼虛 → 빈 왼발 이동 → 왼實로 전환’이 한 흐름으로 보여.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "攬雀尾 左掤 第3–5動",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
     "gp-nonrigidity": {
       "id": "gp-nonrigidity",
       "title": "국소 제약을 전신 경직으로 번지게 하지 않기",
@@ -20862,7 +20914,8 @@
             "support": "explicit"
           }
         ]
-      }
+      },
+      "order": 2
     },
     "gp-spatial-reference": {
       "id": "gp-spatial-reference",
@@ -20906,7 +20959,8 @@
             "support": "explicit"
           }
         ]
-      }
+      },
+      "order": 3
     },
     "gp-joint-chain": {
       "id": "gp-joint-chain",
@@ -20949,7 +21003,8 @@
             "support": "explicit"
           }
         ]
-      }
+      },
+      "order": 4
     },
     "gp-cat-step": {
       "id": "gp-cat-step",
@@ -21004,7 +21059,8 @@
             "support": "explicit"
           }
         ]
-      }
+      },
+      "order": 5
     }
   }
 }
