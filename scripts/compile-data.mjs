@@ -94,11 +94,23 @@ function projection(s) {
 }
 export function compileData(d) {
   const {order} = validateReferences(d);
+  const principleIds=Object.values(d.principles ?? {}).sort((a,b)=>a.order-b.order).map(p=>p.id);
+  const postureSections=[...d.sections].sort((a,b)=>{
+    if(a.id==='shujin12')return -1;
+    if(b.id==='shujin12')return 1;
+    return 0;
+  });
+  const sectionOffset=principleIds.length?1:0;
+  const displaySections=[
+    ...(principleIds.length?[{id:'principles',name:'공통원리',kind:'principles',order:1,
+      principleIds:copy(principleIds),viewIds:principleIds.map(id=>id+'-view')}]:[]),
+    ...postureSections.map((s,i)=>({...copy(s),kind:'postures',order:i+1+sectionOffset}))
+  ];
   const out = {
     formatVersion:'0.1.0', profile:'preparation-pilot',
     meta:{datasetId:d.id, datasetRevision:d.revision, trainingSchemaVersion:d.schemaVersion,
       generatorVersion:'0.1.0', inputDigest:createHash('sha256').update(stableJSON(d)).digest('hex'), coverage:copy(d.coverage)},
-    coordinateFrames:{}, catalog:{sections:copy(d.sections),postures:{}},
+    coordinateFrames:{}, catalog:{sections:displaySections,postures:{}},
     navigation:{order:[],edges:{}}, states:{}, views:{}, principles:{}, interpretations:{}, sources:{}
   };
   const usedStates = new Set(), usedPrinciples = new Set(), usedInterpretations = new Set(), usedSources = new Set();
@@ -129,9 +141,18 @@ export function compileData(d) {
     if (from !== null) usedStates.add(from);
     if (current !== null && from !== null) check(d.states[current].coordinateFrameId === d.states[from].coordinateFrameId,
       `${id}: cross-frame transition is not supported`);
-    out.views[id] = view; out.navigation.order.push(id);
+    out.views[id] = view;
     return id;
   };
+  for (const principleId of principleIds) {
+    const principle=d.principles[principleId], id=principleId+'-view', sourceIds=evidenceIds(principle);
+    sourceIds.forEach(x=>usedSources.add(x));
+    out.views[id]={
+      id,kind:'principle',principleId,title:principle.title,order:principle.order,
+      summary:copy(principle.summary),explanation:copy(principle.explanation),
+      example:principle.example?copy(principle.example):null,sourceIds
+    };
+  }
   for (const pid of order) {
     const p=d.postures[pid], start=p.start.kind === 'initial' || p.start.kind === 'explicitState' ? p.start.stateId
       : p.start.kind === 'unregistered' ? null : previousEnd;
@@ -142,6 +163,13 @@ export function compileData(d) {
     }
     previousEnd=from;
     out.catalog.postures[pid]={id:pid,number:p.number,name:p.name,motionCount:p.motionIds.length,startViewId,motionViewIds};
+  }
+  for (const section of out.catalog.sections) {
+    if (section.kind==='principles') out.navigation.order.push(...section.viewIds);
+    else for (const postureId of section.postureIds) {
+      const p=out.catalog.postures[postureId];
+      out.navigation.order.push(p.startViewId,...p.motionViewIds);
+    }
   }
   out.navigation.order.forEach((id,i,a) => {out.navigation.edges[id]={previous:a[i-1]??null,next:a[i+1]??null};});
   for (const id of [...usedStates].sort()) {
@@ -168,16 +196,32 @@ export function validateDeploymentReferences(d) {
   const order=d.navigation.order;
   check(new Set(order).size===order.length,'duplicate navigation view');
   check(order.length===Object.keys(d.views).length && order.length===Object.keys(d.navigation.edges).length,'navigation coverage mismatch');
+  const sectionOrders=d.catalog.sections.map(s=>s.order).sort((a,b)=>a-b);
+  check(new Set(sectionOrders).size===sectionOrders.length && sectionOrders.every((n,i)=>n===i+1),'catalog section order must be contiguous from 1');
+  for (const section of d.catalog.sections) {
+    if (section.kind==='principles') {
+      check(section.principleIds.length===section.viewIds.length,'principle section coverage mismatch');
+      section.principleIds.forEach((pid,i)=>{
+        requireItem(d.principles,pid,`${section.id}/principles`);
+        check(section.viewIds[i]===pid+'-view',`${section.id}: principle view order mismatch`);
+      });
+    } else section.postureIds.forEach(pid=>requireItem(d.catalog.postures,pid,`${section.id}/postures`));
+  }
   for (const [i,id] of order.entries()) {
     const v=requireItem(d.views,id,'navigation');
     check(d.navigation.edges[id]?.previous===(order[i-1]??null) && d.navigation.edges[id]?.next===(order[i+1]??null),'navigation edge mismatch');
-    const p=requireItem(d.catalog.postures,v.postureId,`${id}/postureId`);
-    if (v.kind==='start') {
-      check(p.startViewId===id && v.motionId===null && v.events.length===0,'invalid start view');
-    } else check(p.motionViewIds.includes(id),`${id}: view outside posture`);
-    for (const sid of [v.stateId,v.fromStateId]) if (sid!==null) requireItem(d.states,sid,`${id}/state`);
-    for (const x of v.principleIds) requireItem(d.principles,x,`${id}/principles`);
-    for (const x of v.interpretationIds) requireItem(d.interpretations,x,`${id}/interpretations`);
+    if (v.kind==='principle') {
+      const principle=requireItem(d.principles,v.principleId,`${id}/principleId`);
+      check(v.order===principle.order && v.title===principle.title,`${id}: principle view metadata mismatch`);
+    } else {
+      const p=requireItem(d.catalog.postures,v.postureId,`${id}/postureId`);
+      if (v.kind==='start') {
+        check(p.startViewId===id && v.motionId===null && v.events.length===0,'invalid start view');
+      } else check(p.motionViewIds.includes(id),`${id}: view outside posture`);
+      for (const sid of [v.stateId,v.fromStateId]) if (sid!==null) requireItem(d.states,sid,`${id}/state`);
+      for (const x of v.principleIds) requireItem(d.principles,x,`${id}/principles`);
+      for (const x of v.interpretationIds) requireItem(d.interpretations,x,`${id}/interpretations`);
+    }
     for (const x of v.sourceIds) requireItem(d.sources,x,`${id}/sources`);
   }
   for (const s of Object.values(d.states)) requireItem(d.coordinateFrames,s.coordinateFrameId,'state frame');
