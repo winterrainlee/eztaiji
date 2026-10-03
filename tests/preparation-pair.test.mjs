@@ -10,9 +10,16 @@ const qishiEnd='p002-m06-end';
 
 function freeze(x){if(x&&typeof x==='object'){Object.freeze(x);Object.values(x).forEach(freeze);}return x;}
 
-test('current partial dataset includes Yijian and Shujin practice views',()=>{
+test('current partial dataset includes principles, Shujin and Yijian practice views',()=>{
   const d=compileData(fresh());
-  assert.equal(d.navigation.order.length,98);
+  assert.equal(d.navigation.order.length,103);
+  const principles=d.catalog.sections[0];
+  assert.equal(principles.id,'principles');
+  assert.equal(principles.kind,'principles');
+  assert.deepEqual(principles.principleIds,['gp-shi-xu','gp-nonrigidity','gp-spatial-reference','gp-joint-chain','gp-cat-step']);
+  assert.deepEqual(d.navigation.order.slice(0,5),principles.viewIds);
+  assert.equal(d.views['gp-shi-xu-view'].kind,'principle');
+  assert.equal(d.views['gp-shi-xu-view'].order,1);
   assert.equal(d.catalog.postures.p001.motionCount,4);
   assert.equal(d.catalog.postures.p002.motionCount,6);
   assert.equal(d.catalog.postures.p003.motionCount,21);
@@ -134,7 +141,7 @@ test('lanquewei start shares qishi final state without replaying qishi events',(
 test('global principle is referenced without duplicating its content',()=>{
   const d=compileData(fresh()),v=d.views['p002-m03-view'];
   assert.deepEqual(v.principleIds,['gp-nonrigidity']);
-  assert.equal(d.principles['gp-nonrigidity'].title,'경직하지 않고 변화 가능성을 유지하기');
+  assert.equal(d.principles['gp-nonrigidity'].title,'국소 제약을 전신 경직으로 번지게 하지 않기');
 });
 
 test('bad principle ID fails rather than disappearing',()=>{
@@ -144,7 +151,7 @@ test('bad principle ID fails rather than disappearing',()=>{
 
 test('collection data without global-principle fields still compiles',()=>{
   const x=fresh();delete x.principles;for(const m of Object.values(x.motions))delete m.principleIds;
-  const d=compileData(x);assert.deepEqual(d.principles,{});assert.deepEqual(d.views['p002-m03-view'].principleIds,[]);
+  const d=compileData(x);assert.deepEqual(d.principles,{});assert.deepEqual(d.views['p002-m03-view'].principleIds,[]);assert.equal(d.catalog.sections[0].id,'shujin12');
 });
 
 test('bad state ID fails rather than falling back',()=>{
