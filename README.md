@@ -19,6 +19,7 @@
 - [단·자세·동작 구조와 출처](docs/routine-navigation.md)
 - [확장 계획 및 체크리스트](docs/expansion-plan.md)
 - [동작·상태 데이터 모델 0.1](docs/data-model.md)
+- [공통원리 관리 규칙](docs/common-principles.md)
 - [데이터 모델 설계 시험](docs/design-tests/model-contract.test.mjs)
 - [수련 원본의 검사·변환·배포 경로](docs/data-pipeline.md)
 - [수련 원본·배포 데이터 정리 기록](docs/preparation-pair.md)
