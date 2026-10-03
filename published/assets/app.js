@@ -21,7 +21,7 @@
     const sectorText={'front':'처음의 앞','front-right':'처음의 오른쪽 앞','right':'처음의 오른쪽','back-right':'처음의 오른쪽 뒤','back':'처음의 뒤','back-left':'처음의 왼쪽 뒤','left':'처음의 왼쪽','front-left':'처음의 왼쪽 앞'};
     const relativeSectorText={'front':'몸 정면','front-right':'몸 오른쪽 앞','right':'몸 오른쪽','back-right':'몸 오른쪽 뒤','back':'몸 뒤','back-left':'몸 왼쪽 뒤','left':'몸 왼쪽','front-left':'몸 왼쪽 앞'};
     const contactText={toe:'발끝 접촉',forefoot:'앞꿈치 접촉',heel:'뒤꿈치 접촉',sole:'발바닥 접촉',none:'바닥에서 떨어짐',other:'자료에 기록된 접촉'};
-    const regionText={leftFoot:'왼발 쪽',rightFoot:'오른발 쪽',betweenFeet:'두 발 사이',front:'기준 정면 쪽',back:'기준 뒤쪽'};
+    const regionText={leftFoot:'왼발 쪽',rightFoot:'오른발 쪽',betweenFeet:'두 발 사이',front:'처음 바라보던 앞쪽',back:'처음 바라보던 뒤쪽'};
     const heading=c=>{const a=value(c);return !a?'미등록':a.kind==='sector'?sectorText[a.sector]:`${a.degrees}°${c.precision==='approximate'?' (근사)':''}`;};
     const relativeHeading=c=>{const a=value(c);return !a?'미등록':a.kind==='sector'?relativeSectorText[a.sector]:`몸 정면에서 ${a.degrees}°${c.precision==='approximate'?' (근사)':''}`;};
     const headingAngle=h=>h?(h.kind==='sector'?sectorAngle[h.sector]:h.degrees):null;
@@ -45,9 +45,9 @@
       for(let x=26;x<=334;x+=27)plot.append(svg('path',{d:`M${x} 18V150`,stroke:'#dce5f0','stroke-width':.7}));
       for(let y=24;y<=150;y+=27)plot.append(svg('path',{d:`M26 ${y}H334`,stroke:'#dce5f0','stroke-width':.7}));
       plot.append(svg('path',{d:`M26 ${y0}H270 M${x0} 150V22`,stroke:'#aabdd1','stroke-width':1}));
-      plot.append(svg('text',{x:x0,y:14,fill:muted,'font-size':11,'text-anchor':'middle'},'+y 정면'),svg('text',{x:274,y:y0+14,fill:muted,'font-size':11},'+x'));
+      plot.append(svg('text',{x:x0,y:14,fill:muted,'font-size':11,'text-anchor':'middle'},'처음의 앞'),svg('text',{x:274,y:y0+14,fill:muted,'font-size':11},'오른쪽'));
       for(const n of [0,1,2])plot.append(svg('text',{x:x0+unit*n,y:166,fill:muted,'font-size':11,'text-anchor':'middle'},String(n)));
-      function arrow(x,y,angle,length,color){const a=angle*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),xx=x+dx*length,yy=y+dy*length;plot.append(svg('path',{d:`M${x} ${y}L${xx} ${yy}`,stroke:color,'stroke-width':2.4,'stroke-linecap':'round'}),svg('path',{d:`M${xx-dx*7-dy*4} ${yy-dy*7+dx*4}L${xx} ${yy}L${xx-dx*7+dy*4} ${yy-dy*7-dx*4}`,fill:'none',stroke:color,'stroke-width':2.2,'stroke-linejoin':'round'}));}
+      function arrow(x,y,angle,length,color,dashed=false){const a=angle*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),xx=x+dx*length,yy=y+dy*length;plot.append(svg('path',{d:`M${x} ${y}L${xx} ${yy}`,stroke:color,'stroke-width':2.4,'stroke-linecap':'round',...(dashed?{'stroke-dasharray':'5 4'}:{})}),svg('path',{d:`M${xx-dx*7-dy*4} ${yy-dy*7+dx*4}L${xx} ${yy}L${xx-dx*7+dy*4} ${yy-dy*7-dx*4}`,fill:'none',stroke:color,'stroke-width':2.2,'stroke-linejoin':'round'}));}
       const footScreen={};
       for(const side of ['left','right']){
         const f=s.feet[side],p=value(f.position);if(!p)continue;const x=x0+p.x*unit,y=y0-p.y*unit,h=value(f.heading),role=value(f.supportRole);
@@ -58,7 +58,7 @@
         if(aa!==null){
           const a=aa*Math.PI/180,dx=Math.sin(a),dy=-Math.cos(a),offset=side==='left'?-6:6;
           const ax=x+dx*14-dy*offset,ay=y+dy*14+dx*offset;
-          arrow(ax,ay,aa,22,red);
+          arrow(ax,ay,aa,22,red,true);
         }
         if(!role)plot.append(svg('text',{x:x+18,y:y+4,fill:muted,'font-size':12},'?'));
         const labels=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);
