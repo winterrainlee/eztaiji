@@ -105,7 +105,7 @@
       const contacts=['left','right'].flatMap(side=>{const list=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);return list.length?[`${side==='left'?'왼발':'오른발'} · ${list.join(' / ')}`]:[];});
       $('contact-summary').hidden=!contacts.length;$('contact-summary').textContent=contacts.join('　')+(contacts.length?' · 기록 기준':'');
       const overview=$('start-overview');overview.replaceChildren();const ready=p.motionViewIds.filter(id=>text(d.views[id]?.instruction));overview.hidden=!(v.kind==='start'&&ready.length);
-      if(!overview.hidden){overview.append(el('h2','이 자세의 흐름'));let lastGroup=null;for(const id of ready){const m=d.views[id],match=String(m.title||'').match(/^([^·]+?)\\s+\\d+\\/\\d+\\s*·/),group=match?match[1].trim():null;if(group&&group!==lastGroup){overview.append(el('h3',group,'overview-group'));lastGroup=group;}const row=el('button',`${m.motionNumber} · ${m.title}`,'overview-step');row.type='button';row.onclick=()=>go(id,{history:'push'});overview.append(row);}}
+      if(!overview.hidden){overview.append(el('h2','이 자세의 흐름'));let lastGroup=null;for(const id of ready){const m=d.views[id],match=String(m.title||'').match(/^([^·]+?)\s+\d+\/\d+\s*·/),group=match?match[1].trim():null;if(group&&group!==lastGroup){overview.append(el('h3',group,'overview-group'));lastGroup=group;}const row=el('button',`${m.motionNumber} · ${m.title}`,'overview-step');row.type='button';row.onclick=()=>go(id,{history:'push'});overview.append(row);}}
       const related=v.interpretationIds.map(id=>d.interpretations[id]).filter(Boolean);
       const globalPrinciples=(v.principleIds||[]).map(id=>d.principles?.[id]).filter(Boolean);
       const gpSection=$('global-principles'),gpBody=$('global-principles-body');gpSection.hidden=!globalPrinciples.length;gpBody.replaceChildren();
@@ -134,7 +134,7 @@
     $('section-select').onchange=()=>fillPostures($('section-select').value);
     $('close-picker').onclick=()=>$('picker-dialog').close();$('picker-dialog').addEventListener('close',()=>pickerReturn?.focus());
     $('apply-picker').onclick=()=>{const id=$('posture-select').value;$('picker-dialog').close();go(postures[id].startViewId);};
-    const motionGroup=title=>{const m=String(title||'').match(/^([^·]+?)\\s+\\d+\\/\\d+\\s*·/);return m?m[1].trim():null;};
+    const motionGroup=title=>{const m=String(title||'').match(/^([^·]+?)\s+\d+\/\d+\s*·/);return m?m[1].trim():null;};
     function fillMotionList(p){const nav=$('motion-list');nav.replaceChildren();let group=null,box=null;for(const id of p.motionViewIds){const v=d.views[id],nextGroup=motionGroup(v.title);if(nextGroup&&nextGroup!==group){group=nextGroup;box=el('section',undefined,'motion-group');box.append(el('h3',group));nav.append(box);}if(!box){box=el('section',undefined,'motion-group');nav.append(box);}const b=el('button',`${v.motionNumber} · ${v.title}`,'motion-jump');b.type='button';b.dataset.viewId=id;b.onclick=()=>{go(id);$('motion-dialog').close();};box.append(b);}}
     $('motion-current').onclick=()=>{const p=postures[d.views[current].postureId];fillMotionList(p);motionReturn=document.activeElement;$('motion-dialog').showModal();};
     $('close-motion-dialog').onclick=()=>$('motion-dialog').close();$('motion-dialog').addEventListener('close',()=>motionReturn?.focus());
