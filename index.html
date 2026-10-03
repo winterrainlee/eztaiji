@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f4f7fc">
   <title>eztaiji · 태극권 동작 연습</title>
-  <link rel="stylesheet" href="./published/assets/app.css?v=picker-content-width-1">
+  <link rel="stylesheet" href="./published/assets/app.css">
   <script src="./catalog.js" defer></script>
-  <script src="./published/data/taiji-data.js?v=shujin-coords-2" defer></script>
-  <script src="./published/assets/app.js?v=shujin-picker-first-1" defer></script>
+  <script src="./published/data/taiji-data.js" defer></script>
+  <script src="./published/assets/app.js" defer></script>
 </head>
 <body>
 <main class="app" id="app" hidden>
@@ -18,37 +18,84 @@
     <button id="open-picker" class="location" aria-haspopup="dialog" aria-controls="picker-dialog"><span id="location-text"></span><span aria-hidden="true">▾</span></button>
     <a class="about-link" href="./about.html">소개</a>
   </header>
-  <div class="workspace">
-    <section class="plot-panel" id="plot-panel" aria-label="고정 좌표판">
-      <div class="plot-head"><span>위에서 본 모습 · 학습용 좌표</span><button id="open-details" aria-haspopup="dialog" aria-controls="details-dialog">상세</button></div>
-      <svg id="plot" class="plot" viewBox="0 0 360 170" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">발 위치, 몸 방향과 팔 구조 방향</title><desc id="diagram-desc"></desc></svg>
-      <p id="plot-empty" class="plot-empty" hidden></p>
-      <div id="center-summary" class="center-summary"></div>
-      <div class="legend"><span><b>●</b> 실</span><span><b>○</b> 허</span><span style="color:#704f99"><b>C</b> 중심</span><span>↗ 발끝</span><span style="color:#c43d3d">↗ 팔 구조 방향</span></div>
-    </section>
+
+  <div class="workspace" id="workspace">
     <section class="explanation" id="explanation" tabindex="0" aria-label="동작 설명">
       <div class="eyebrow" id="stage"></div>
       <h1 id="title"></h1>
+
+      <section class="action-card" aria-labelledby="action-heading">
+        <h2 id="action-heading" class="section-kicker">지금 할 일</h2>
+        <p id="action-summary" class="action-summary"></p>
+      </section>
+
+      <section id="checks" class="check primary-checks" hidden aria-labelledby="check-heading">
+        <h2 id="check-heading">자세 확인</h2>
+        <ul id="check-list"></ul>
+      </section>
+
+      <section class="plot-panel" id="plot-panel" aria-label="발 위치와 체중을 보는 그림">
+        <div class="plot-head">
+          <div><strong>발 위치·체중을 보는 그림</strong><span> · 위에서 본 모습</span></div>
+          <button id="open-details" aria-haspopup="dialog" aria-controls="details-dialog">상세</button>
+        </div>
+        <div class="orientation-guide" aria-label="도식 방향 기준">
+          <span>↑ 화면 위 = 처음 바라보던 앞</span>
+          <span>左·右 = 수행자 본인 기준</span>
+          <strong id="body-heading-summary">B 현재 몸의 앞 · 미등록</strong>
+        </div>
+        <svg id="plot" class="plot" viewBox="0 0 360 184" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">발 위치, 체중과 몸 방향</title><desc id="diagram-desc"></desc></svg>
+        <p id="plot-empty" class="plot-empty" hidden></p>
+        <div id="center-summary" class="center-summary"></div>
+        <div class="legend" aria-label="도식 범례">
+          <span><b>● 實</b> 체중을 받치는 발</span>
+          <span><b>○ 虛</b> 가볍게 둔 발</span>
+          <span><b>B ↗</b> 현재 몸의 앞</span>
+          <span>발에서 난 ↗ = 발끝</span>
+          <span>점선 ↗ = 팔 구조 방향</span>
+        </div>
+        <p class="plot-role">손 높이·손목 변화는 위의 ‘지금 할 일’에서 확인해. 이 그림은 평면상의 발 위치·체중·방향을 구분하는 용도야.</p>
+      </section>
+
       <div id="contact-summary" class="contact-summary" hidden></div>
-      <div id="record-kind" class="section-kicker">자료</div>
-      <p class="instruction" id="instruction"></p>
-      <p id="instruction-basis" class="basis-note"></p>
+
+      <section class="movement-detail" aria-labelledby="detail-heading">
+        <h2 id="detail-heading">자세한 동작 설명</h2>
+        <div id="record-kind" class="record-kind">자료</div>
+        <p class="instruction" id="instruction"></p>
+        <p id="instruction-basis" class="basis-note"></p>
+      </section>
+
+      <div id="additional-checks" class="check additional-checks" hidden>
+        <h2>추가 확인</h2>
+        <ul id="additional-check-list"></ul>
+      </div>
+
       <div id="start-overview" class="start-overview" hidden></div>
-      <div id="interpretation-label" class="section-kicker" hidden>해석</div>
-      <div id="why" class="reading-section" hidden><h2>왜 이렇게 움직일까?</h2><div id="why-body"></div></div>
-      <div id="global-principles" class="reading-section global-principles" hidden><h2>공통 원리 <span class="tag">전체</span></h2><div id="global-principles-body"></div><a class="principle-more" href="./about.html#principles">소개에서 자세히 →</a></div>
-      <div id="yin-yang" class="reading-section yin-yang" hidden><h2><span aria-hidden="true">☯</span> 여기서의 음양 <span class="tag">프로젝트 해석</span></h2><div id="yin-yang-body"></div></div>
-      <details id="application" class="reading-section application" hidden><summary>전투 상황에서는 <span class="tag">가정</span></summary><div id="application-body"></div></details>
-      <div id="checks" class="check" hidden><h2>내 자세 확인</h2><ul id="check-list"></ul></div>
-      <details id="sources" class="sources"><summary>출처 · 수련 메모</summary><p>이 화면의 자료와 해석에 실제로 연결된 근거만 모아 보여줘.</p><div id="source-list"></div><p class="muted">좌표로 옮긴 값과 프로젝트 해석은 원자료 자체와 구분해 읽어줘. 실제 수련에서는 사부님의 지도를 우선해.</p></details>
+
+      <details id="theory-details" class="theory-details">
+        <summary>원리 · 해석 · 출처</summary>
+        <div id="interpretation-label" class="section-kicker" hidden>해석</div>
+        <div id="why" class="reading-section" hidden><h2>왜 이렇게 움직일까?</h2><div id="why-body"></div></div>
+        <div id="global-principles" class="reading-section global-principles" hidden><h2>공통 원리 <span class="tag">전체</span></h2><div id="global-principles-body"></div><a class="principle-more" href="./about.html#principles">소개에서 자세히 →</a></div>
+        <div id="yin-yang" class="reading-section yin-yang" hidden><h2><span aria-hidden="true">☯</span> 여기서의 음양 <span class="tag">프로젝트 해석</span></h2><div id="yin-yang-body"></div></div>
+        <details id="application" class="reading-section application" hidden><summary>전투 상황에서는 <span class="tag">가정</span></summary><div id="application-body"></div></details>
+        <section id="sources" class="sources"><h2>출처 · 수련 메모</h2><p>이 화면의 자료와 해석에 실제로 연결된 근거만 모아 보여줘.</p><div id="source-list"></div><p class="muted">좌표로 옮긴 값과 프로젝트 해석은 원자료 자체와 구분해 읽어줘. 실제 수련에서는 사부님의 지도를 우선해.</p></section>
+      </details>
     </section>
   </div>
-  <footer class="controls"><button id="prev">← 이전</button><span id="motion-current"></span><button id="next">다음 →</button></footer>
+
+  <footer class="controls"><button id="prev">← 이전</button><button id="motion-current" aria-haspopup="dialog" aria-controls="motion-dialog"></button><button id="next">다음 →</button></footer>
   <span id="announce" class="sr-only" role="status" aria-live="polite"></span>
 </main>
+
 <section id="load-message" class="load-message" role="status"><p>연습 데이터를 불러오는 중이야.</p></section>
 <noscript><p class="load-message">동작을 살펴보려면 브라우저의 JavaScript를 켜줘.</p></noscript>
+
 <dialog id="picker-dialog" aria-labelledby="picker-title"><div class="sheet-head"><h2 id="picker-title">연습할 자세 선택</h2><button id="close-picker" autofocus>닫기</button></div><div class="picker"><div><label for="section-select">과정</label><select id="section-select"></select></div><div><label for="posture-select">자세</label><select id="posture-select"></select></div></div><p class="muted">과정과 자세를 고르면 0동작부터 살펴볼 수 있어.</p><button id="apply-picker" class="apply">이 자세 시작</button></dialog>
-<dialog id="details-dialog" aria-labelledby="details-title"><div class="sheet-head"><h2 id="details-title">좌표 상세</h2><button id="close-details" autofocus>닫기</button></div><div id="pose-details" class="detail-lines"></div><p class="muted">확인된 세부값만 보여줘. 위치는 고정된 바닥 좌표, 발의 좌우는 몸의 좌우야. C의 ‘발 쪽’은 영역 설명이고 정확한 점이 아니야.</p></dialog>
+
+<dialog id="motion-dialog" aria-labelledby="motion-dialog-title"><div class="sheet-head"><h2 id="motion-dialog-title">동작 바로 이동</h2><button id="close-motion-dialog" autofocus>닫기</button></div><p class="muted">번호와 동작 제목을 눌러 바로 이동해.</p><nav id="motion-list" class="motion-list" aria-label="현재 자세 동작 목록"></nav></dialog>
+
+<dialog id="details-dialog" aria-labelledby="details-title"><div class="sheet-head"><h2 id="details-title">좌표 상세</h2><button id="close-details" autofocus>닫기</button></div><div id="pose-details" class="detail-lines"></div><p class="muted">확인된 세부값만 보여줘. 위치는 처음 바라보던 앞을 고정한 바닥 좌표이고, 발의 좌우는 수행자 본인 기준이야. B는 현재 몸이 향하는 방향이고, C의 ‘발 쪽’은 영역 설명이지 정확한 점이 아니야.</p></dialog>
 </body>
 </html>

@@ -186,6 +186,7 @@ export function asDataScript(d) {
 }
 if (process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
   try {
+    process.stdin.setEncoding('utf8');
     let input=''; for await (const part of process.stdin) input+=part;
     const d=compileData(JSON.parse(input));
     process.stdout.write(process.argv.includes('--script')?asDataScript(d):stableJSON(d)+'\n');
