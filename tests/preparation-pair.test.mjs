@@ -12,8 +12,8 @@ function freeze(x){if(x&&typeof x==='object'){Object.freeze(x);Object.values(x).
 
 test('current partial dataset includes Yijian and Shujin practice views',()=>{
   const d=compileData(fresh());
-  assert.equal(d.navigation.order.length,95);
-  assert.equal(d.catalog.postures.p001.motionCount,1);
+  assert.equal(d.navigation.order.length,98);
+  assert.equal(d.catalog.postures.p001.motionCount,4);
   assert.equal(d.catalog.postures.p002.motionCount,6);
   assert.equal(d.catalog.postures.p003.motionCount,21);
   assert.equal(d.catalog.postures.p004.motionCount,5);
@@ -25,22 +25,27 @@ test('current partial dataset includes Yijian and Shujin practice views',()=>{
   assert.ok(d.sources['donghwa-shujin12-20260925']);
 });
 
-test('preparation start links to its one verified motion',()=>{
+test('preparation exposes its four source-verified motions in order',()=>{
   const d=compileData(fresh());
-  assert.deepEqual(d.catalog.postures.p001.motionViewIds,['p001-m01-view']);
+  assert.deepEqual(d.catalog.postures.p001.motionViewIds,
+    ['p001-m01-view','p001-m02-view','p001-m03-view','p001-m04-view']);
   assert.equal(d.states['p001-start'].feet.left.position.status,'known');
   assert.equal(d.states['p001-start'].feet.left.position.basis,'illustration');
   assert.equal(d.states['p001-start'].feet.right.supportRole.status,'known');
   assert.equal(d.views['p001-start-view'].events.length,0);
   assert.equal(d.navigation.edges['p001-start-view'].next,'p001-m01-view');
+  assert.equal(d.navigation.edges['p001-m04-view'].next,'p002-start-view');
 });
 
-test('qishi start uses an explicit learning coordinate guide',()=>{
+test('qishi start shares the restored preparation final state',()=>{
   const d=compileData(fresh());
-  assert.equal(d.views['p002-start-view'].stateId,'p002-start');
-  assert.equal(d.states['p002-start'].feet.left.position.basis,'illustration');
-  assert.deepEqual(d.states['p002-start'].feet.left.position.value,{x:0,y:0});
-  assert.deepEqual(d.states['p002-start'].feet.right.position.value,{x:1,y:0});
+  assert.equal(d.views['p002-start-view'].stateId,'p001-m04-end');
+  assert.deepEqual(d.views['p002-start-view'].events,[]);
+  assert.equal(d.states['p002-start'],undefined);
+  assert.deepEqual(d.states['p001-m04-end'].feet.left.position.value,{x:0,y:0});
+  assert.deepEqual(d.states['p001-m04-end'].feet.right.position.value,{x:1,y:0});
+  assert.equal(d.states['p001-m04-end'].feet.left.supportRole.value,'shi');
+  assert.equal(d.states['p001-m04-end'].feet.right.supportRole.value,'xu');
 });
 
 test('Shujin coordinates exist only for supported movement states',()=>{
@@ -162,13 +167,15 @@ test('same-day training notes are represented by one source',()=>{
   assert.equal(d.sources['sifu-2026-09-23-nonrigidity'],undefined);
 });
 
-test('only the verified preparation motion remains',()=>{
+test('restored preparation motions use checked source data rather than legacy assumptions',()=>{
   const d=compileData(fresh());
   assert.equal(d.sources['legacy-preparation'],undefined);
-  assert.ok(source.motions['p001-m01']);
-  for(const id of ['p001-m02','p001-m03','p001-m04'])assert.equal(source.motions[id],undefined);
+  for(const id of ['p001-m01','p001-m02','p001-m03','p001-m04'])assert.ok(source.motions[id]);
   assert.equal(d.states['p001-start'].feet.left.position.basis,'illustration');
-  assert.equal(d.views['p001-m01-view'].instruction.basis,'observation');
+  assert.equal(d.views['p001-m01-view'].instruction.basis,'source');
+  assert.equal(d.views['p001-m02-view'].contactSymbols.left,'Toe');
+  assert.equal(d.states['p001-m03-end'].feet.left.supportRole.value,'shi');
+  assert.equal(d.states['p001-m04-end'].feet.right.heading.value.sector,'front');
 });
 
 test('unsupported groups fail instead of being discarded',()=>{
