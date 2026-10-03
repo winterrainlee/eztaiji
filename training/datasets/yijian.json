@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "principles-mece-001",
+  "revision": "principles-cat-step-001",
   "coverage": {
     "kind": "partial",
     "note": "易簡太極拳 預備式 4동작을 Tsaifucius 易簡1–64식 원문과 다시 대조해 복원했다. 발의 수치 좌표와 여덟 방향 섹터는 학습용 근사이며, 원문이 전후 위치를 정확히 고정하지 않는 부분은 수치로 확정하지 않는다. 太極起勢는 預備式 4동작 종료 상태에서 이어진다."
@@ -1528,7 +1528,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-cat-step"
+      ]
     },
     "p003-m05": {
       "id": "p003-m05",
@@ -1960,7 +1962,9 @@
           "note": "원문 동작 관계를 개인 수련용 자기 점검 문장으로 바꾼 프로젝트 해석이다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-cat-step"
+      ]
     },
     "p003-m10": {
       "id": "p003-m10",
@@ -3575,7 +3579,7 @@
         }
       ],
       "principleIds": [
-        "gp-nonrigidity"
+        "gp-cat-step"
       ]
     },
     "p004-m04": {
@@ -4020,7 +4024,7 @@
         }
       ],
       "principleIds": [
-        "gp-nonrigidity"
+        "gp-cat-step"
       ]
     },
     "p005-m03": {
@@ -4339,7 +4343,7 @@
         }
       ],
       "principleIds": [
-        "gp-nonrigidity"
+        "gp-cat-step"
       ]
     },
     "p006-m03": {
@@ -20805,7 +20809,7 @@
         "id": "sifu-2026-10-03",
         "title": "2026-10-03 수련 메모",
         "url": null,
-        "note": "몸의 끝부분만 따로 돌리지 않고 연결된 부분이 차례로 돌아가야 한다는 설명이야. 預備式 4동작에서는 오른발을 먼저 돌리는 것이 아니라 오른쪽 고관절이 몸을 닫는 방향으로 회전하고, 그 변화에 발이 따라온다고 들은 내용을 기록했어."
+        "note": "같은 날 수련에서 들은 설명을 한 메모로 묶었어. 몸의 끝부분만 따로 돌리지 않고 연결된 부분이 차례로 돌아가야 한다는 설명, 預備式 4동작에서 오른쪽 고관절의 회전에 오른발이 따라오는 예시, 그리고 동작을 천천히 하며 하나하나 느끼고 고양이처럼 움직이라는 반복 지도가 포함돼. '몸을 옮기기 전에 빈 발을 먼저 내보내 새 자리를 가늠한다'는 정리는 사용자의 수련 이해로 기록해."
       }
     }
   },
@@ -20942,6 +20946,61 @@
           {
             "sourceId": "sifu-2026-10-03",
             "locator": "預備式 4동작 · 오른쪽 고관절이 먼저 돌아 몸을 닫고 오른발이 따라오는 예시",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
+    "gp-cat-step": {
+      "id": "gp-cat-step",
+      "title": "발로 먼저 공간을 확인한 뒤 중심을 옮기기",
+      "summary": {
+        "status": "known",
+        "value": "새 공간으로 들어갈 때 몸의 중심부터 먼저 보내지 않아. 기존 實발이 몸을 지지하는 동안 虛한 발을 먼저 내보내 새 자리를 잡고, 그 다음에 중심을 옮겨.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-10-03",
+            "locator": "수련 중 반복한 '고양이처럼 움직이기' 지도와 사용자의 '몸을 옮기기 전에 발부터 뻗어 가늠한다'는 이해",
+            "support": "contextual"
+          },
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "攬雀尾 左掤 第3–5動·右掤 第2–4動 / 單鞭 第2–4動 / 提手 第1–3動 / 右靠 第1–3動",
+            "support": "contextual"
+          }
+        ],
+        "note": "사부님의 '고양이처럼'이라는 반복 지도와, 실제 권가에서 지지발을 유지한 채 빈 발을 먼저 새 자리에 놓고 이후 중심을 옮기는 순서를 함께 보고 정리한 프로젝트 해석이다."
+      },
+      "explanation": {
+        "status": "known",
+        "value": "이 원리의 초점은 관절의 전달 순서나 공간상의 고정 기준이 아니라, 새 지지점을 만들 때 발과 중심 가운데 무엇이 먼저 가는가에 있어. 먼저 기존 實발로 몸을 안정시키고 虛한 발만 새 위치로 보낸다. 발이 자리를 잡은 뒤에야 중심 C가 따라가므로, 발을 내딛는 것과 몸을 옮기는 것을 한꺼번에 하지 않아.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-10-03",
+            "locator": "수련 중 반복한 '고양이처럼 움직이기' 지도와 사용자의 '몸을 옮기기 전에 발부터 뻗어 가늠한다'는 이해",
+            "support": "contextual"
+          },
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "攬雀尾 左掤 第3–5動·右掤 第2–4動 / 單鞭 第2–4動 / 提手 第1–3動 / 右靠 第1–3動",
+            "support": "contextual"
+          }
+        ],
+        "note": "邁步如貓行과의 정확한 문헌적 정의를 확정한 것이 아니라, 현장 지도와 현재 등록된 권가 순서를 바탕으로 한 eztaiji의 수련 해석이다."
+      },
+      "example": {
+        "status": "known",
+        "value": "攬雀尾 左掤에서는 오른발을 坐實해 왼발을 虛로 만든 뒤, 왼발을 앞으로 내딛어도 중심은 아직 오른발에 둬. 다음 동작에서야 몸을 왼발로 옮겨 坐實해. '발 먼저 → 중심 나중'이 가장 분명하게 보이는 예야.",
+        "basis": "inference",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "攬雀尾 左掤 第3–5動",
             "support": "explicit"
           }
         ]
