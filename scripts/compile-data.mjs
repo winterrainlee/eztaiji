@@ -37,6 +37,9 @@ function validateReferences(d) {
       check(!allIds.has(id), `${key}/${id}: duplicate global ID`); allIds.add(id);
     }
   }
+  const principleOrders = Object.values(d.principles ?? {}).map(p => p.order).sort((a,b) => a-b);
+  check(new Set(principleOrders).size === principleOrders.length, 'duplicate principle order');
+  check(principleOrders.every((n,i) => n === i + 1), 'principle order must be contiguous from 1');
   const order = d.sections.flatMap(s => s.postureIds), seen = new Set(), motionOwner = new Map();
   const sectionIds = d.sections.map(s => s.id);
   check(new Set(sectionIds).size === sectionIds.length, 'duplicate section ID');
