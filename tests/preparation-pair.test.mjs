@@ -25,13 +25,14 @@ test('current partial dataset includes Yijian and Shujin practice views',()=>{
   assert.ok(d.sources['donghwa-shujin12-20260925']);
 });
 
-test('preparation keeps only its verified start view',()=>{
+test('preparation start links to its one verified motion',()=>{
   const d=compileData(fresh());
-  assert.deepEqual(d.catalog.postures.p001.motionViewIds,[]);
-  assert.equal(d.states['p001-start'].feet.left.position.status,'unknown');
+  assert.deepEqual(d.catalog.postures.p001.motionViewIds,['p001-m01-view']);
+  assert.equal(d.states['p001-start'].feet.left.position.status,'known');
+  assert.equal(d.states['p001-start'].feet.left.position.basis,'illustration');
   assert.equal(d.states['p001-start'].feet.right.supportRole.status,'known');
   assert.equal(d.views['p001-start-view'].events.length,0);
-  assert.equal(d.navigation.edges['p001-start-view'].next,'p002-start-view');
+  assert.equal(d.navigation.edges['p001-start-view'].next,'p001-m01-view');
 });
 
 test('qishi start uses an explicit learning coordinate guide',()=>{
