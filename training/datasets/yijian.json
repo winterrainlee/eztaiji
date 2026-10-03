@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "preparation-4-source-recheck-001",
+  "revision": "principles-joint-chain-001",
   "coverage": {
     "kind": "partial",
     "note": "易簡太極拳 預備式 4동작을 Tsaifucius 易簡1–64식 원문과 다시 대조해 복원했다. 발의 수치 좌표와 여덟 방향 섹터는 학습용 근사이며, 원문이 전후 위치를 정확히 고정하지 않는 부분은 수치로 확정하지 않는다. 太極起勢는 預備式 4동작 종료 상태에서 이어진다."
@@ -5734,7 +5734,9 @@
           "note": "右腳尖內扣를 수련용 자기 점검 문장으로 바꿨다."
         }
       ],
-      "principleIds": []
+      "principleIds": [
+        "gp-joint-chain"
+      ]
     }
   },
   "states": {
@@ -20793,6 +20795,18 @@
         "url": "https://github.com/winterrainlee/eztaiji/blob/main/docs/sources/donghwa-shujin12.md",
         "note": "2026-09-25 동아리 수련 현장에서 사용자가 직접 촬영한 교육자료를 전사한 문서야. 사이트의 한국어 문장은 이 원문을 옮긴 것이고, 별도 원리 해석은 아직 덧붙이지 않았어."
       }
+    },
+    "sifu-2026-10-03": {
+      "id": "sifu-2026-10-03",
+      "kind": "observation",
+      "reviewStatus": "checked",
+      "location": "2026-10-03 사용자 기록 · 國立東華大學 태극권 수련에서 들은 사부님 설명",
+      "public": {
+        "id": "sifu-2026-10-03",
+        "title": "2026-10-03 수련 메모",
+        "url": null,
+        "note": "몸의 끝부분만 따로 돌리지 않고 연결된 부분이 차례로 돌아가야 한다는 설명이야. 預備式 4동작에서는 오른발을 먼저 돌리는 것이 아니라 오른쪽 고관절이 몸을 닫는 방향으로 회전하고, 그 변화에 발이 따라온다고 들은 내용을 기록했어."
+      }
     }
   },
   "authoring": {
@@ -20885,6 +20899,49 @@
           {
             "sourceId": "tsaifucius-yijian64",
             "locator": "攬雀尾 左掤 第1–2動 / 右擠 第3動",
+            "support": "explicit"
+          }
+        ]
+      }
+    },
+    "gp-joint-chain": {
+      "id": "gp-joint-chain",
+      "title": "관절의 연결을 따라 움직이기",
+      "summary": {
+        "status": "known",
+        "value": "손발 같은 끝부분을 따로 조작하지 않고, 몸 중심에 가까운 관절에서 시작된 변화가 연결된 부분을 따라 차례로 전달되게 해.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-10-03",
+            "locator": "연결된 부분이 차례로 회전한다는 설명 / 預備式 4동작의 오른쪽 고관절→오른발 예시",
+            "support": "explicit"
+          }
+        ]
+      },
+      "explanation": {
+        "status": "known",
+        "value": "사부님은 몸의 끝부분만 돌리는 식으로 움직이지 말고 연결된 부분이 차례로 돌아가야 한다고 강조했어. 預備式 4동작에서는 오른발을 먼저 비트는 게 아니라 오른쪽 고관절이 몸을 닫는 방향으로 회전하고, 그 변화에 다리와 발이 따라오게 해.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-10-03",
+            "locator": "연결된 부분이 차례로 회전한다는 설명 / 預備式 4동작의 오른쪽 고관절→오른발 예시",
+            "support": "explicit"
+          }
+        ]
+      },
+      "example": {
+        "status": "known",
+        "value": "預備式 4동작에서 왼발의 지지를 유지한 채 오른쪽 고관절이 안쪽으로 회전해 몸을 닫으면, 가벼운 오른발이 그 회전을 따라 평행하게 정렬되는 흐름으로 확인해.",
+        "basis": "observation",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "sifu-2026-10-03",
+            "locator": "預備式 4동작 · 오른쪽 고관절이 먼저 돌아 몸을 닫고 오른발이 따라오는 예시",
             "support": "explicit"
           }
         ]
