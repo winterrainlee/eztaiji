@@ -15,7 +15,7 @@
     list.replaceChildren(Object.assign(document.createElement('p'),{className:'note',textContent:'공통원리 데이터를 불러오지 못했어.'}));
     return;
   }
-  const items=Object.values(d.principles);
+  const items=Object.values(d.principles).sort((a,b)=>(a.order??999)-(b.order??999)||a.title.localeCompare(b.title,'ko'));
   list.replaceChildren();
   if(!items.length){
     list.append(Object.assign(document.createElement('p'),{className:'note',textContent:'아직 등록된 공통원리가 없어.'}));
@@ -23,7 +23,7 @@
   }
   for(const principle of items){
     const card=document.createElement('article');card.className='principle-card';
-    const h=document.createElement('h3');h.textContent=principle.title;card.append(h);
+    const h=document.createElement('h3');h.textContent=(principle.order?principle.order+'. ':'')+principle.title;card.append(h);
     const label=basisLabel(principle.summary);
     if(label){const meta=document.createElement('div');meta.className='principle-label';meta.textContent=label;card.append(meta);}
     const summary=text(principle.summary);
