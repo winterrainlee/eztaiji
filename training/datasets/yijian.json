@@ -2,10 +2,10 @@
   "schemaVersion": "0.1.0",
   "profile": "preparation-pilot",
   "id": "yijian",
-  "revision": "postures-4-6-shujin12-coordinates-002",
+  "revision": "preparation-4-source-recheck-001",
   "coverage": {
     "kind": "partial",
-    "note": "기존 易簡太極拳 자료와 舒筋十二式 12식·38개 동작에 더해, 현장 자료가 중심 이동·한쪽 다리 들기·전방 차기/蹬出을 명시하는 下蹲式·抖腕抖跗·踢腿·蹬腿 일부 단계에 학습용 좌표·허실 도식을 추가한다. 좌표 거리는 실측값이 아니며 원문 지시와 프로젝트 해석을 구분한다."
+    "note": "易簡太極拳 預備式 4동작을 Tsaifucius 易簡1–64식 원문과 다시 대조해 복원했다. 발의 수치 좌표와 여덟 방향 섹터는 학습용 근사이며, 원문이 전후 위치를 정확히 고정하지 않는 부분은 수치로 확정하지 않는다. 太極起勢는 預備式 4동작 종료 상태에서 이어진다."
   },
   "coordinateFrames": {
     "yijian-front": {
@@ -71,17 +71,20 @@
         "stateId": "p001-start"
       },
       "motionIds": [
-        "p001-m01"
+        "p001-m01",
+        "p001-m02",
+        "p001-m03",
+        "p001-m04"
       ],
       "introduction": {
         "status": "known",
-        "value": "양 발꿈치를 붙이고 발끝을 바깥으로 연 外八字로 곧게 서. 오른발을 實로 두고 왼다리는 풀어 虛로 두며, 팔은 자연스럽게 내려 중지를 바지선 가까이에 두고 손바닥은 안쪽을 향하게 해.",
+        "value": "預備式은 4동작이야. 시작은 양 발꿈치를 붙인 外八字에서 오른발을 實, 왼발을 虛로 두고 선 뒤, 왼발을 비워 열고 → 왼발로 지지를 옮기고 → 오른발을 안으로 돌려 두 발을 평행하게 정렬해.",
         "basis": "source",
         "precision": "qualitative",
         "evidence": [
           {
             "sourceId": "tsaifucius-yijian64",
-            "locator": "預備勢 準備動作 / 第一式 預備式 站姿",
+            "locator": "預備勢 準備動作 / 第一式 預備式 站姿·第一至第四動",
             "support": "explicit"
           }
         ]
@@ -92,8 +95,8 @@
       "number": 2,
       "name": "太極起勢",
       "start": {
-        "kind": "explicitState",
-        "stateId": "p002-start"
+        "kind": "previousEnd",
+        "postureId": "p001"
       },
       "motionIds": [
         "p002-m01",
@@ -105,17 +108,17 @@
       ],
       "introduction": {
         "status": "known",
-        "value": "太極起勢는 6동작으로 이어져. 시작 좌표판은 원자료의 太極起勢 시작 상태를 이해하기 위한 별도 학습용 근사이며, 직전 화면과의 연속 동작을 뜻하지 않아. 실제 핵심은 어깨·팔꿈치·손목이 어떻게 풀리며 두 팔의 구조가 바뀌는지에 있어.",
-        "basis": "inference",
+        "value": "太極起勢는 預備式 4동작이 끝난 상태에서 바로 이어져. 두 발은 어깨너비로 평행하게 정렬되어 있고, 왼발이 實·오른발이 虛인 상태에서 두 손의 起勢를 시작해.",
+        "basis": "source",
         "precision": "qualitative",
         "evidence": [
           {
             "sourceId": "tsaifucius-yijian64",
-            "locator": "太極起勢 1–6動",
+            "locator": "預備勢 第四動 / 第一式 預備式 第四動 → 太極起勢 第一動",
             "support": "contextual"
           }
         ],
-        "note": "현재 預備式은 확인된 현장 수련 내용만 제공한다. 太極起勢 시작 좌표판은 별도 근거의 학습용 도식이므로, 사이의 발 이동이나 체중 이동을 화면이 임의로 보완하지 않는다."
+        "note": "두 항목이 원문에서 연속된 순서로 제시되고, 預備式 4동작의 종료 상태와 太極起勢 시작의 발 배치가 일치한다."
       }
     },
     "p003": {
@@ -3150,7 +3153,7 @@
     "p001-m01": {
       "id": "p001-m01",
       "number": 1,
-      "title": "몸을 낮추며 손의 상대적 상승을 느껴",
+      "title": "몸을 낮추고 왼발 뒤꿈치를 들어",
       "endStateId": "p001-m01-end",
       "checkpointStateIds": [],
       "events": [
@@ -3172,24 +3175,70 @@
             ],
             "note": "2026-09-23 현장 지도에서 확인한 변화다."
           }
+        },
+        {
+          "id": "p001-m01-e2",
+          "target": "leftFoot",
+          "kind": "heel_raise",
+          "description": {
+            "status": "known",
+            "value": "왼발 뒤꿈치를 살짝 들어 바닥에서 떼고 왼발을 虛로 둔다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第一動 / 第一式 預備式 第一動",
+                "support": "explicit"
+              }
+            ]
+          }
         }
       ],
       "eventRelations": [],
       "instruction": {
         "status": "known",
-        "value": "오른다리로 몸을 받치며 고관절 쪽과 몸 전체를 약간 낮춰. 손이나 팔을 따로 들어 올리지 말고 자연스럽게 둬. 몸의 기준 높이가 내려가면서 손이 몸에 대해 상대적으로 조금 위에 남아 보이는 변화를 느껴.",
-        "basis": "observation",
+        "value": "두 다리를 약간 굽혀 몸을 가볍게 낮추고, 왼다리를 풀어 왼발 뒤꿈치를 살짝 들어. 중심은 오른다리에 두고 두 팔은 자연스럽게 내려둬.",
+        "basis": "source",
         "precision": "qualitative",
         "evidence": [
           {
-            "sourceId": "sifu-2026-09-23",
-            "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "預備勢 第一動 / 第一式 預備式 第一動",
             "support": "explicit"
           }
-        ],
-        "note": "손의 상승을 별도의 팔 동작으로 만들지 않는다는 2026-09-23 사부님 설명을 반영했다."
+        ]
       },
-      "checks": [],
+      "checks": [
+        {
+          "status": "known",
+          "value": "왼발 뒤꿈치를 들려고 몸을 왼쪽이나 오른쪽으로 기울이지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第一動 / 第一式 預備式 第一動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 오른발 實·왼발 虛 관계를 자기 점검 문장으로 옮긴 프로젝트 해석이다."
+        },
+        {
+          "status": "known",
+          "value": "손이나 팔을 따로 들어 올리지 않아. 몸이 내려가며 손이 상대적으로 위에 남아 보이는 변화만 느껴.",
+          "basis": "observation",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "sifu-2026-09-23",
+              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+              "support": "explicit"
+            }
+          ],
+          "note": "현장 지도에서 손의 상대적 상승을 독립적인 팔 동작으로 만들지 않는다고 설명했다."
+        }
+      ],
       "principleIds": []
     },
     "p004-m01": {
@@ -5379,6 +5428,312 @@
         "note": "원문: 膝蓋上下蹲立。"
       },
       "checks": [],
+      "principleIds": []
+    },
+    "p001-m02": {
+      "id": "p001-m02",
+      "number": 2,
+      "title": "빈 왼발을 왼쪽으로 열어",
+      "endStateId": "p001-m02-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m02-e1",
+          "target": "leftFoot",
+          "kind": "foot_move",
+          "description": {
+            "status": "known",
+            "value": "왼발을 가볍게 들어 왼쪽으로 열어 어깨너비 자리에 발끝을 비스듬히 댄다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p001-m02-e2",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "두 손을 양옆으로 약 15도 자연스럽게 연다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼발을 가볍게 들어 왼쪽으로 열어 어깨너비에 두고 발끝을 비스듬히 가볍게 대. 두 손도 발과 함께 양옆으로 약 15도 자연스럽게 열어.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "왼발 발끝이 닿아도 중심을 서둘러 왼발에 넘기지 않아.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+              "support": "contextual"
+            }
+          ],
+          "note": "2동작은 발끝 점지이고 3동작에서 비로소 중심을 왼발로 옮긴다는 순서를 자기 점검 문장으로 옮겼다."
+        },
+        {
+          "status": "known",
+          "value": "왼발의 정확한 앞뒤 오프셋을 숫자로 맞추려 하지 말고, 어깨너비의 왼쪽 자리를 우선 확인해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+              "support": "contextual"
+            }
+          ],
+          "note": "같은 원문 안에 '向左側橫開'와 '向左方稍前橫伸' 두 표현이 있어 미세한 전후 위치는 수치로 확정하지 않는다."
+        }
+      ],
+      "principleIds": []
+    },
+    "p001-m03": {
+      "id": "p001-m03",
+      "number": 3,
+      "title": "왼발을 바로 놓고 지지를 옮겨",
+      "endStateId": "p001-m03-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m03-e1",
+          "target": "leftFoot",
+          "kind": "foot_turn",
+          "description": {
+            "status": "known",
+            "value": "왼발을 정면으로 바로 놓는다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p001-m03-e2",
+          "target": "center",
+          "kind": "weight_shift",
+          "description": {
+            "status": "known",
+            "value": "중심을 왼발로 옮겨 왼발을 實, 오른발을 虛로 만든다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p001-m03-e3",
+          "target": "leftFoot",
+          "kind": "heel_lower",
+          "description": {
+            "status": "known",
+            "value": "왼발 뒤꿈치를 내려 바닥에 댄다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p001-m03-e4",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "두 팔을 다리 앞 바깥쪽으로 돌리고 손바닥을 뒤쪽으로 향하게 한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼발을 정면으로 바로 놓고 뒤꿈치를 내려. 중심을 왼발로 옮겨 왼발을 實로 만들고 오른발은 虛로 둬. 두 팔은 다리 앞 바깥쪽으로 돌아오며 손바닥은 뒤를 향해.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "중심을 왼발로 옮긴 뒤에 오른발이 가벼워졌는지 확인해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+              "support": "contextual"
+            }
+          ],
+          "note": "원문의 左實右虛 관계를 자기 점검 문장으로 바꿨다."
+        },
+        {
+          "status": "known",
+          "value": "오른발은 아직 바깥으로 비스듬한 방향을 유지해. 4동작에서 안으로 돌려.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "第一式 預備式 第三動",
+              "support": "contextual"
+            }
+          ],
+          "note": "3동작의 오른발 60도 斜踏 유지와 4동작의 內扣 순서를 자기 점검 문장으로 바꿨다."
+        }
+      ],
+      "principleIds": []
+    },
+    "p001-m04": {
+      "id": "p001-m04",
+      "number": 4,
+      "title": "오른발을 안으로 돌려 평행하게 맞춰",
+      "endStateId": "p001-m04-end",
+      "checkpointStateIds": [],
+      "events": [
+        {
+          "id": "p001-m04-e1",
+          "target": "rightFoot",
+          "kind": "foot_turn",
+          "description": {
+            "status": "known",
+            "value": "오른발 끝을 안쪽으로 돌려 두 발을 평행하게 맞춘다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "p001-m04-e2",
+          "target": "leftArm",
+          "kind": "arm_move",
+          "description": {
+            "status": "known",
+            "value": "어깨를 풀면서 손목과 두 손을 아래로 가라앉혀 다리 앞 바깥쪽에 둔다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      ],
+      "eventRelations": [],
+      "instruction": {
+        "status": "known",
+        "value": "왼발의 지지를 유지한 채 오른발 끝을 안쪽으로 돌려 두 발을 평행하게 맞춰. 두 발은 어깨너비를 유지해. 어깨를 풀면서 손목과 두 손을 아래로 가라앉혀 다리 앞 바깥쪽에 가볍게 둬.",
+        "basis": "source",
+        "precision": "qualitative",
+        "evidence": [
+          {
+            "sourceId": "tsaifucius-yijian64",
+            "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+            "support": "explicit"
+          }
+        ]
+      },
+      "checks": [
+        {
+          "status": "known",
+          "value": "오른발을 돌릴 때 중심을 오른발로 넘기지 않고 왼발 지지를 유지해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第三動·第四動 / 第一式 預備式 第三動·第四動",
+              "support": "contextual"
+            }
+          ],
+          "note": "3동작에서 左實右虛가 된 뒤 4동작에는 별도 체중 이동이 없다는 연속성을 자기 점검 문장으로 옮겼다."
+        },
+        {
+          "status": "known",
+          "value": "오른발을 억지로 비틀기보다 가벼운 발끝을 안으로 정렬해.",
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+              "support": "contextual"
+            }
+          ],
+          "note": "右腳尖內扣를 수련용 자기 점검 문장으로 바꿨다."
+        }
+      ],
       "principleIds": []
     }
   },
@@ -13188,37 +13543,38 @@
           "supportRole": {
             "status": "known",
             "value": "xu",
-            "basis": "observation",
+            "basis": "source",
             "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "sifu-2026-09-23",
-                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第一動 / 第一式 預備式 第一動",
                 "support": "explicit"
               }
-            ],
-            "note": "오른다리가 몸을 받친다는 현장 설명에 대응해 왼발은 주 지지에서 빠진 상태로 기록한다."
+            ]
           },
           "groundContact": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "이 수련 메모만으로 왼발의 세부 접촉 부위를 확정하지 않는다.",
+            "status": "known",
+            "value": "toe",
+            "basis": "source",
+            "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "sifu-2026-09-23",
-                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第一動 / 第一式 預備式 第一動",
                 "support": "explicit"
               }
             ]
           },
           "heelRaised": {
-            "status": "unknown",
-            "reason": "unverified",
-            "note": "왼발 뒤꿈치 높이는 이번 확인된 메모만으로 확정하지 않는다.",
+            "status": "known",
+            "value": true,
+            "basis": "source",
+            "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "sifu-2026-09-23",
-                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第一動 / 第一式 預備式 第一動",
                 "support": "explicit"
               }
             ]
@@ -13262,16 +13618,15 @@
           "supportRole": {
             "status": "known",
             "value": "shi",
-            "basis": "observation",
+            "basis": "source",
             "precision": "qualitative",
             "evidence": [
               {
-                "sourceId": "sifu-2026-09-23",
-                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第一動 / 第一式 預備式 第一動",
                 "support": "explicit"
               }
-            ],
-            "note": "오른다리로 몸을 받친다는 2026-09-23 현장 설명을 반영한다."
+            ]
           },
           "groundContact": {
             "status": "unknown",
@@ -13310,12 +13665,12 @@
           "precision": "qualitative",
           "evidence": [
             {
-              "sourceId": "sifu-2026-09-23",
-              "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
-              "support": "explicit"
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第一動 / 第一式 預備式 第一動",
+              "support": "contextual"
             }
           ],
-          "note": "오른다리가 주로 몸을 받친다는 관찰을 학습용 C 영역으로 옮긴 프로젝트 해석이다."
+          "note": "오른다리가 實이라는 원문을 C의 질적 영역으로 옮긴 프로젝트 해석이다."
         }
       },
       "body": {
@@ -18698,6 +19053,711 @@
           }
         }
       }
+    },
+    "p001-m02-end": {
+      "id": "p001-m02-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "어깨너비로 왼쪽에 연 상태를 평면에서 읽기 위한 학습용 근사다. 원문에는 '왼쪽으로 횡개'와 '왼쪽 약간 앞' 두 표현이 있어 작은 전후 차이는 좌표값에 넣지 않는다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-left"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "斜踏을 여덟 방향 범주로 단순화한 학습용 표기다. 정확한 각도값이 아니다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "발끝만 점지하고 3동작에서 중심을 왼발로 옮기는 순서에 따른 허실 해석이다."
+          },
+          "groundContact": {
+            "status": "known",
+            "value": "toe",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": true,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발을 한 어깨너비 열었을 때 두 발의 상대 배치를 읽기 위한 학습용 기준 좌표다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第三動",
+                "support": "contextual"
+              }
+            ],
+            "note": "3동작에서 오른발 각도를 유지한다고 기록한 내용을 바탕으로 시작 外八字 방향을 여덟 방향 범주로 유지한 학습용 표기다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발이 발끝 점지 상태이고 중심 이동은 3동작에서 명시되므로 오른발 지지가 유지된다고 읽은 프로젝트 해석이다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 수련 메모만으로 오른발의 세부 접촉 부위를 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "오른발 뒤꿈치 높이는 이번 확인된 메모만으로 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "rightFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+              "support": "contextual"
+            }
+          ],
+          "note": "3동작 전까지 오른발이 몸을 받친다는 동작 순서를 C의 질적 영역으로 옮겼다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "第一式 預備式 站姿·第二動",
+              "support": "contextual"
+            }
+          ],
+          "note": "시작 시 북쪽을 향하고 2동작에는 몸 회전 지시가 없어 고정 좌표의 처음 앞을 유지한다고 읽는다."
+        },
+        "organization": {
+          "status": "unknown",
+          "reason": "unrecorded",
+          "note": "2동작에서 별도의 몸통 조직 변화는 원문에서 확정하지 않는다."
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "두 손은 양옆으로 약 15도 자연스럽게 열리고 손바닥은 안쪽을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "두 손은 양옆으로 약 15도 자연스럽게 열리고 손바닥은 안쪽을 향한다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "p001-m03-end": {
+      "id": "p001-m03-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "어깨너비로 왼쪽에 연 상태를 평면에서 읽기 위한 학습용 근사다. 원문에는 '왼쪽으로 횡개'와 '왼쪽 약간 앞' 두 표현이 있어 작은 전후 차이는 좌표값에 넣지 않는다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ],
+            "note": "轉正·直踏을 고정 좌표의 처음 앞 방향으로 옮겼다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "왼발이 바닥에 내려앉는 것은 확인되지만 접촉을 toe/forefoot/sole 중 하나로 더 세분하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발을 한 어깨너비 열었을 때 두 발의 상대 배치를 읽기 위한 학습용 기준 좌표다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front-right"
+            },
+            "basis": "illustration",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "第一式 預備式 第三動",
+                "support": "contextual"
+              }
+            ],
+            "note": "원문은 오른발이 60도 斜踏을 유지한다고 적지만, 현재 화면은 여덟 방향 섹터만 써 front-right로 단순화한다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 수련 메모만으로 오른발의 세부 접촉 부위를 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "오른발 뒤꿈치 높이는 이번 확인된 메모만으로 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+              "support": "contextual"
+            }
+          ],
+          "note": "왼발이 實이라는 원문을 C의 질적 영역으로 옮긴 프로젝트 해석이다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "第一式 預備式 站姿·第三動",
+              "support": "contextual"
+            }
+          ],
+          "note": "몸 회전 지시 없이 북쪽을 향한 자세를 유지한다고 읽는다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "중심이 왼발로 옮겨 왼발이 實, 오른발이 虛가 된다.",
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "두 팔이 다리 앞 바깥쪽으로 돌아오고 손바닥은 뒤를 향한다. 팔은 다리 앞 약 15도에 놓인다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "두 팔이 다리 앞 바깥쪽으로 돌아오고 손바닥은 뒤를 향한다. 팔은 다리 앞 약 15도에 놓인다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "p001-m04-end": {
+      "id": "p001-m04-end",
+      "coordinateFrameId": "yijian-front",
+      "feet": {
+        "left": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "어깨너비로 왼쪽에 연 상태를 평면에서 읽기 위한 학습용 근사다. 원문에는 '왼쪽으로 횡개'와 '왼쪽 약간 앞' 두 표현이 있어 작은 전후 차이는 좌표값에 넣지 않는다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ],
+            "note": "轉正·直踏을 고정 좌표의 처음 앞 방향으로 옮겼다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "shi",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動·第四動 / 第一式 預備式 第三動·第四動",
+                "support": "contextual"
+              }
+            ],
+            "note": "3동작에서 왼발 實이 된 뒤 4동작에는 별도 중심 이동이 없어 유지된다고 읽는다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "왼발이 바닥에 내려앉는 것은 확인되지만 접촉을 toe/forefoot/sole 중 하나로 더 세분하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "known",
+            "value": false,
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動 / 第一式 預備式 第三動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "position": {
+            "status": "known",
+            "value": {
+              "x": 1,
+              "y": 0
+            },
+            "basis": "illustration",
+            "precision": "approximate",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第二動 / 第一式 預備式 第二動",
+                "support": "contextual"
+              }
+            ],
+            "note": "왼발을 한 어깨너비 열었을 때 두 발의 상대 배치를 읽기 위한 학습용 기준 좌표다."
+          },
+          "heading": {
+            "status": "known",
+            "value": {
+              "kind": "sector",
+              "sector": "front"
+            },
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+                "support": "explicit"
+              }
+            ],
+            "note": "右腳尖內扣·兩腳平行을 고정 좌표의 처음 앞 방향으로 옮겼다."
+          },
+          "supportRole": {
+            "status": "known",
+            "value": "xu",
+            "basis": "inference",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第三動·第四動 / 第一式 預備式 第三動·第四動",
+                "support": "contextual"
+              }
+            ],
+            "note": "3동작에서 오른발 虛가 된 뒤 4동작에는 별도 중심 이동이 없어 유지된다고 읽는다."
+          },
+          "groundContact": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "이 수련 메모만으로 오른발의 세부 접촉 부위를 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          },
+          "heelRaised": {
+            "status": "unknown",
+            "reason": "unverified",
+            "note": "오른발 뒤꿈치 높이는 이번 확인된 메모만으로 확정하지 않는다.",
+            "evidence": [
+              {
+                "sourceId": "sifu-2026-09-23",
+                "locator": "2026-09-23 수련 · 預備式 · 몸의 높이 변화",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      },
+      "center": {
+        "location": {
+          "status": "known",
+          "value": {
+            "kind": "region",
+            "anchor": "leftFoot"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第三動·第四動 / 第一式 預備式 第三動·第四動",
+              "support": "contextual"
+            }
+          ],
+          "note": "왼발 지지 유지 관계를 C의 질적 영역으로 옮겼다."
+        }
+      },
+      "body": {
+        "heading": {
+          "status": "known",
+          "value": {
+            "kind": "sector",
+            "sector": "front"
+          },
+          "basis": "inference",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "第一式 預備式 站姿·第四動",
+              "support": "contextual"
+            }
+          ],
+          "note": "처음 북쪽을 향한 상태에서 4동작까지 몸 회전 지시가 없어 처음 앞을 유지한다고 읽는다."
+        },
+        "organization": {
+          "status": "known",
+          "value": "오른발 끝을 안으로 돌려 두 발을 평행하게 맞추고 어깨너비를 유지한다.",
+          "basis": "source",
+          "precision": "qualitative",
+          "evidence": [
+            {
+              "sourceId": "tsaifucius-yijian64",
+              "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+              "support": "explicit"
+            }
+          ]
+        }
+      },
+      "arms": {
+        "left": {
+          "configuration": {
+            "status": "known",
+            "value": "어깨를 풀면서 손목이 아래로 가라앉고 손은 다리 앞과 바깥쪽에 걸쳐 가볍게 놓인다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+                "support": "explicit"
+              }
+            ]
+          }
+        },
+        "right": {
+          "configuration": {
+            "status": "known",
+            "value": "어깨를 풀면서 손목이 아래로 가라앉고 손은 다리 앞과 바깥쪽에 걸쳐 가볍게 놓인다.",
+            "basis": "source",
+            "precision": "qualitative",
+            "evidence": [
+              {
+                "sourceId": "tsaifucius-yijian64",
+                "locator": "預備勢 第四動 / 第一式 預備式 第四動",
+                "support": "explicit"
+              }
+            ]
+          }
+        }
+      }
     }
   },
   "groups": {},
@@ -19690,12 +20750,12 @@
       "id": "tsaifucius-yijian64",
       "kind": "document",
       "reviewStatus": "checked",
-      "location": "https://tsaitaiji.blogspot.com/2024/03/1-64.html — 預備勢, 太極起勢 1–6動, 攬雀尾 3-1~3-5, 單鞭 1–5動, 提手 1–3動, 右靠 1–3動",
+      "location": "https://tsaitaiji.blogspot.com/2024/03/1-64.html — 預備勢 1–4動, 第一式 預備式 站姿·第一至第四動, 太極起勢 1–6動, 攬雀尾 3-1~3-5, 單鞭 1–5動, 提手 1–3動, 右靠 1–3動",
       "public": {
         "id": "tsaifucius-yijian64",
         "title": "Tsaifucius Tai Chi Notes · 易簡1–64式文字敘述",
         "url": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
-        "note": "預備勢, 太極起勢, 攬雀尾에 이어 單鞭 5동·提手 3동·右靠 3동의 순서·방향·坐實/虛踏·발 접촉·팔 배치를 직접 대조한 온라인 기록이야. 좌표와 무술적 해석은 eztaiji의 학습용 정리이며, 현장 지도와 다르면 사부님의 지도를 우선해."
+        "note": "預備勢/第一式 預備式 4동작과 太極起勢·攬雀尾·單鞭·提手·右靠의 순서·방향·坐實/虛踏·발 접촉·팔 배치를 직접 대조한 온라인 기록이야. 좌표와 무술적 해석은 eztaiji의 학습용 정리이며, 현장 지도와 다르면 사부님의 지도를 우선해."
       }
     },
     "sifu-2026-09-23": {
@@ -19737,7 +20797,7 @@
   },
   "authoring": {
     "reviewStatus": "source-recheck-pending",
-    "note": "舊 預備式 4동작 후보는 복구하지 않는다. 현재 預備式은 2026-09-23 수련 메모에서 확인된 내용만 사용한다. 2026-09-24에는 2026-09-22 복습에서 정리한 좌표를 원문과 다시 대조해 單鞭 5동·提手 3동·右靠 3동을 추가했다. 발 좌표와 팔 상대 방향은 eztaiji 학습용 근사이며, 원문이 확정하지 않은 右靠 최종 몸 각도는 front-left 섹터의 추론값으로 명시했다.",
+    "note": "2026-10-03에 과거에 삭제했던 預備式 4동작 후보를 Tsaifucius 易簡1–64식의 預備勢/第一式 預備式 원문과 다시 대조했다. 1–4동작의 순서·허실·발끝 접촉·정렬·손 배치가 확인되어 legacy 값 복사가 아니라 원문 근거로 새로 작성해 복원했다. 2동작의 왼발은 원문 안에 '向左側橫開'와 '向左方稍前橫伸' 두 표현이 있어 작은 전후 오프셋을 수치로 확정하지 않는다. 발 좌표와 여덟 방향 섹터는 여전히 eztaiji 학습용 근사다.",
     "upstreamUrl": "https://tsaitaiji.blogspot.com/2024/03/1-64.html",
     "baselineRevision": "ba53fbbb5d562efeb36bc96707baebf6814acd3d",
     "legacyRendering": []
