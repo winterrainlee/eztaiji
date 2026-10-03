@@ -112,6 +112,7 @@
       $('plot-panel').hidden=true;
       $('contact-summary').hidden=true;
       $('detail-heading').textContent='설명';
+      $('movement-detail').hidden=false;
       $('instruction').textContent=text(v.explanation)||'확인된 설명이 없어.';
       $('record-kind').textContent=['source','observation'].includes(v.explanation?.basis)?'자료':'해석';
       $('instruction-basis').textContent=basis(v.explanation);
@@ -137,12 +138,13 @@
       const v=d.views[current];if(!v)throw Error('Display view missing');const section=sectionForView(current);if(!section)throw Error('Display section missing');
       if(v.kind==='principle'){renderPrinciple(v,section);return;}
       const p=postures[v.postureId],s=v.stateId?d.states[v.stateId]:null;
-      $('action-heading').textContent='지금 할 일';$('detail-heading').textContent='자세한 동작 설명';$('theory-summary').textContent='원리 · 해석 · 출처';
+      $('action-heading').textContent=v.kind==='start'?'시작 상태':'지금 할 일';$('detail-heading').textContent='자세한 동작 설명';$('theory-summary').textContent='원리 · 해석 · 출처';
       $('location-text').textContent=`${sectionLabel(section)} · ${p.number}. ${p.name}`;
       const position=v.kind==='start'?'0동작':`${v.motionNumber}동작 / ${p.motionCount}동작`;
       $('stage').textContent=`${p.name} · ${position}`;$('title').textContent=v.kind==='start'?`${p.name} · 0동작`:v.title;
-      $('action-summary').textContent=coreAction(v);
-      $('instruction').textContent=text(v.instruction)||'확인된 설명이 없어.';$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
+      const actionText=coreAction(v),instructionText=text(v.instruction)||'확인된 설명이 없어.';
+      $('action-summary').textContent=actionText;
+      $('instruction').textContent=instructionText;$('movement-detail').hidden=v.kind==='start'||actionText===instructionText;$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
       const contacts=['left','right'].flatMap(side=>{const list=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);return list.length?[`${side==='left'?'왼발':'오른발'} · ${list.join(' / ')}`]:[];});
       $('contact-summary').hidden=!contacts.length;$('contact-summary').textContent=contacts.join('　')+(contacts.length?' · 기록 기준':'');
       const overview=$('start-overview');overview.replaceChildren();const ready=p.motionViewIds.filter(id=>text(d.views[id]?.instruction));overview.hidden=!(v.kind==='start'&&ready.length);
