@@ -12,12 +12,13 @@
     if(globalThis.EZTAIJI_READY) await globalThis.EZTAIJI_READY;
     const d=globalThis.EZTAIJI_DATA;
     if(!d||d.formatVersion!=='0.1.0'||!d.views||!d.catalog?.sections?.length||!d.navigation?.order?.length)throw Error('Unsupported or missing display data');
-    let current=d.views[location.hash.slice(1)]?location.hash.slice(1):d.navigation.order[0];
-    let pickerReturn=null;
+    const requested=location.hash.slice(1);
+    let current=d.views[requested]?requested:d.navigation.order[0];
+    let pickerReturn=null,motionReturn=null;
     const postures=d.catalog.postures,sections=[...d.catalog.sections].sort((a,b)=>Number(b.id==='shujin12')-Number(a.id==='shujin12'));
     const sectorAngle={'front':0,'front-right':45,'right':90,'back-right':135,'back':180,'back-left':225,'left':270,'front-left':315};
     const angleSector=Object.fromEntries(Object.entries(sectorAngle).map(([name,angle])=>[angle,name]));
-    const sectorText={'front':'기준 정면','front-right':'기준 오른쪽 앞','right':'기준 오른쪽','back-right':'기준 오른쪽 뒤','back':'기준 뒤','back-left':'기준 왼쪽 뒤','left':'기준 왼쪽','front-left':'기준 왼쪽 앞'};
+    const sectorText={'front':'처음의 앞','front-right':'처음의 오른쪽 앞','right':'처음의 오른쪽','back-right':'처음의 오른쪽 뒤','back':'처음의 뒤','back-left':'처음의 왼쪽 뒤','left':'처음의 왼쪽','front-left':'처음의 왼쪽 앞'};
     const relativeSectorText={'front':'몸 정면','front-right':'몸 오른쪽 앞','right':'몸 오른쪽','back-right':'몸 오른쪽 뒤','back':'몸 뒤','back-left':'몸 왼쪽 뒤','left':'몸 왼쪽','front-left':'몸 왼쪽 앞'};
     const contactText={toe:'발끝 접촉',forefoot:'앞꿈치 접촉',heel:'뒤꿈치 접촉',sole:'발바닥 접촉',none:'바닥에서 떨어짐',other:'자료에 기록된 접촉'};
     const regionText={leftFoot:'왼발 쪽',rightFoot:'오른발 쪽',betweenFeet:'두 발 사이',front:'기준 정면 쪽',back:'기준 뒤쪽'};
@@ -29,13 +30,15 @@
     const claimLabel=(c,formatter=v=>String(v))=>c?.status==='known'?`${formatter(c.value)} · ${basis(c)}`:c?.status==='not_applicable'?'해당 없음':'미등록';
     const stateDescription=s=>{if(!s)return '몸 상태 미등록';const feet=['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');const arms=[['left','왼팔'],['right','오른팔']].flatMap(([side,label])=>s.arms?.[side]?.relativeDirection?[`${label} 구조 방향 ${armWorldText(s,side)}`]:[]).join('. ');return arms?`${feet}. ${arms}`:feet;};
     const svg=(tag,attrs={},label)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(label!==undefined)e.textContent=label;return e;};
+    function coreAction(v){const xs=(v.events||[]).map(e=>text(e.description)).filter(Boolean);if(xs.length===1)return xs[0];if(xs.length===2&&xs[0]===xs[1])return xs[0];return xs.length?xs.slice(0,2).join(' '):(text(v.instruction)||'확인된 핵심 동작이 없어.');}
     // One fixed world-to-view transform across the current training frames.
     function draw(v,s){
       const plot=$('plot');plot.replaceChildren(svg('title',{id:'diagram-title'},v.title),svg('desc',{id:'diagram-desc'},stateDescription(s)));
       const hasFeet=s&&['left','right'].some(k=>value(s.feet[k].position));
       plot.hidden=!hasFeet;$('plot-empty').hidden=hasFeet;
       $('plot-empty').textContent=v.kind==='start'?'확인된 좌표값은 따로 표시하지 않아.\n아래 자료와 해석을 살펴봐.':'확인된 좌표값이 없어.\n아래 기록만 보여줄게.';
-      const c=value(s?.center?.location);
+      const c=value(s?.center?.location),bh=value(s?.body?.heading);
+      $('body-heading-summary').textContent=bh?`B 현재 몸의 앞 · ${heading(s.body.heading)} · ${basis(s.body.heading)}`:'B 현재 몸의 앞 · 미등록';
       $('center-summary').textContent=c?`C 중심 · ${c.kind==='region'?regionText[c.anchor]+' (영역)':`≈ (${c.x}, ${c.y})`}`:hasFeet?'C 중심 · 미등록':'';
       if(!hasFeet)return;
       const blue='#225bd6',red='#c43d3d',centerColor='#704f99',muted='#5e7184',x0=60,y0=138,unit=88;
@@ -60,6 +63,12 @@
         if(!role)plot.append(svg('text',{x:x+18,y:y+4,fill:muted,'font-size':12},'?'));
         const labels=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);
         if(labels.length)plot.append(svg('text',{x,y:y+30,fill:'#704f99','font-size':11,'text-anchor':'middle'},labels.join(' · ')));
+      }
+      if(bh){
+        let bx=168,by=88;
+        if(footScreen.left&&footScreen.right){bx=(footScreen.left.x+footScreen.right.x)/2;by=(footScreen.left.y+footScreen.right.y)/2-34;}
+        arrow(bx,by,headingAngle(bh),44,'#183c67');
+        plot.append(svg('text',{x:bx+8,y:by-7,fill:'#183c67','font-size':12,'font-weight':700},'B'));
       }
       if(c?.kind==='point'){
         const x=x0+c.x*unit,y=y0-c.y*unit;
@@ -91,11 +100,12 @@
       $('location-text').textContent=`${sectionLabel(section)} · ${p.number}. ${p.name}`;
       const position=v.kind==='start'?'0동작':`${v.motionNumber}동작 / ${p.motionCount}동작`;
       $('stage').textContent=`${p.name} · ${position}`;$('title').textContent=v.kind==='start'?`${p.name} · 0동작`:v.title;
+      $('action-summary').textContent=coreAction(v);
       $('instruction').textContent=text(v.instruction)||'확인된 설명이 없어.';$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
       const contacts=['left','right'].flatMap(side=>{const list=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);return list.length?[`${side==='left'?'왼발':'오른발'} · ${list.join(' / ')}`]:[];});
       $('contact-summary').hidden=!contacts.length;$('contact-summary').textContent=contacts.join('　')+(contacts.length?' · 기록 기준':'');
       const overview=$('start-overview');overview.replaceChildren();const ready=p.motionViewIds.filter(id=>text(d.views[id]?.instruction));overview.hidden=!(v.kind==='start'&&ready.length);
-      if(!overview.hidden){overview.append(el('h2','이 자세의 흐름'));for(const id of ready){const m=d.views[id],row=el('div',undefined,'overview-step');row.append(el('span',`${m.motionNumber}동작`),el('div',m.title));overview.append(row);}}
+      if(!overview.hidden){overview.append(el('h2','이 자세의 흐름'));let lastGroup=null;for(const id of ready){const m=d.views[id],match=String(m.title||'').match(/^([^·]+?)\\s+\\d+\\/\\d+\\s*·/),group=match?match[1].trim():null;if(group&&group!==lastGroup){overview.append(el('h3',group,'overview-group'));lastGroup=group;}const row=el('button',`${m.motionNumber} · ${m.title}`,'overview-step');row.type='button';row.onclick=()=>go(id,{history:'push'});overview.append(row);}}
       const related=v.interpretationIds.map(id=>d.interpretations[id]).filter(Boolean);
       const globalPrinciples=(v.principleIds||[]).map(id=>d.principles?.[id]).filter(Boolean);
       const gpSection=$('global-principles'),gpBody=$('global-principles-body');gpSection.hidden=!globalPrinciples.length;gpBody.replaceChildren();
@@ -105,28 +115,33 @@
       for(const x of yy){const c=x.content,pair=el('div',undefined,'pair');for(const[key,i]of [['first',0],['second',1]]){const a=el('div');a.append(el('strong',c.terms[i]),el('p',text(c[key])));pair.append(a);}yyBox.append(pair,el('p',text(c.relation),'relation'));}
       const apps=related.filter(x=>x.category==='application');$('application').hidden=!apps.length;const ab=$('application-body');ab.replaceChildren();
       for(const x of apps){if(x.availability!=='present'){ab.append(el('p',x.reason,'muted'));continue;}const c=x.content;ab.append(el('p',`${x.scope.kind==='posture'?p.name+' 전체':'이 동작'} · ${c.applicationType==='preparation'?'준비 구조로 읽기':'상황을 가정한 해석'}`,'scope'));for(const[key,label]of [['assumption','상황'],['response','대응'],['possibleResult','가능한 결과'],['limitations','읽을 때의 한계']]){ab.append(el('span',label,'scenario-label'),el('p',text(c[key]),key==='limitations'?'limitations':''));}}
-      const checks=v.checks.map(text).filter(Boolean);$('checks').hidden=!checks.length;$('check-list').replaceChildren(...checks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length||checks.length);
+      const checks=v.checks.map(text).filter(Boolean),primaryChecks=checks.slice(0,2),extraChecks=checks.slice(2);$('checks').hidden=!primaryChecks.length;$('check-list').replaceChildren(...primaryChecks.map(t=>el('li',t)));$('additional-checks').hidden=!extraChecks.length;$('additional-check-list').replaceChildren(...extraChecks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length);
       const sb=$('source-list');sb.replaceChildren();for(const id of v.sourceIds){const source=d.sources[id];if(!source)continue;const item=el('div',undefined,'source-item');const a=el('a',source.title);if(/^https?:\/\//i.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}else item.append(el('strong',source.title));item.append(el('p',source.note));sb.append(item);}if(!sb.childNodes.length)sb.append(el('p','이 화면에는 별도로 연결된 출처가 없어.'));
       draw(v,s);fillDetails(s);$('open-details').disabled=!s;
       const plotPanel=$('plot-panel');const hasPlotCoordinates=['left','right'].some(side=>value(s?.feet?.[side]?.position));if(plotPanel)plotPanel.hidden=section.id==='shujin12'&&!hasPlotCoordinates;
       const edges={previous:localEdge(current,'previous'),next:localEdge(current,'next')};$('prev').disabled=edges.previous===null;$('next').disabled=edges.next===null;
       $('prev').textContent=v.kind==='start'&&edges.previous?'← 이전 자세':'← 이전';$('next').textContent=v.kind==='start'?(p.motionCount?'1동작 →':edges.next?'다음 자세 →':'끝'):v.motionNumber===p.motionCount&&edges.next?'다음 자세 →':'다음 →';
-      $('motion-current').textContent=v.kind==='start'?p.name+' · 0동작':v.motionNumber+' / '+p.motionCount+'동작';
-      $('explanation').scrollTop=0;$('sources').open=false;$('application').open=false;
+      $('motion-current').textContent=v.kind==='start'?p.name+' · 0동작 ▾':v.motionNumber+' / '+p.motionCount+'동작 ▾';
+      $('explanation').scrollTop=0;$('theory-details').open=false;$('application').open=false;
       $('announce').textContent=`${sectionLabel(section)} ${p.name} ${position}. ${v.title}`;
-      try{history.replaceState(null,'','#'+current);}catch{/* file viewers may limit history */}
     }
-    function go(id){if(!id)return;try{current=id;render();}catch(e){fail(e);}}
+    function setUrl(id,mode){try{if(mode==='push')history.pushState({view:id},'','#'+id);else if(mode==='replace')history.replaceState({view:id},'','#'+id);}catch{/* file viewers may limit history */}}
+    function go(id,{history='push'}={}){if(!id||!d.views[id])return;try{current=id;setUrl(id,history);render();}catch(e){fail(e);}}
     $('prev').onclick=()=>go(localEdge(current,'previous'));$('next').onclick=()=>go(localEdge(current,'next'));
     function options(select,items,selected){select.replaceChildren(...items.map(([value,label])=>{const o=el('option',label);o.value=value;return o;}));select.value=selected;}
     function fillPostures(sectionId,selected){const list=sections.find(s=>s.id===sectionId).postureIds;options($('posture-select'),list.map(id=>[id,`${postures[id].number}. ${postures[id].name}`]),selected||list[0]);}
     $('open-picker').onclick=()=>{const pid=d.views[current].postureId,s=sectionFor(pid);options($('section-select'),sections.map(s=>[s.id,sectionLabel(s)]),s.id);fillPostures(s.id,pid);pickerReturn=document.activeElement;$('picker-dialog').showModal();};
     $('section-select').onchange=()=>fillPostures($('section-select').value);
     $('close-picker').onclick=()=>$('picker-dialog').close();$('picker-dialog').addEventListener('close',()=>pickerReturn?.focus());
-    $('apply-picker').onclick=()=>{const id=$('posture-select').value;go(postures[id].startViewId);$('picker-dialog').close();};
+    $('apply-picker').onclick=()=>{const id=$('posture-select').value;$('picker-dialog').close();go(postures[id].startViewId);};
+    const motionGroup=title=>{const m=String(title||'').match(/^([^·]+?)\\s+\\d+\\/\\d+\\s*·/);return m?m[1].trim():null;};
+    function fillMotionList(p){const nav=$('motion-list');nav.replaceChildren();let group=null,box=null;for(const id of p.motionViewIds){const v=d.views[id],nextGroup=motionGroup(v.title);if(nextGroup&&nextGroup!==group){group=nextGroup;box=el('section',undefined,'motion-group');box.append(el('h3',group));nav.append(box);}if(!box){box=el('section',undefined,'motion-group');nav.append(box);}const b=el('button',`${v.motionNumber} · ${v.title}`,'motion-jump');b.type='button';b.dataset.viewId=id;b.onclick=()=>{go(id);$('motion-dialog').close();};box.append(b);}}
+    $('motion-current').onclick=()=>{const p=postures[d.views[current].postureId];fillMotionList(p);motionReturn=document.activeElement;$('motion-dialog').showModal();};
+    $('close-motion-dialog').onclick=()=>$('motion-dialog').close();$('motion-dialog').addEventListener('close',()=>motionReturn?.focus());
     $('open-details').onclick=()=>$('details-dialog').showModal();$('close-details').onclick=()=>$('details-dialog').close();$('details-dialog').addEventListener('close',()=>$('open-details').focus());
-    for(const id of ['picker-dialog','details-dialog'])$(id).addEventListener('click',e=>{if(e.target!==$(id))return;const r=$(id).getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$(id).close();});
+    for(const id of ['picker-dialog','motion-dialog','details-dialog'])$(id).addEventListener('click',e=>{if(e.target!==$(id))return;const r=$(id).getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$(id).close();});
     document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]')||/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(localEdge(current,e.key==='ArrowRight'?'next':'previous'));}});
-    render();$('load-message').hidden=true;$('app').hidden=false;
+    const syncFromLocation=()=>{const id=location.hash.slice(1);if(d.views[id]&&id!==current){current=id;render();}};window.addEventListener('popstate',syncFromLocation);window.addEventListener('hashchange',syncFromLocation);
+    setUrl(current,'replace');render();$('load-message').hidden=true;$('app').hidden=false;
   }catch(error){fail(error);}
 })();
