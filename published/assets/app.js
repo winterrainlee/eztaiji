@@ -30,7 +30,6 @@
     const claimLabel=(c,formatter=v=>String(v))=>c?.status==='known'?`${formatter(c.value)} · ${basis(c)}`:c?.status==='not_applicable'?'해당 없음':'미등록';
     const stateDescription=s=>{if(!s)return '몸 상태 미등록';const feet=['left','right'].map(side=>`${side==='left'?'왼발':'오른발'} ${claimLabel(s.feet[side].supportRole,v=>({shi:'실',xu:'허',shared:'함께 지지'})[v])}, 발끝 ${heading(s.feet[side].heading)}`).join('. ');const arms=[['left','왼팔'],['right','오른팔']].flatMap(([side,label])=>s.arms?.[side]?.relativeDirection?[`${label} 구조 방향 ${armWorldText(s,side)}`]:[]).join('. ');return arms?`${feet}. ${arms}`:feet;};
     const svg=(tag,attrs={},label)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(label!==undefined)e.textContent=label;return e;};
-    function coreAction(v){const xs=(v.events||[]).map(e=>text(e.description)).filter(Boolean);if(xs.length===1)return xs[0];if(xs.length===2&&xs[0]===xs[1])return xs[0];return xs.length?xs.slice(0,2).join(' '):(text(v.instruction)||'확인된 핵심 동작이 없어.');}
     // One fixed world-to-view transform across the current training frames.
     function draw(v,s){
       const plot=$('plot');plot.replaceChildren(svg('title',{id:'diagram-title'},v.title),svg('desc',{id:'diagram-desc'},stateDescription(s)));
@@ -97,6 +96,11 @@
       :sections.find(s=>s.kind==='postures'&&s.postureIds.includes(v.postureId));};
     const sectionLabel=s=>s?.kind==='principles'?'공통원리':s?.id==='shujin12'?'舒筋十二式':`易簡太極拳 · ${s?.name??''}`;
     const localEdge=(viewId,direction)=>{const candidate=d.navigation.edges[viewId]?.[direction];if(!candidate)return null;const here=sectionForView(viewId),there=sectionForView(candidate);return here?.id===there?.id?candidate:null;};
+    function visibleSourceIds(values){
+      const ids=new Set();
+      const walk=x=>{if(!x||typeof x!=='object')return;if(Array.isArray(x)){x.forEach(walk);return;}if(['known','unknown','not_applicable'].includes(x.status)){for(const e of x.evidence||[])if(d.sources[e.sourceId])ids.add(e.sourceId);return;}for(const y of Object.values(x))walk(y);};
+      walk(values);return [...ids].sort();
+    }
     function renderSources(sourceIds){
       const sb=$('source-list');sb.replaceChildren();
       for(const id of sourceIds||[]){const source=d.sources[id];if(!source)continue;const item=el('div',undefined,'source-item');const a=el('a',source.title);if(/^https?:\/\//i.test(source.url||'')){a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}else item.append(el('strong',source.title));item.append(el('p',source.note));sb.append(item);}
@@ -107,7 +111,7 @@
       $('stage').textContent=`공통원리 · ${v.order} / ${section.principleIds.length}`;
       $('title').textContent=`${v.order}. ${v.title}`;
       $('action-heading').textContent='핵심';
-      $('action-summary').textContent=text(v.summary)||'확인된 핵심 설명이 없어.';
+      $('action-summary').hidden=false;$('action-summary').textContent=text(v.summary)||'확인된 핵심 설명이 없어.';
       $('checks').hidden=true;
       $('plot-panel').hidden=true;
       $('contact-summary').hidden=true;
@@ -116,7 +120,6 @@
       $('instruction').textContent=text(v.explanation)||'확인된 설명이 없어.';
       $('record-kind').textContent=['source','observation'].includes(v.explanation?.basis)?'자료':'해석';
       $('instruction-basis').textContent=basis(v.explanation);
-      $('additional-checks').hidden=true;
       const overview=$('start-overview');overview.replaceChildren();const example=text(v.example);overview.hidden=!example;
       if(example){overview.append(el('h2','예시'),el('p',example));}
       $('global-principles').hidden=true;$('global-principles-body').replaceChildren();
@@ -138,18 +141,18 @@
       const v=d.views[current];if(!v)throw Error('Display view missing');const section=sectionForView(current);if(!section)throw Error('Display section missing');
       if(v.kind==='principle'){renderPrinciple(v,section);return;}
       const p=postures[v.postureId],s=v.stateId?d.states[v.stateId]:null;
-      $('action-heading').textContent=v.kind==='start'?'시작 상태':'지금 할 일';$('detail-heading').textContent='자세한 동작 설명';$('theory-summary').textContent='원리 · 해석 · 출처';
+      $('action-heading').textContent=v.kind==='start'?'시작 상태':'지금 할 일';$('detail-heading').textContent='움직이는 법';$('theory-summary').textContent='원리와 의미 · 근거';
       $('location-text').textContent=`${sectionLabel(section)} · ${p.number}. ${p.name}`;
       const position=v.kind==='start'?'0동작':`${v.motionNumber}동작 / ${p.motionCount}동작`;
       $('stage').textContent=`${p.name} · ${position}`;$('title').textContent=v.kind==='start'?`${p.name} · 0동작`:v.title;
-      const actionText=coreAction(v),instructionText=text(v.instruction)||'확인된 설명이 없어.';
-      $('action-summary').textContent=actionText;
-      $('instruction').textContent=instructionText;$('movement-detail').hidden=v.kind==='start'||actionText===instructionText;$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
+      const instructionText=text(v.instruction)||'확인된 설명이 없어.';
+      $('action-summary').hidden=v.kind==='motion';$('action-summary').textContent=v.kind==='start'?instructionText:'';
+      $('instruction').textContent=instructionText;$('movement-detail').hidden=v.kind==='start';$('record-kind').textContent=['source','observation'].includes(v.instruction?.basis)?'자료':'해석';$('instruction-basis').textContent=basis(v.instruction);
       const contacts=['left','right'].flatMap(side=>{const list=[v.contactSymbols[side],...v.events.filter(e=>e.target===side+'Foot'&&e.symbol).map(e=>e.symbol)].filter(Boolean);return list.length?[`${side==='left'?'왼발':'오른발'} · ${list.join(' / ')}`]:[];});
       $('contact-summary').hidden=!contacts.length;$('contact-summary').textContent=contacts.join('　')+(contacts.length?' · 기록 기준':'');
       const overview=$('start-overview');overview.replaceChildren();const ready=p.motionViewIds.filter(id=>text(d.views[id]?.instruction));overview.hidden=!(v.kind==='start'&&ready.length);
       if(!overview.hidden){overview.append(el('h2','이 자세의 흐름'));let lastGroup=null;for(const id of ready){const m=d.views[id],match=String(m.title||'').match(/^([^·]+?)\s+\d+\/\d+\s*·/),group=match?match[1].trim():null;if(group&&group!==lastGroup){overview.append(el('h3',group,'overview-group'));lastGroup=group;}const row=el('button',`${m.motionNumber} · ${m.title}`,'overview-step');row.type='button';row.onclick=()=>go(id,{history:'push'});overview.append(row);}}
-      const related=v.interpretationIds.map(id=>d.interpretations[id]).filter(Boolean);
+      const related=v.interpretationIds.map(id=>d.interpretations[id]).filter(Boolean).filter(x=>v.kind==='start'?x.scope.kind==='posture':x.scope.kind==='motion');
       const globalPrinciples=(v.principleIds||[]).map(id=>d.principles?.[id]).filter(Boolean);
       const gpSection=$('global-principles'),gpBody=$('global-principles-body');gpSection.hidden=!globalPrinciples.length;gpBody.replaceChildren();
       for(const principle of globalPrinciples){const item=el('div',undefined,'global-principle-item');item.append(el('strong',principle.title),el('p',text(principle.summary)));gpBody.append(item);}
@@ -159,8 +162,8 @@
       for(const x of yy){const c=x.content,pair=el('div',undefined,'pair');for(const[key,i]of [['first',0],['second',1]]){const a=el('div');a.append(el('strong',c.terms[i]),el('p',text(c[key])));pair.append(a);}yyBox.append(pair,el('p',text(c.relation),'relation'));}
       const apps=related.filter(x=>x.category==='application');$('application').hidden=!apps.length;const ab=$('application-body');ab.replaceChildren();
       for(const x of apps){if(x.availability!=='present'){ab.append(el('p',x.reason,'muted'));continue;}const c=x.content;ab.append(el('p',`${x.scope.kind==='posture'?p.name+' 전체':'이 동작'} · ${c.applicationType==='preparation'?'준비 구조로 읽기':'상황을 가정한 해석'}`,'scope'));for(const[key,label]of [['assumption','상황'],['response','대응'],['possibleResult','가능한 결과'],['limitations','읽을 때의 한계']]){ab.append(el('span',label,'scenario-label'),el('p',text(c[key]),key==='limitations'?'limitations':''));}}
-      const checks=v.checks.map(text).filter(Boolean),primaryChecks=checks.slice(0,2),extraChecks=checks.slice(2);$('checks').hidden=!primaryChecks.length;$('check-list').replaceChildren(...primaryChecks.map(t=>el('li',t)));$('additional-checks').hidden=!extraChecks.length;$('additional-check-list').replaceChildren(...extraChecks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length);
-      renderSources(v.sourceIds);
+      const checks=v.checks.map(text).filter(Boolean);$('checks').hidden=!checks.length;$('check-list').replaceChildren(...checks.map(t=>el('li',t)));$('interpretation-label').hidden=!(why.length||yy.length||apps.length||globalPrinciples.length);
+      renderSources(visibleSourceIds([v.instruction,v.checks,v.events,s,v.fromStateId?d.states[v.fromStateId]:null,globalPrinciples,related]));
       draw(v,s);fillDetails(s);$('open-details').disabled=!s;
       const plotPanel=$('plot-panel');const hasPlotCoordinates=['left','right'].some(side=>value(s?.feet?.[side]?.position));if(plotPanel)plotPanel.hidden=section.id==='shujin12'&&!hasPlotCoordinates;
       const edges={previous:localEdge(current,'previous'),next:localEdge(current,'next')};$('prev').disabled=edges.previous===null;$('next').disabled=edges.next===null;
