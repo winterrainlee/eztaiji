@@ -138,6 +138,14 @@ test('lanquewei start shares qishi final state without replaying qishi events',(
   assert.equal(d.views['p003-start-view'].interpretationIds.includes('p002-m06-principle'),false);
 });
 
+test('posture interpretations stay on start views and motion interpretations stay on motion views',()=>{
+  const d=compileData(fresh());
+  assert.ok(d.views['p003-start-view'].interpretationIds.length>0);
+  assert.ok(d.views['p003-start-view'].interpretationIds.every(id=>d.interpretations[id].scope.kind==='posture'));
+  assert.ok(d.views['p002-m03-view'].interpretationIds.length>0);
+  assert.ok(d.views['p002-m03-view'].interpretationIds.every(id=>d.interpretations[id].scope.kind==='motion'));
+});
+
 test('global principle is referenced without duplicating its content',()=>{
   const d=compileData(fresh()),v=d.views['p002-m03-view'];
   assert.deepEqual(v.principleIds,['gp-nonrigidity']);
