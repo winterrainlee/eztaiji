@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./published/assets/app.css?v=principle-course-v1">
   <script src="./catalog.js" defer></script>
   <script src="./published/data/taiji-data.js?v=principle-course-v1" defer></script>
-  <script src="./published/assets/app.js?v=principle-course-v1" defer></script>
+  <script src="./published/assets/app.js?v=mece-structure-v1" defer></script>
 </head>
 <body>
 <main class="app" id="app" hidden>
@@ -22,16 +22,11 @@
   <div class="workspace" id="workspace">
     <section class="explanation" id="explanation" tabindex="0" aria-label="동작 설명">
       <div class="eyebrow" id="stage"></div>
-      <h1 id="title"></h1>
 
       <section class="action-card" aria-labelledby="action-heading">
         <h2 id="action-heading" class="section-kicker">지금 할 일</h2>
+        <h1 id="title"></h1>
         <p id="action-summary" class="action-summary"></p>
-      </section>
-
-      <section id="checks" class="check primary-checks" hidden aria-labelledby="check-heading">
-        <h2 id="check-heading">자세 확인</h2>
-        <ul id="check-list"></ul>
       </section>
 
       <section class="plot-panel" id="plot-panel" aria-label="발 위치와 체중을 보는 그림">
@@ -54,27 +49,27 @@
           <span>발에서 난 ↗ = 발끝</span>
           <span>점선 ↗ = 팔 구조 방향</span>
         </div>
-        <p class="plot-role">손 높이·손목 변화는 위의 ‘지금 할 일’에서 확인해. 이 그림은 평면상의 발 위치·체중·방향을 구분하는 용도야.</p>
+        <p class="plot-role">손 높이·손목 변화와 움직임의 순서는 아래 ‘움직이는 법’에서 확인해. 이 그림은 동작 뒤의 발 위치·체중·방향을 구분하는 용도야.</p>
       </section>
 
       <div id="contact-summary" class="contact-summary" hidden></div>
 
       <section id="movement-detail" class="movement-detail" aria-labelledby="detail-heading">
-        <h2 id="detail-heading">자세한 동작 설명</h2>
+        <h2 id="detail-heading">움직이는 법</h2>
         <div id="record-kind" class="record-kind">자료</div>
         <p class="instruction" id="instruction"></p>
         <p id="instruction-basis" class="basis-note"></p>
       </section>
 
-      <div id="additional-checks" class="check additional-checks" hidden>
-        <h2>추가 확인</h2>
-        <ul id="additional-check-list"></ul>
-      </div>
+      <section id="checks" class="check primary-checks" hidden aria-labelledby="check-heading">
+        <h2 id="check-heading">확인할 것</h2>
+        <ul id="check-list"></ul>
+      </section>
 
       <div id="start-overview" class="start-overview" hidden></div>
 
       <details id="theory-details" class="theory-details">
-        <summary id="theory-summary">원리 · 해석 · 출처</summary>
+        <summary id="theory-summary">원리와 의미 · 근거</summary>
         <div id="interpretation-label" class="section-kicker" hidden>해석</div>
         <div id="why" class="reading-section" hidden><h2>왜 이렇게 움직일까?</h2><div id="why-body"></div></div>
         <div id="global-principles" class="reading-section global-principles" hidden><h2>공통 원리 <span class="tag">연결</span></h2><div id="global-principles-body"></div><a id="principle-more" class="principle-more" href="#">공통원리에서 자세히 →</a></div>
