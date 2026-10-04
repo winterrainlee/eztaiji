@@ -118,8 +118,8 @@ export function compileData(d) {
   const add = (p, m, current, from) => {
     const id = m ? m.id+'-view' : p.id+'-start-view';
     const related = Object.values(d.interpretations).filter(x =>
-      (x.scope.kind === 'posture' && x.scope.postureId === p.id) ||
-      (m && x.scope.kind === 'motion' && x.scope.motionId === m.id)).map(x => x.id).sort();
+      m ? (x.scope.kind === 'motion' && x.scope.motionId === m.id)
+        : (x.scope.kind === 'posture' && x.scope.postureId === p.id)).map(x => x.id).sort();
     const principleIds = m ? copy(m.principleIds ?? []) : [];
     const state = current === null ? null : d.states[current];
     const symbols = {left:null,right:null};
